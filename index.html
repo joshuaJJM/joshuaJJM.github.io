@@ -74,10 +74,28 @@
 
 
   
-  <!-- 粒子背景效果：canvas-nest -->
+
+
+  
+
+<!-- 粒子背景效果：canvas-nest -->
 <script src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1.0.1/dist/canvas-nest.min.js"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', function () {
+    new CanvasNest(document.body, {
+      color: '255,182,193',     // 粉色系（浅粉红） RGB 255,182,193
+      opacity: 0.6,             // 粒子透明度
+      count: 99,                // 粒子数量
+      zIndex: -1,               // 放在最底层
+      pointColor: '255,182,193',
+      lineColor: '255,182,193'
+    });
+  });
+</script>
 
 <meta name="generator" content="Hexo 7.3.0"></head>
+
+</head>
 
 
 <body>
