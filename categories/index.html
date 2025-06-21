@@ -359,16 +359,37 @@
     <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
   </noscript>
 
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+
   <!-- 粒子背景效果：canvas-nest -->
-<script src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1.0.1/dist/canvas-nest.min.js"></script>
-<script>
-  new CanvasNest(document.body, {
-    color: '255,182,193',
-    opacity: 0.6,
-    count: 88,
-    zIndex: -1
-  });
-</script>
+  <style>
+    canvas#canvas-nest {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      width: 100% !important;
+      height: 100% !important;
+      z-index: 9999 !important;
+      pointer-events: none;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1.0.1/dist/canvas-nest.min.js"></script>
+  <script>
+    new CanvasNest(document.body, {
+      color: '255,182,193',
+      opacity: 0.6,
+      count: 88,
+      zIndex: 9999
+    });
+  </script>
+
+</body>
+</html>
+
 
 </body>
 </html>

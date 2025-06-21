@@ -18,3 +18,12 @@
   height: 100vh;
   z-index: -1;
 }
+html, body {
+  height: 100%;
+  overflow: visible !important;
+}
+
+#board, .container, .main, main, .page {
+  position: relative;
+  z-index: auto !important;
+}
