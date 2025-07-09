@@ -4,17 +4,85 @@
   
   
   <entry>
+    <title>测试</title>
+    <link href="/2025/07/09/%E6%B5%8B%E8%AF%95/"/>
+    <url>/2025/07/09/%E6%B5%8B%E8%AF%95/</url>
+    
+    <content type="html"><![CDATA[<p>$$</p><p>\sqrt{2}</p><p>$$</p><span id="more"></span><p>sb</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>非学习</category>
+      
+      <category>不知道该放哪</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>原创</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>手把手教你创建VmWare Workstation17虚拟机</title>
+    <link href="/2025/07/09/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E5%88%9B%E5%BB%BAVmWare-Workstation17%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
+    <url>/2025/07/09/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E5%88%9B%E5%BB%BAVmWare-Workstation17%E8%99%9A%E6%8B%9F%E6%9C%BA/</url>
+    
+    <content type="html"><![CDATA[<p><s>众所周知</s>，VmWare Workstation 是一款十分好的虚拟机软件，而 VmWare Workstation 17，则更好了：相比于之前的版本，它支持个人使用，无需破解即可使用。</p><p><a href="https://pan.quark.cn/s/fb7ca018d7a8">下载链接（无限有效）</a></p><h2 id="安装-VmWare-17">安装 VmWare 17</h2><p>下载完之后直接按照正常的安装方法安装就可以了。这里需要注意，到了许可证那一步的时候，要选择<strong>个人使用</strong>，这样就不用输入许可证号了。</p><p>安装完成后，你应该看到这样一个界面。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/buf7n7z6.png" alt=""></p><h2 id="下载系统镜像">下载系统镜像</h2><h3 id="下载下载工具">下载下载工具</h3><p>这里以 windows10 为例，其他系统请自行寻找：<br>前往<a href="https://www.microsoft.com/zh-cn/software-download/windows10">这里</a>，下载镜像下载器。<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="也可以直接下载镜像，（iso文件），在windows官网，这里不做详细介绍。">[1]</span></a></sup></p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/qqqvx7fp.png" alt=""></p><h3 id="下载镜像">下载镜像</h3><p>打开下载器。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/n1csvw6x.png" alt=""></p><p>等待准备完成。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/je2gtl4d.png" alt=""></p><p>点击接受。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/3zefi8d4.png" alt=""></p><p><s>又</s>等待准备完成。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/je2gtl4d.png" alt=""></p><p>点击<strong>为另一台电脑创建安装介质</strong>选项。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/u0mdv60r.png" alt=""></p><p>自行选择系统信息，注意要先取消勾选下面的那个。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/qsxz7ske.png" alt=""></p><p>将介质改为 ISO 文件。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/xniz7yc9.png" alt=""></p><p>选择保存路径，建议在 D 盘专门建一个虚拟机文件夹，并创建子目录专门用于存放各种系统的 ISO 镜像文件。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/xqq9f9ks.png" alt=""></p><p>又叕叕叕叕叕等待。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/hwrhw4nq.png" alt=""></p><p>等待下载完成。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/qvc2a45p.png" alt=""></p><p>下载完后，直接退出即可。</p><h2 id="安装虚拟机">安装虚拟机</h2><h3 id="虚拟机创建">虚拟机创建</h3><p>打开 VmWare，点击<strong>创建新的虚拟机</strong>。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/0knykvvr.png" alt=""></p><p>点击典型（或者高级也行，但是这里以典型为例）并点击下一步。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/b1bneubi.png" alt=""></p><p>选择中间的选项，并浏览刚刚下载的 ISO 文件。这时如果出现了“已检测到……”的字样，说明镜像已经搞定了。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/gdbz0ew4.png" alt=""></p><p>选择虚拟机的目录并命名，建议放在刚刚的 D 盘的虚拟机目录里。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/8l1z2r1h.png" alt=""></p><p>设置磁盘大小。这里就使用 60G，也可以自行调整。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/om3fohnk.png" alt=""></p><p>确认信息。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/afq03i0h.png" alt=""></p><p>以后要更改配置的话在左边右键，点管理即可。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/lcjsbqvw.png" alt=""></p><p>点击完成，等磁盘创建完之后就开机了。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/wc6wc1pc.png" alt=""></p><h3 id="安装系统">安装系统</h3><h4 id="安装部分">安装部分</h4><p>在这个页面，赶紧点击屏幕中心部分，然后乱按一通键盘。如果出现 time out 的字样，就重启，在来一次。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/6swnpnem.png" alt=""></p><p>出现这个页面，说明成功了。直接下一页即可。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/7q3bg1h3.png" alt=""></p><p>点击现在安装。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/hr7mpz0f.png" alt=""></p><p>等他这么一下子。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/ihzmdmak.png" alt=""></p><p>点击我没有产品密钥。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/myhk9r4m.png" alt=""></p><p>选择版本，这里选择专业版。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/6omr9qhi.png" alt=""></p><p>点击接受，然后下一页。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/bx1t1wu3.png" alt=""></p><p>点下面这个自定义：仅安装 windows。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/68mcia9z.png" alt=""></p><h4 id="分区">分区</h4><p>硬盘分区。这里先点新建，直接点应用，在弹窗里点击确定，然后再在三个分区里点“驱动器0分区3”，类型是主分区的这个。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/zwwgp0yp.png" alt=""></p><h4 id="安装系统-2">安装系统</h4><p>等他安装，这要用一些时间。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/gzue5x1f.png" alt=""></p><p>等他出现这个，就<s>继续等</s>。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/t8fq0tvs.png" alt=""></p><p>然后虚拟机会重启。又可以见到<s>奇怪的翻译</s>了。设置地区。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/8ute7rgq.png" alt=""></p><p>设置键盘布局。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/w0569dbo.png" alt=""></p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/prheemeq.png" alt=""></p><p>这里选通过个人设置。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/rhk5bnrh.png" alt=""></p><p>这里可以<strong>点左下角的脱机账户，再点有限的体验</strong>免登录微软账号。当然你直接登录微软账号也可以，但是我不推荐。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/w6bbnpxk.png" alt=""></p><p>设置用户名和密码，密码可以为空。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/abmtqz5j.png" alt=""></p><p>后面就是一堆接受和跳过。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/g0axbmdk.png" alt=""></p><p>然后，你就进入桌面了。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/6z8bq2k1.png" alt=""></p><p>再安装Vmware tools，就可以随意调整屏幕大小了。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/zzs6w69j.png" alt=""></p><p>按提示安装即可。</p><h2 id="完成！">完成！</h2><p>求赞。（用于 luogu，原文章在<a href="https://www.luogu.com.cn/article/mtpxcv12">这里</a>）。<section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span>也可以直接下载镜像，（iso文件），在windows官网，这里不做详细介绍。<br><a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>非学习</category>
+      
+      <category>帮助</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>原创</tag>
+      
+      <tag>教程</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>题解：B4205 [常州市赛 2021] 特殊字符</title>
-    <link href="/2025/06/14/%E6%B5%8B%E8%AF%95/"/>
-    <url>/2025/06/14/%E6%B5%8B%E8%AF%95/</url>
+    <link href="/2025/06/14/B4205%E9%A2%98%E8%A7%A3/"/>
+    <url>/2025/06/14/B4205%E9%A2%98%E8%A7%A3/</url>
     
-    <content type="html"><![CDATA[<h1 id="题解：B4205-常州市赛-2021-特殊字符"><a href="#题解：B4205-常州市赛-2021-特殊字符" class="headerlink" title="题解：B4205 [常州市赛 2021] 特殊字符"></a>题解：B4205 [常州市赛 2021] 特殊字符</h1><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>因为 $n\le10^6$ 且 $K\le10^9 $，直接构造整个字符串会超时甚至内存爆炸。因此考虑模拟加上跳过模拟扩展的片段。</p><h2 id="代码逻辑"><a href="#代码逻辑" class="headerlink" title="代码逻辑"></a>代码逻辑</h2><p>对于每个特殊字符，从左往右遍历：</p><ul><li><p>若遇到一段连续的 $c$ 长度为 $t$，取出后续的 <code>min(t,n-i)</code> 个字符 $p$。</p></li><li><p>经过处理后，这段会变成 $p$ 重复 $t$ 遍。</p></li><li><p>然后判断：</p><ul><li>若当前 $K$ 还在这段之前，正常推进；</li><li>若 $K$ 落在这段里，用取模找出具体落在 $p$ 的哪一位。</li></ul></li><li><p>若不是特殊字符，就正常推进 $K$。</p></li></ul><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-keyword">typedef</span> <span class="hljs-type">long</span> <span class="hljs-type">long</span> ll;<br><br><br><span class="hljs-type">int</span> n,k;<br>string s;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>cin&gt;&gt;n&gt;&gt;k;<br>cin&gt;&gt;s;<br><span class="hljs-keyword">for</span>(<span class="hljs-type">char</span> c=<span class="hljs-string">&#x27;a&#x27;</span>;c&lt;=<span class="hljs-string">&#x27;z&#x27;</span>;c++)&#123;<br>ll d=k;<br><span class="hljs-type">int</span> t=<span class="hljs-number">0</span>;<br><span class="hljs-type">int</span> i;<br><span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;i&lt;=n;i++)&#123;  <br><span class="hljs-keyword">if</span>(s[i]==c) t++;<span class="hljs-comment">//符合条件，t++</span><br><span class="hljs-keyword">else</span>&#123;<br><span class="hljs-keyword">if</span>(t)&#123;<br>ll z=<span class="hljs-built_in">min</span>(t,n-i);<span class="hljs-comment">//取t和n-i的最小值</span><br><span class="hljs-keyword">if</span>(d&gt;z*t)&#123;<span class="hljs-comment">//如果d&gt;z*t，d减去z*t，i加上z-1，t置0</span><br>d-=z*t;<br>i+=z<span class="hljs-number">-1</span>;<br>t=<span class="hljs-number">0</span>;<br>&#125;<br><span class="hljs-keyword">else</span>&#123;<br>d%=z;<br><span class="hljs-keyword">if</span>(!d) d=z;<br>cout&lt;&lt;s[i+d<span class="hljs-number">-1</span>];<br>d=<span class="hljs-number">0</span>;<br>t=<span class="hljs-number">0</span>;<br><span class="hljs-keyword">break</span>;<br>&#125;<br>&#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(i!=n)&#123;<span class="hljs-comment">//如果t=0，i!=n，d--，如果d=0，输出s[i]</span><br>d--;<br><span class="hljs-keyword">if</span>(d==<span class="hljs-number">0</span>)&#123;<br>cout&lt;&lt;s[i];<br><span class="hljs-keyword">break</span>;<br>&#125;   <br>&#125;<br><br>&#125;<br>&#125;<br><span class="hljs-keyword">if</span>(d) cout&lt;&lt;<span class="hljs-string">&quot;*&quot;</span>;<span class="hljs-comment">//如果d&gt;0，输出*</span><br>&#125;<br><span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure><h2 id="时空间复杂度分析"><a href="#时空间复杂度分析" class="headerlink" title="时空间复杂度分析"></a>时空间复杂度分析</h2><p>时间复杂度：$O(26\times n)$，每个字符模拟一遍。<br>空间复杂度：$O(n)$，仅存储字符串。</p><p><a href="https://www.luogu.com.cn/record/218392364">AC 记录</a></p>]]></content>
+    <content type="html"><![CDATA[<h1>题解：B4205 [常州市赛 2021] 特殊字符</h1><h2 id="思路">思路</h2><p>因为 $n\le10^6$ 且 $K\le10^9 $，直接构造整个字符串会超时甚至内存爆炸。因此考虑模拟加上跳过模拟扩展的片段。</p><h2 id="代码逻辑">代码逻辑</h2><p>对于每个特殊字符，从左往右遍历：</p><ul><li><p>若遇到一段连续的 $c$ 长度为 $t$，取出后续的 <code>min(t,n-i)</code> 个字符 $p$。</p></li><li><p>经过处理后，这段会变成 $p$ 重复 $t$ 遍。</p></li><li><p>然后判断：</p><ul><li>若当前 $K$ 还在这段之前，正常推进；</li><li>若 $K$ 落在这段里，用取模找出具体落在 $p$ 的哪一位。</li></ul></li><li><p>若不是特殊字符，就正常推进 $K$。</p></li></ul><h2 id="代码">代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-keyword">typedef</span> <span class="hljs-type">long</span> <span class="hljs-type">long</span> ll;<br><br><br><span class="hljs-type">int</span> n,k;<br>string s;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>cin&gt;&gt;n&gt;&gt;k;<br>cin&gt;&gt;s;<br><span class="hljs-keyword">for</span>(<span class="hljs-type">char</span> c=<span class="hljs-string">&#x27;a&#x27;</span>;c&lt;=<span class="hljs-string">&#x27;z&#x27;</span>;c++)&#123;<br>ll d=k;<br><span class="hljs-type">int</span> t=<span class="hljs-number">0</span>;<br><span class="hljs-type">int</span> i;<br><span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;i&lt;=n;i++)&#123;  <br><span class="hljs-keyword">if</span>(s[i]==c) t++;<span class="hljs-comment">//符合条件，t++</span><br><span class="hljs-keyword">else</span>&#123;<br><span class="hljs-keyword">if</span>(t)&#123;<br>ll z=<span class="hljs-built_in">min</span>(t,n-i);<span class="hljs-comment">//取t和n-i的最小值</span><br><span class="hljs-keyword">if</span>(d&gt;z*t)&#123;<span class="hljs-comment">//如果d&gt;z*t，d减去z*t，i加上z-1，t置0</span><br>d-=z*t;<br>i+=z<span class="hljs-number">-1</span>;<br>t=<span class="hljs-number">0</span>;<br>&#125;<br><span class="hljs-keyword">else</span>&#123;<br>d%=z;<br><span class="hljs-keyword">if</span>(!d) d=z;<br>cout&lt;&lt;s[i+d<span class="hljs-number">-1</span>];<br>d=<span class="hljs-number">0</span>;<br>t=<span class="hljs-number">0</span>;<br><span class="hljs-keyword">break</span>;<br>&#125;<br>&#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(i!=n)&#123;<span class="hljs-comment">//如果t=0，i!=n，d--，如果d=0，输出s[i]</span><br>d--;<br><span class="hljs-keyword">if</span>(d==<span class="hljs-number">0</span>)&#123;<br>cout&lt;&lt;s[i];<br><span class="hljs-keyword">break</span>;<br>&#125;   <br>&#125;<br><br>&#125;<br>&#125;<br><span class="hljs-keyword">if</span>(d) cout&lt;&lt;<span class="hljs-string">&quot;*&quot;</span>;<span class="hljs-comment">//如果d&gt;0，输出*</span><br>&#125;<br><span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure><h2 id="时空间复杂度分析">时空间复杂度分析</h2><p>时间复杂度：$O(26\times n)$，每个字符模拟一遍。<br>空间复杂度：$O(n)$，仅存储字符串。</p><p><a href="https://www.luogu.com.cn/record/218392364">AC 记录</a></p>]]></content>
     
+    
+    <categories>
+      
+      <category>学习</category>
+      
+      <category>编程</category>
+      
+      <category>题解</category>
+      
+    </categories>
     
     
     <tags>
       
       <tag>题解</tag>
+      
+      <tag>原创</tag>
       
     </tags>
     
@@ -24,12 +92,26 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="/2025/06/13/hello-world/"/>
-    <url>/2025/06/13/hello-world/</url>
+    <link href="/2000/01/01/hello-world/"/>
+    <url>/2000/01/01/hello-world/</url>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start">Quick Start</h2><h3 id="Create-a-new-post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
     
     
+    <categories>
+      
+      <category>非学习</category>
+      
+      <category>不知道该放哪</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>非原创</tag>
+      
+    </tags>
     
   </entry>
   
