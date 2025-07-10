@@ -19,26 +19,26 @@
   <meta name="author" content="Joshua0729">
   <meta name="keywords" content="">
   
-    <meta name="description" content="今天是夏令营的第一天 上午 学习了枚举，就是一种优雅的暴力 开始做题~ T1 题意 题意为给定一个 N，求满足 $A\le B \le C$ 且 $A\times B\times C\le N$ 的整数 $a,b,c$ 的数量。 数据范围是  $1\le N\le 10^{11}$，要用 long long。 答案 $\le 2^{63}$，也要用 long long。  思路 枚举 AB，计算">
+    <meta name="description" content="B4206 [常州市程序设计小能手 2021] 数字翻转 思路 暴力 首先考虑打表，看一眼数据范围，$10^{14}$，啥都不用想，就算你打出了数组代码也一定会太长。 那么，我们就可以写一个函数，遍历 $L$ 到 $R$ 之间的数，检查，如果是，就增加答案数。 70 分的超时代码： 1234567891011121314151617181920212223242526272829303132333">
 <meta property="og:type" content="article">
-<meta property="og:title" content="夏令营7.10总结">
-<meta property="og:url" content="http://joshuajjm.github.io/2025/07/10/%E5%A4%8F%E4%BB%A4%E8%90%A57-10%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:title" content="B4206题解">
+<meta property="og:url" content="http://joshuajjm.github.io/2025/07/10/B4206%E9%A2%98%E8%A7%A3/index.html">
 <meta property="og:site_name" content="Joshua0729的个人博客">
-<meta property="og:description" content="今天是夏令营的第一天 上午 学习了枚举，就是一种优雅的暴力 开始做题~ T1 题意 题意为给定一个 N，求满足 $A\le B \le C$ 且 $A\times B\times C\le N$ 的整数 $a,b,c$ 的数量。 数据范围是  $1\le N\le 10^{11}$，要用 long long。 答案 $\le 2^{63}$，也要用 long long。  思路 枚举 AB，计算">
+<meta property="og:description" content="B4206 [常州市程序设计小能手 2021] 数字翻转 思路 暴力 首先考虑打表，看一眼数据范围，$10^{14}$，啥都不用想，就算你打出了数组代码也一定会太长。 那么，我们就可以写一个函数，遍历 $L$ 到 $R$ 之间的数，检查，如果是，就增加答案数。 70 分的超时代码： 1234567891011121314151617181920212223242526272829303132333">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.rthe.cn/cached-c7ebe86c826364a46c255143f906c865-avif/mapbad/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-07-10%20155621.png">
-<meta property="article:published_time" content="2025-07-10T02:19:18.000Z">
-<meta property="article:modified_time" content="2025-07-10T08:00:48.090Z">
+<meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/1evwgt2o.png">
+<meta property="article:published_time" content="2025-07-10T10:50:06.000Z">
+<meta property="article:modified_time" content="2025-07-10T10:51:13.150Z">
 <meta property="article:author" content="Joshua0729">
+<meta property="article:tag" content="题解">
 <meta property="article:tag" content="原创">
-<meta property="article:tag" content="夏令营">
-<meta property="article:tag" content="总结">
+<meta property="article:tag" content="洛谷">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cdn.rthe.cn/cached-c7ebe86c826364a46c255143f906c865-avif/mapbad/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-07-10%20155621.png">
+<meta name="twitter:image" content="https://cdn.luogu.com.cn/upload/image_hosting/1evwgt2o.png">
   
   
   
-  <title>夏令营7.10总结 - Joshua0729的个人博客</title>
+  <title>B4206题解 - Joshua0729的个人博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -215,13 +215,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('https://cdn.rthe.cn/cached-c7ebe86c826364a46c255143f906c865-avif/mapbad/屏幕截图%202025-07-10%20155621.png') no-repeat center center; background-size: cover;">
+     style="background: url('https://cdn.luogu.com.cn/upload/image_hosting/1evwgt2o.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="夏令营7.10总结"></span>
+            <span id="subtitle" data-typed-text="B4206题解"></span>
           
         </div>
 
@@ -232,8 +232,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-07-10 10:19" pubdate>
-          2025年7月10日 星期四 上午 10:19
+        <time datetime="2025-07-10 18:50" pubdate>
+          2025年7月10日 星期四 晚上 6:50
         </time>
       </span>
     
@@ -244,7 +244,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          911 字
+          509 字
         
       </span>
     
@@ -255,7 +255,7 @@
         
         
         
-          8 分钟
+          5 分钟
         
       </span>
     
@@ -293,12 +293,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">夏令营7.10总结</h1>
+            <h1 id="seo-header">B4206题解</h1>
             
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于 2025-07-10T16:00:48+08:00
+                    本文最后更新于 2025-07-10T18:51:13+08:00
                   
                   
 
@@ -308,81 +308,22 @@
             
               <div class="markdown-body">
                 
-                <p>今天是夏令营的第一天</p>
-<h2 id="上午">上午</h2>
-<p>学习了枚举，就是一种<em>优雅的暴力</em></p>
-<p>开始做题~</p>
-<h3 id="T1">T1</h3>
-<h4 id="题意">题意</h4>
-<p>题意为给定一个 N，求满足 $A\le B \le C$ 且 $A\times B\times C\le N$ 的整数 $a,b,c$ 的数量。</p>
-<p>数据范围是</p>
-<ul>
-<li>$1\le N\le 10^{11}$，要用 <code>long long</code>。</li>
-<li>答案 $\le 2^{63}$，也要用 <code>long long</code>。</li>
-</ul>
-<h4 id="思路">思路</h4>
-<p>枚举 AB，计算 C 的可能个数。</p>
-<p>使用双重循环，第一层枚举 $A^3$，第二层枚举 $A\times B^2$。</p>
-<h4 id="代码">代码</h4>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-meta">#<span class="hljs-keyword">define</span> int long long</span><br><span class="hljs-type">int</span> n;<br><span class="hljs-type">int</span> ans=<span class="hljs-number">0</span>;<br><span class="hljs-function"><span class="hljs-type">signed</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>	cin&gt;&gt;n;<br>	<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> a=<span class="hljs-number">1</span>;a*a*a&lt;=n;a++)&#123;<br>		<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> b=a;a*b*b&lt;=n;b++)&#123;<br>			<span class="hljs-type">int</span> c=n/(a*b);<br>			<span class="hljs-keyword">if</span>(c&lt;b) <span class="hljs-keyword">continue</span>;<br>			ans+=c-b<span class="hljs-number">+1</span>;<br>		&#125;<br>	&#125;<br>	cout&lt;&lt;ans;<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h3 id="T2">T2</h3>
-<h4 id="题意-2">题意</h4>
-<p>求大于 X 的一个十进制数 N，使得 N 的全部位数按位数排序后为等差数列。</p>
-<h4 id="思路-2">思路</h4>
-<p>是长度为 L 的，各项为 0 到 9 的，首项不是 9 的等差数列。</p>
-<p>数列由首项与公差决定。</p>
-<ul>
-<li>首项: 1,2,…,9</li>
-<li>公差: -9,-8,…,9</li>
-</ul>
-<p>直接枚举，枚举量小于 200。</p>
-<h4 id="代码-2">代码</h4>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-meta">#<span class="hljs-keyword">define</span> int long long</span><br><span class="hljs-function"><span class="hljs-type">signed</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>	<span class="hljs-type">int</span> x;<br>	cin&gt;&gt;x;<br>	<span class="hljs-type">int</span> ans=x*<span class="hljs-number">10</span>;<br>	<span class="hljs-type">int</span> len=<span class="hljs-built_in">to_string</span>(x).<span class="hljs-built_in">size</span>();<br>	<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> a=<span class="hljs-number">1</span>;a&lt;=<span class="hljs-number">9</span>;a++)&#123;<br>		<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> d=<span class="hljs-number">-9</span>;d&lt;=<span class="hljs-number">9</span>;d++)&#123;<br>			<span class="hljs-type">int</span> sum=<span class="hljs-number">0</span>;<br>			<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;len;i++)&#123;<br>				<span class="hljs-type">int</span> t=a+d*i;<br>				<span class="hljs-keyword">if</span>(t&lt;<span class="hljs-number">0</span>||t&gt;<span class="hljs-number">9</span>) <span class="hljs-keyword">break</span>;<br>				sum=sum*<span class="hljs-number">10</span>+t;<br>			&#125;<br>			<span class="hljs-keyword">if</span>(sum&gt;=x)&#123;<br>				ans=<span class="hljs-built_in">min</span>(ans,sum);<br>			&#125;<br>		&#125;<br>	&#125;<br>	cout&lt;&lt;ans;<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h3 id="T3">T3</h3>
-<h4 id="题意-3">题意</h4>
-<p>给定正整数 N 和 M，找到最小正整数 X，使得 X 可以表示为 a，b 两个整数的乘积且 $1\le a,b\le N$（a，b 可以相同）且 $M\le X$。</p>
-<p>数据范围：</p>
-<ul>
-<li>$1\le N\le 10^{12}$</li>
-<li>$1\le N\le 10^{18}$</li>
-</ul>
-<h5 id="简化">简化</h5>
-<p>找到 a,b 满足：</p>
-<ul>
-<li>$1\le a,b\le N$</li>
-<li>$m\le a\times b$</li>
-</ul>
-<h4 id="思路-3">思路</h4>
-<p>枚举 a，从 1 到 $min(N,\sqrt{M})$</p>
-<h4 id="代码-3">代码</h4>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-meta">#<span class="hljs-keyword">define</span> int long long</span><br><span class="hljs-function"><span class="hljs-type">signed</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>	<span class="hljs-type">int</span> n,m;<br>	cin&gt;&gt;n&gt;&gt;m;<br>	<span class="hljs-type">int</span> ans=<span class="hljs-number">-1</span>;<br>	<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> a=<span class="hljs-number">1</span>;a&lt;=n;a++)&#123;<br>		<span class="hljs-type">int</span> b=(m+(a<span class="hljs-number">-1</span>))/a;<br>		<span class="hljs-keyword">if</span>(b&lt;=n)&#123;<br>			<span class="hljs-keyword">if</span>(ans==<span class="hljs-number">-1</span>||ans&gt;a*b)&#123;<br>				ans=a*b;<br>			&#125;<br>		&#125;<br>		<span class="hljs-keyword">if</span>(a*a&gt;=m)&#123;<br>			<span class="hljs-keyword">break</span>;<br>		&#125;<br>	&#125;<br>	cout&lt;&lt;ans;<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h2 id="中午">中午</h2>
-<p>睡觉…</p>
-<h2 id="下午">下午</h2>
-<p><s><strong>题目逐渐变得难了起来…</strong></s></p>
-<h3 id="T4（上午）">T4（上午）</h3>
-<h4 id="题意-4">题意</h4>
-<p>有三种物品，是易拉罐，普通罐头和开罐器。易拉罐可以获得 x 点体力，普通罐头要消耗开罐器的一点耐久，获得 x 点体力，开罐器可以开罐 x 次。从 N 个中拿走 N 个，求最大可以获取的体力值。</p>
-<p>数据范围：</p>
-<ul>
-<li>$1\le M\le N\le2\times10^5$</li>
-<li>$1\le x_i\le10^9$</li>
-</ul>
-<h4 id="思路-4">思路</h4>
-<ul>
-<li>无论是什么东西，都优先拿 x 更大的。</li>
-<li>如果要拿普通罐头，则一定要打开。打不开的干脆不拿。</li>
-<li>由拿的普通罐头数量决定开罐器的数量。尽量不要多拿。</li>
-<li>其实也可以那小于 m 个物品，效果一样。</li>
-</ul>
-<h4 id="代码逻辑">代码逻辑</h4>
-<ol>
-<li>把物品分类后按 x 的大小排序</li>
-<li>计算每种物品的前缀和数组</li>
-<li>枚举拿几个普通罐头，几个开罐器，几个易拉罐头。</li>
-</ol>
-<h4 id="代码-4">代码</h4>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-keyword">typedef</span> <span class="hljs-type">long</span> <span class="hljs-type">long</span> ll;<br><br><span class="hljs-function"><span class="hljs-type">signed</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>	<span class="hljs-type">int</span> n,m;<br>	cin&gt;&gt;n&gt;&gt;m;<br>	vector&lt;<span class="hljs-type">int</span>&gt; X[<span class="hljs-number">3</span>];<br>	<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++)&#123;<br>		<span class="hljs-type">int</span> t,x;<br>		cin&gt;&gt;t&gt;&gt;x;<br>		X[t].<span class="hljs-built_in">push_back</span>(x);<br>	&#125;<br>	<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">3</span>;i++)&#123;<br>		<span class="hljs-built_in">sort</span>(X[i].<span class="hljs-built_in">rbegin</span>(),X[i].<span class="hljs-built_in">rend</span>());<br>	&#125;<br>	vector&lt;ll&gt; sum[<span class="hljs-number">3</span>];<br>	<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">3</span>;i++)&#123;<br>		sum[i].<span class="hljs-built_in">resize</span>(X[i].<span class="hljs-built_in">size</span>()<span class="hljs-number">+1</span>);<br>		<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j=<span class="hljs-number">0</span>;j&lt;X[i].<span class="hljs-built_in">size</span>();j++)&#123;<br>			sum[i][j<span class="hljs-number">+1</span>]=sum[i][j]+X[i][j];<br>		&#125;<br>	&#125;<br>	ll ans=<span class="hljs-number">0</span>;<br>	<span class="hljs-type">int</span> j=<span class="hljs-number">0</span>;<br>	<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;=(<span class="hljs-type">int</span>)X[<span class="hljs-number">1</span>].<span class="hljs-built_in">size</span>();i++)&#123;<br>		<span class="hljs-keyword">if</span>(i&gt;m) <span class="hljs-keyword">break</span>;<br>		<span class="hljs-keyword">if</span>(sum[<span class="hljs-number">2</span>][j]&lt;i) j++;<br>		<span class="hljs-keyword">if</span>(j&gt;(<span class="hljs-type">int</span>)X[<span class="hljs-number">2</span>].<span class="hljs-built_in">size</span>()||i+j&gt;m) <span class="hljs-keyword">break</span>;<br>		<span class="hljs-type">int</span> k=<span class="hljs-built_in">min</span>(m-i-j,(<span class="hljs-type">int</span>)X[<span class="hljs-number">0</span>].<span class="hljs-built_in">size</span>());<br>		ans=<span class="hljs-built_in">max</span>(ans,sum[<span class="hljs-number">0</span>][k]+sum[<span class="hljs-number">1</span>][i]);<br>	&#125;<br>	cout&lt;&lt;ans;<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+                <h1>B4206 [常州市程序设计小能手 2021] 数字翻转</h1>
+<h2 id="思路">思路</h2>
+<h3 id="暴力">暴力</h3>
+<p><s>首先考虑打表</s>，看一眼数据范围，$10^{14}$，啥都不用想，就算你打出了数组代码也一定会太长。</p>
+<p>那么，我们就可以写一个函数，遍历 $L$ 到 $R$ 之间的数，检查，如果是，就增加答案数。</p>
+<p>70 分的超时代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-type">int</span> change[<span class="hljs-number">10</span>]=&#123;<span class="hljs-number">0</span>,<span class="hljs-number">-1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">-1</span>,<span class="hljs-number">-1</span>,<span class="hljs-number">5</span>,<span class="hljs-number">9</span>,<span class="hljs-number">-1</span>,<span class="hljs-number">8</span>,<span class="hljs-number">6</span>&#125;;<br><span class="hljs-comment">//#define int unsigned long long</span><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">daozhi</span><span class="hljs-params">(<span class="hljs-type">int</span> x)</span></span>&#123;<br>	<span class="hljs-type">int</span> ans=<span class="hljs-number">0</span>;<br>	<span class="hljs-keyword">while</span>(x!=<span class="hljs-number">0</span>)&#123;<br>		ans+=x%<span class="hljs-number">10</span>;<br>		x/=<span class="hljs-number">10</span>;<br>		ans*=<span class="hljs-number">10</span>;<br>	&#125;<br>	<span class="hljs-keyword">return</span> ans/<span class="hljs-number">10</span>;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">weishu</span><span class="hljs-params">(<span class="hljs-type">int</span> x)</span></span>&#123;<br>	<span class="hljs-type">int</span> ans=<span class="hljs-number">0</span>;<br>	<span class="hljs-keyword">while</span>(x!=<span class="hljs-number">0</span>)&#123;<br>		ans++;<br>		x/=<span class="hljs-number">10</span>;<br>	&#125;<br>	<span class="hljs-keyword">return</span> ans;<br>&#125;<br><span class="hljs-function">string <span class="hljs-title">check</span><span class="hljs-params">(<span class="hljs-type">int</span> x)</span></span>&#123;<br>	x=<span class="hljs-built_in">daozhi</span>(x);<br>	<span class="hljs-type">int</span> n=<span class="hljs-built_in">weishu</span>(x);<br>	string ans=<span class="hljs-built_in">to_string</span>(x);<br>	<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++)&#123;<br>		ans[i]=change[ans[i]-<span class="hljs-string">&#x27;0&#x27;</span>]+<span class="hljs-string">&#x27;0&#x27;</span>;<br>	&#125;<br>	<span class="hljs-keyword">return</span> ans;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">signed</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>	<span class="hljs-type">int</span> T;<br>	cin&gt;&gt;T;<br>	<span class="hljs-keyword">while</span>(T--)&#123;<br>		<span class="hljs-type">int</span> l,r;<br>		cin&gt;&gt;l&gt;&gt;r;<br>		<span class="hljs-type">int</span> ans=<span class="hljs-number">0</span>;<br>		<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=l;i&lt;=r;i++)&#123;<br>			<span class="hljs-keyword">if</span>(<span class="hljs-built_in">check</span>(i)==<span class="hljs-built_in">to_string</span>(i))&#123;<br>				ans++;<br>			&#125;<br>		&#125;<br>		cout&lt;&lt;ans&lt;&lt;endl;<br>	&#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="优化">优化</h3>
+<h4 id="优化思路">优化思路</h4>
+<p>可以看到，在 70 分代码中，数字在翻转时调用了很多的函数，导致时间复杂度爆炸。我们可以优化这个翻转的过程。</p>
+<h4 id="优化过程">优化过程</h4>
+<p>首先看到翻转数字的部分。我把两部分分开了，但是可以把两部分合到一起。</p>
+<p>再看到检查函数部分。我的写法是每一位先翻转再把翻转后的结果返回并比较两个结果的关系。但是其实可以一边剥离每一位，另一边检查这一位翻转后是否有意义，并合成回原数字。</p>
+<h2 id="代码">代码</h2>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-keyword">typedef</span> <span class="hljs-type">long</span> <span class="hljs-type">long</span> ll;<br>ll q,r,l,a[<span class="hljs-number">11</span>]=&#123;<span class="hljs-number">0</span>,<span class="hljs-number">-1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">-1</span>,<span class="hljs-number">-1</span>,<span class="hljs-number">5</span>,<span class="hljs-number">9</span>,<span class="hljs-number">-1</span>,<span class="hljs-number">8</span>,<span class="hljs-number">6</span>&#125;;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    cin&gt;&gt;q;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=q;i++)&#123;<br>        cin&gt;&gt;l&gt;&gt;r;<br>        <span class="hljs-type">int</span> cnt=<span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j=l;j&lt;=r;j++)&#123;<br>            <span class="hljs-type">bool</span> vis=<span class="hljs-literal">true</span>;<br>            <span class="hljs-type">int</span> t=j,f=<span class="hljs-number">0</span>;<br>            <span class="hljs-keyword">while</span>(t)&#123;<br>                <span class="hljs-keyword">if</span>(a[t%<span class="hljs-number">10</span>]==<span class="hljs-number">-1</span>)&#123;<br>                    vis=<span class="hljs-number">0</span>;<br>                    <span class="hljs-keyword">break</span>;<br>                &#125;<br>                f=f*<span class="hljs-number">10</span>+a[t%<span class="hljs-number">10</span>];<br>                t/=<span class="hljs-number">10</span>;<br>            &#125;<br>            <span class="hljs-keyword">if</span>(f==j&amp;&amp;vis==<span class="hljs-number">1</span>)&#123;<br>                cnt++;<br>            &#125;<br>        &#125;<br>        cout&lt;&lt;cnt&lt;&lt;endl;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/record/216743302">通过记录</a></p>
 
                 
               </div>
@@ -411,7 +352,7 @@
   
     <span>></span>
     
-  <a href="/categories/%E5%AD%A6%E4%B9%A0/%E7%BC%96%E7%A8%8B/%E6%80%BB%E7%BB%93/" class="category-chain-item">总结</a>
+  <a href="/categories/%E5%AD%A6%E4%B9%A0/%E7%BC%96%E7%A8%8B/%E9%A2%98%E8%A7%A3/" class="category-chain-item">题解</a>
   
   
 
@@ -430,11 +371,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
+        <a href="/tags/%E9%A2%98%E8%A7%A3/" class="print-no-link">#题解</a>
+      
         <a href="/tags/%E5%8E%9F%E5%88%9B/" class="print-no-link">#原创</a>
       
-        <a href="/tags/%E5%A4%8F%E4%BB%A4%E8%90%A5/" class="print-no-link">#夏令营</a>
-      
-        <a href="/tags/%E6%80%BB%E7%BB%93/" class="print-no-link">#总结</a>
+        <a href="/tags/%E6%B4%9B%E8%B0%B7/" class="print-no-link">#洛谷</a>
       
     </div>
   
@@ -446,8 +387,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>夏令营7.10总结</div>
-      <div>http://joshuajjm.github.io/2025/07/10/夏令营7-10总结/</div>
+      <div>B4206题解</div>
+      <div>http://joshuajjm.github.io/2025/07/10/B4206题解/</div>
     </div>
     <div class="license-meta">
       
@@ -459,13 +400,13 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年7月10日 星期四 上午 10:19</div>
+          <div>2025年7月10日 星期四 晚上 6:50</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年7月10日 星期四 下午 4:00</div>
+          <div>2025年7月10日 星期四 晚上 6:51</div>
         </div>
       
       
@@ -496,18 +437,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/07/10/P3843%E9%A2%98%E8%A7%A3/" title="P3843 [TJOI2007] 迷路 题解">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">P3843 [TJOI2007] 迷路 题解</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/07/10/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8hexo-fluid%E4%B8%8E%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/" title="如何使用hexo-fluid与常用操作">
-                        <span class="hidden-mobile">如何使用hexo-fluid与常用操作</span>
+                      <a href="/2025/07/10/B4219%E9%A2%98%E8%A7%A3/" title="B4219题解">
+                        <span class="hidden-mobile">B4219题解</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
