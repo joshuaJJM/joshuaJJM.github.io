@@ -8,12 +8,14 @@
     <link href="/2025/07/10/%E4%B8%80%E4%B8%AA%E5%87%BD%E6%95%B0%E6%B1%82%E8%A7%A3/"/>
     <url>/2025/07/10/%E4%B8%80%E4%B8%AA%E5%87%BD%E6%95%B0%E6%B1%82%E8%A7%A3/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<p>有一个人才写了一个方程：<br>$$<br>(\frac{1+2\times\sqrt{2}+x}{2})\times(\frac{1+2\times\sqrt{2}+x}{2}-1)\times(\frac{1+2\times\sqrt{2}+x}{2}-2\times\sqrt{2})\times(\frac{1+2\times\sqrt{2}+x}{2}-x)=6\times\sqrt{2}<br>$$<br>让我们求解。</p><p>这能忍？</p><p>开解！</p><h2 id="思路">思路</h2><p>显然，<s>直接解是不可能的</s>，所以要<s>借助科技的力量</s>，就是转化为一个函数，找这个函数与 x 轴的交点，即 y=0 的位置。</p><p>转化为函数之后长这样：<br>$$<br>y=(\frac{1+2\times\sqrt{2}+x}{2})\times(\frac{1+2\times\sqrt{2}+x}{2}-1)\times(\frac{1+2\times\sqrt{2}+x}{2}-2\times\sqrt{2})\times(\frac{1+2\times\sqrt{2}+x}{2}-x)-6\times\sqrt{2}<br>$$</p><h2 id="带入！">带入！</h2><p>奇迹出现了！！！！！</p><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="https://cdn.luogu.com.cn/upload/image_hosting/imj19x9j.png" alt=""></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="https://cdn.luogu.com.cn/upload/image_hosting/w6wl7a3c.png" alt=""></div><div class="group-image-wrap"><img src="https://cdn.luogu.com.cn/upload/image_hosting/xn8x2o8n.png" alt=""></div><div class="group-image-wrap"><img src="https://cdn.luogu.com.cn/upload/image_hosting/17opvwhw.png" alt=""></div></div></div><p>$\Huge这个方程竟然无解$</p><p>原帖：<a href="https://discourse.xinyoudui.com/t/topic/39622">这里</a></p>]]></content>
     
     
     <categories>
       
-      <category>1</category>
+      <category>学习</category>
+      
+      <category>数学</category>
       
     </categories>
     
