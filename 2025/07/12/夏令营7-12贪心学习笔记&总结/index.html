@@ -21,24 +21,25 @@
   
     <meta name="description" content="贪心 贪心就是在当前条件下的最优解。与DP不同，贪心是保证在当前条件下的最优解。 正常贪心（我只能这么和区间区别了） T1 摩天轮 思路：最大的应该最重与最轻的匹配。如果如果和另一个人匹配，会浪费一些重量。 让凑对的人最多（让座舱最满） 证明正确：假设不是最优，尝试使用不是这个的方法。看看有没有反例。 要从“第一步怎么走”入手。 T2 萨鲁曼的部队 直到要不能满足了再去考虑这个点。 在$[x,x+">
 <meta property="og:type" content="article">
-<meta property="og:title" content="夏令营7.12贪心学习笔记">
-<meta property="og:url" content="http://joshuajjm.github.io/2025/07/12/%E5%A4%8F%E4%BB%A4%E8%90%A57-12%E8%B4%AA%E5%BF%83%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:title" content="夏令营7.12贪心学习笔记&amp;总结">
+<meta property="og:url" content="http://joshuajjm.github.io/2025/07/12/%E5%A4%8F%E4%BB%A4%E8%90%A57-12%E8%B4%AA%E5%BF%83%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0&%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="Joshua0729的个人博客">
 <meta property="og:description" content="贪心 贪心就是在当前条件下的最优解。与DP不同，贪心是保证在当前条件下的最优解。 正常贪心（我只能这么和区间区别了） T1 摩天轮 思路：最大的应该最重与最轻的匹配。如果如果和另一个人匹配，会浪费一些重量。 让凑对的人最多（让座舱最满） 证明正确：假设不是最优，尝试使用不是这个的方法。看看有没有反例。 要从“第一步怎么走”入手。 T2 萨鲁曼的部队 直到要不能满足了再去考虑这个点。 在$[x,x+">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.rthe.cn/cached-6761cd98577d04db3d21bf036f68f964-avif/mapbad/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-07-12%20093542.png">
 <meta property="article:published_time" content="2025-07-12T00:33:07.000Z">
-<meta property="article:modified_time" content="2025-07-12T07:38:42.853Z">
+<meta property="article:modified_time" content="2025-07-12T10:54:20.448Z">
 <meta property="article:author" content="Joshua0729">
 <meta property="article:tag" content="原创">
 <meta property="article:tag" content="夏令营">
+<meta property="article:tag" content="总结">
 <meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://cdn.rthe.cn/cached-6761cd98577d04db3d21bf036f68f964-avif/mapbad/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-07-12%20093542.png">
   
   
   
-  <title>夏令营7.12贪心学习笔记 - Joshua0729的个人博客</title>
+  <title>夏令营7.12贪心学习笔记&amp;总结 - Joshua0729的个人博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -221,7 +222,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="夏令营7.12贪心学习笔记"></span>
+            <span id="subtitle" data-typed-text="夏令营7.12贪心学习笔记&amp;总结"></span>
           
         </div>
 
@@ -244,7 +245,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          707 字
+          929 字
         
       </span>
     
@@ -255,7 +256,7 @@
         
         
         
-          6 分钟
+          8 分钟
         
       </span>
     
@@ -293,12 +294,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">夏令营7.12贪心学习笔记</h1>
+            <h1 id="seo-header">夏令营7.12贪心学习笔记&amp;总结</h1>
             
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于 2025-07-12T15:38:42+08:00
+                    本文最后更新于 2025-07-12T18:54:20+08:00
                   
                   
 
@@ -353,6 +354,8 @@ $$</p>
 <p>所有能和这个点配对的区间中，要选取R的最小值，且能覆盖这个点。因为R大的区间有可能覆盖下一个点。</p>
 <p><img src="https://cdn.luogu.com.cn/upload/image_hosting/t7p1zn0o.png" srcset="/img/loading.gif" lazyload alt=""></p>
 <h4 id="T7-带区间限制的装箱问题">T7 带区间限制的装箱问题</h4>
+<p>这题中，可以把盒子当成上一题的点，球当成上一题的区间。</p>
+<p>区别是，这里有$10^9$个点，不能逐个枚举，要忽略无用的点。</p>
 <h4 id="T8-代金券">T8 代金券</h4>
 <p>$[L_i,1^{9}]（正无穷）$</p>
 <p>经典错误：</p>
@@ -360,7 +363,13 @@ $$</p>
 <li>$D_i越大越先用$</li>
 <li>$L_i越小越先用$</li>
 </ul>
+<p>原则：</p>
+<ul>
+<li>优先使用优惠大的代金券</li>
+<li>多用代金券</li>
+</ul>
 <h3 id="区间分组问题">区间分组问题</h3>
+<h4 id="T9-牛栏预定（区间分组问题）">T9 牛栏预定（区间分组问题）</h4>
 <p>把区间分组，每一组的区间两两不相交。</p>
 <p>R从往大。L从小往大。</p>
 <ol>
@@ -368,13 +377,18 @@ $$</p>
 <li><code>upper_bound</code> $L_2&gt;R_1$</li>
 <li>…，得到1组。</li>
 </ol>
-<h4 id="廊桥分配">廊桥分配</h4>
+<h4 id="T10-CSP2021-S-1-廊桥分配">T10 CSP2021-S-1-廊桥分配</h4>
 <p>这道题的一个关键就是你无法调整飞机靠不靠廊桥，只能控制放几个在国内或国际。飞机是有位置就靠上去，没位置就停在远机位。</p>
+<p>对国内区，国际区其实是一样的。</p>
+<p>$计算出停靠在国内区i廊桥上的飞机数量C_{1,i}，国际区i号廊桥上的数量C_{2,i}。$</p>
+<p>$计算出C_1和c_2的前缀和序列S_1和S_2。$</p>
+<p>答案是$max_{0\le i\le n}(s_{1,i}+s_{2,i})$</p>
 <h2 id="带反悔的贪心">带反悔的贪心</h2>
 <h3 id="T13-股票">T13 股票</h3>
+<p>这题其实有多种解法，这里选择反悔的贪心。</p>
+<p>在第$i$天，如果有价值低于$P_i$的股票，就把最便宜的一股买下，但是保留<strong>反悔</strong>的选项，可以撤消这个行为。</p>
 <h3 id="T14-奶牛优惠券">T14 奶牛优惠券</h3>
-<p>$先买C_i前K小的牛。如果还有钱，以后每次买剩余中的min(C_i+Δ_K,P_i)。$</p>
-<h2 id="无法分类（？）">无法分类（？）</h2>
+<p>$先买C_i前K小的牛。如果还有钱，以后每次买剩余中的min(C_i+Δ_K,P_i)最小的牛。其中，Δ_K代表了最小优惠。$</p>
 
                 
               </div>
@@ -403,7 +417,7 @@ $$</p>
   
     <span>></span>
     
-  <a href="/categories/%E5%AD%A6%E4%B9%A0/%E7%BC%96%E7%A8%8B/%E7%AC%94%E8%AE%B0/" class="category-chain-item">笔记</a>
+  <a href="/categories/%E5%AD%A6%E4%B9%A0/%E7%BC%96%E7%A8%8B/%E6%80%BB%E7%BB%93/" class="category-chain-item">总结</a>
   
   
 
@@ -426,6 +440,8 @@ $$</p>
       
         <a href="/tags/%E5%A4%8F%E4%BB%A4%E8%90%A5/" class="print-no-link">#夏令营</a>
       
+        <a href="/tags/%E6%80%BB%E7%BB%93/" class="print-no-link">#总结</a>
+      
         <a href="/tags/%E7%AC%94%E8%AE%B0/" class="print-no-link">#笔记</a>
       
     </div>
@@ -438,8 +454,8 @@ $$</p>
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>夏令营7.12贪心学习笔记</div>
-      <div>http://joshuajjm.github.io/2025/07/12/夏令营7-12贪心学习笔记/</div>
+      <div>夏令营7.12贪心学习笔记&amp;总结</div>
+      <div>http://joshuajjm.github.io/2025/07/12/夏令营7-12贪心学习笔记&amp;总结/</div>
     </div>
     <div class="license-meta">
       
@@ -457,7 +473,7 @@ $$</p>
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025年7月12日 星期六 下午 3:38</div>
+          <div>2025年7月12日 星期六 晚上 6:54</div>
         </div>
       
       
