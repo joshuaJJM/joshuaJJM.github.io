@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>测试</title>
+    <link href="/2025/07/19/%E6%B5%8B%E8%AF%95/"/>
+    <url>/2025/07/19/%E6%B5%8B%E8%AF%95/</url>
+    
+    <content type="html"><![CDATA[<p>$$</p><p>\sqrt{2}</p><p>$$<br>$\sqrt{2}$<br>1$\sqrt{2}$1<br>s$\sqrt{2}$d<br>的$\sqrt{2}$的</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/je2gtl4d.png" alt="1ds fdasd a14cxds dsf f 5 d dsad 14"></p><p>后排兜售爆米花炸鸡可乐，前往前排需要翻过1733排座位<br>$$<br>\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\huge但是灌水区已经不在了}}}}}}}}}}}}}}}}}}}}}}}}}}}}<br>$$</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>非学习</category>
+      
+      <category>不知道该放哪</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>原创</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>夏令营7.13总结</title>
+    <link href="/2025/07/13/%E5%A4%8F%E4%BB%A4%E8%90%A57-13%E6%80%BB%E7%BB%93/"/>
+    <url>/2025/07/13/%E5%A4%8F%E4%BB%A4%E8%90%A57-13%E6%80%BB%E7%BB%93/</url>
+    
+    <content type="html"><![CDATA[<p>今天又模考了。</p><h2 id="时间线"><a href="#时间线" class="headerlink" title="时间线"></a>时间线</h2><p>$8:30\sim 8:50做T1，AC$<br>$8:50\sim9:07做T2，AC$<br>$9:07\sim10:35思考T3-T4$<br>$10:35\sim11:00做T4，失败$<br>$11:00\sim12:00做T3，做了3次，22分$</p><h2 id="时间线详解"><a href="#时间线详解" class="headerlink" title="时间线详解"></a>时间线详解</h2><h3 id="T1"><a href="#T1" class="headerlink" title="T1"></a>T1</h3><p>考试的时候想着两层<code>for</code>里面嵌套两个<code>for</code>，但是复杂度直接起飞，TLE67。</p><p>第二次尝试从嵌套两个变成一个，但是还是TLR67。</p><p>最后，用了两个$O(n\times m)$复杂度的<code>for</code>，竟然过了。</p><h3 id="T2"><a href="#T2" class="headerlink" title="T2"></a>T2</h3><p>这题是个找规律，发现了规律：行或列，会有一个在正负1之间有一个完全平方数，行和列分别时奇数的和偶数的。</p><p>找到这个规律之后，就可以直接根据规律写了，时间复杂度时$O(t)$。</p><h3 id="T3"><a href="#T3" class="headerlink" title="T3"></a>T3</h3><p>这题用dp</p><p>状态定义：$f[i][j][k]:从前i个问题里选j个，所选问题的优美度之和不小于k，所选总满意度的最大值$</p><p>$如果无法做到。令$f[i][j][k]&#x3D;-inf$</p><p>$0\le i\le N$<br>$0\le j\le i$<br>$0\le k\le K$</p><h4 id="递推式"><a href="#递推式" class="headerlink" title="递推式"></a>递推式</h4><p>考虑第$i$个问题选或不选。</p><ul><li>选：$f[i-1][j-1][max(0,k-b_i)]+A_i$</li><li>不选：$f[i-1][j][k]&#x3D;1$</li></ul><p>$$<br>f[i][j][k]&#x3D;max(f[i-1][j-1][max(0,k-b_i)]+A_i,f[i-1][j][k]&#x3D;1)<br>$$</p><p>子问题数量$O(N\times D\times K)$</p><p>内存：$1.25\times 10^8\times 8B&#x3D;爆炸，超256MiB$</p><h4 id="节约空间"><a href="#节约空间" class="headerlink" title="节约空间"></a>节约空间</h4><p>$f[i][0][0]&#x3D;0,0\le i\le N$</p><p>01背包的省空间写法：滚动数组</p><p>我们注意到有一个维度是只用一次的（你说一次性也行），就只要从前往后枚举，就可以节省空间。</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">long</span> <span class="hljs-type">long</span> f[maxn][maxn];<br><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=n;i++)<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j=<span class="hljs-built_in">min</span>(i,d);j&gt;=<span class="hljs-number">1</span>;k++)<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> k=<span class="hljs-number">0</span>;k&lt;=K【大写！】;k++)<br>            f[j][k]=<span class="hljs-built_in">max</span>(f[j<span class="hljs-number">-1</span>][<span class="hljs-built_in">max</span>(<span class="hljs-number">0</span>,k-b[i])]+a[i],f[j][k]);<br></code></pre></td></tr></table></figure><p>这里$1\le i\le N,1\le j$</p><h3 id="T4"><a href="#T4" class="headerlink" title="T4"></a>T4</h3><p>考试的时候没有想通这个逻辑。</p><p>就是如果一个人出现了两次超过同一个人，就不可能在同一圈，因为其他人都是不能后退的。</p><p>如果想通了这个逻辑，就很简单了。</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">int</span> n,q;<br>cin&gt;&gt;n&gt;&gt;q;<br><span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">overmake</span><span class="hljs-params">(n,<span class="hljs-number">-1</span>)</span></span>;<br><span class="hljs-type">int</span> ans=<span class="hljs-number">0</span>;<br><span class="hljs-type">int</span> last=<span class="hljs-number">0</span>;<br><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=q;i++)&#123;<br>    <span class="hljs-type">int</span> x;<br>    cin&gt;&gt;x;<br>    <span class="hljs-keyword">if</span>(x&gt;<span class="hljs-number">0</span>)&#123;<br>        <span class="hljs-keyword">if</span>(overmake[x]&gt;=last)&#123;<br>            ans++;<br>            last=i;<br>        &#125;<br>        overmake[x]=i;<br>    &#125;<br>    <span class="hljs-keyword">else</span>&#123;<br>        overmake[-x]=<span class="hljs-number">-1</span>;<br>    &#125;<br>&#125;<br>cout&lt;&lt;ans;<br></code></pre></td></tr></table></figure><h1 id="Huge-the-end"><a href="#Huge-the-end" class="headerlink" title="$\Huge the \  end$"></a>$\Huge the \  end$</h1>]]></content>
+    
+    
+    <categories>
+      
+      <category>学习</category>
+      
+      <category>编程</category>
+      
+      <category>总结</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>原创</tag>
+      
+      <tag>夏令营</tag>
+      
+      <tag>总结</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>夏令营7.12贪心学习笔记&amp;总结</title>
+    <link href="/2025/07/12/%E5%A4%8F%E4%BB%A4%E8%90%A57-12%E8%B4%AA%E5%BF%83%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0&amp;%E6%80%BB%E7%BB%93/"/>
+    <url>/2025/07/12/%E5%A4%8F%E4%BB%A4%E8%90%A57-12%E8%B4%AA%E5%BF%83%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0&amp;%E6%80%BB%E7%BB%93/</url>
+    
+    <content type="html"><![CDATA[<h1 id="贪心"><a href="#贪心" class="headerlink" title="贪心"></a>贪心</h1><p>贪心就是在当前条件下的最优解。与DP不同，贪心是保证在当前条件下的最优解。</p><h2 id="正常贪心"><a href="#正常贪心" class="headerlink" title="正常贪心"></a>正常贪心</h2><p>（我只能用这几个字来和区间区别了）</p><h3 id="T1-摩天轮"><a href="#T1-摩天轮" class="headerlink" title="T1 摩天轮"></a>T1 摩天轮</h3><p>思路：最大的应该最重与最轻的匹配。如果如果和另一个人匹配，会浪费一些重量。</p><p>让凑对的人最多（让座舱最满）</p><p>证明正确：假设不是最优，尝试使用不是这个的方法。看看有没有反例。</p><p>要从“第一步怎么走”入手。</p><h3 id="T2-萨鲁曼的部队"><a href="#T2-萨鲁曼的部队" class="headerlink" title="T2 萨鲁曼的部队"></a>T2 萨鲁曼的部队</h3><p>直到要不能满足了再去考虑这个点。</p><p>在$[x,x+r]$中找一个点，打一个标记。</p><h3 id="T3-小木棍"><a href="#T3-小木棍" class="headerlink" title="T3 小木棍"></a>T3 小木棍</h3><p><del>出了原题错题不可做题</del>而且<strong>CSP-J2024也是T3</strong></p><p>8用的木棍最多，所以先全选8，位数最小。</p><p>在确定了$n-1$位以后，最高位就确定了。</p><p>优先让前几位小。总共x位,$x&#x3D;(\frac{n}{7})向上取整$。</p><p>按照$\frac{n}{7}$的余数分类讨</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/pv2fo23n.png" alt="这题分类讨论的类别"></p><ol><li>位数最少</li><li>从高往低尽量小。</li></ol><h2 id="区间问题"><a href="#区间问题" class="headerlink" title="区间问题"></a>区间问题</h2><p>就一句：<br>$$<br>全是\huge经典\Huge模板\times N<br>$$</p><h3 id="区间安排问题"><a href="#区间安排问题" class="headerlink" title="区间安排问题"></a>区间安排问题</h3><p>按照左端点排序是考虑这样的情况：</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/ob5cnv2q.png" alt="按照左端点排序的问题"></p><p>考虑逐步开放所有可放的区间，当有区间可以进入时，就进入。相当于找对最后影响最小的区间。即按照右端点排序。</p><h3 id="区间选点问题"><a href="#区间选点问题" class="headerlink" title="区间选点问题"></a>区间选点问题</h3><p>没有例题先不写</p><h3 id="区间覆盖问题1"><a href="#区间覆盖问题1" class="headerlink" title="区间覆盖问题1"></a>区间覆盖问题1</h3><p>问题：数轴上有$n$个区间$[L_i,R_i]$，从中选取尽量少的区间覆盖$[x,y]$。</p><p>$L$从小到大，$R$从大到小</p><h3 id="区间覆盖问题1-2"><a href="#区间覆盖问题1-2" class="headerlink" title="区间覆盖问题1.2"></a>区间覆盖问题1.2</h3><p>问题：数轴上有$n$个区间$[L_i,R_i]$，从中选取尽量少的区间覆盖$[x,y]$。区别是这个问题是时段。所以$x&#x3D;r+1$</p><h3 id="区间覆盖问题2"><a href="#区间覆盖问题2" class="headerlink" title="区间覆盖问题2"></a>区间覆盖问题2</h3><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/fru31xsk.png" alt="区间覆盖问题2"></p><h3 id="一般的点和区间配对问题"><a href="#一般的点和区间配对问题" class="headerlink" title="一般的点和区间配对问题"></a>一般的点和区间配对问题</h3><p>点和区间配对：</p><p>所有能和这个点配对的区间中，要选取R的最小值，且能覆盖这个点。因为R大的区间有可能覆盖下一个点。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/t7p1zn0o.png"></p><h4 id="T7-带区间限制的装箱问题"><a href="#T7-带区间限制的装箱问题" class="headerlink" title="T7 带区间限制的装箱问题"></a>T7 带区间限制的装箱问题</h4><p>这题中，可以把盒子当成上一题的点，球当成上一题的区间。</p><p>区别是，这里有$10^9$个点，不能逐个枚举，要忽略无用的点。</p><h4 id="T8-代金券"><a href="#T8-代金券" class="headerlink" title="T8 代金券"></a>T8 代金券</h4><p>$[L_i,1^{9}]（正无穷）$</p><p>经典错误：</p><ul><li>$D_i越大越先用$</li><li>$L_i越小越先用$</li></ul><p>原则：</p><ul><li>优先使用优惠大的代金券</li><li>多用代金券</li></ul><h3 id="区间分组问题"><a href="#区间分组问题" class="headerlink" title="区间分组问题"></a>区间分组问题</h3><h4 id="T9-牛栏预定（区间分组问题）"><a href="#T9-牛栏预定（区间分组问题）" class="headerlink" title="T9 牛栏预定（区间分组问题）"></a>T9 牛栏预定（区间分组问题）</h4><p>把区间分组，每一组的区间两两不相交。</p><p>R从往大。L从小往大。</p><ol><li>取L的最小区间$[L_1,R_1]$</li><li><code>upper_bound</code> $L_2&gt;R_1$</li><li>……，得到1组。</li></ol><h4 id="T10-CSP2021-S-1-廊桥分配"><a href="#T10-CSP2021-S-1-廊桥分配" class="headerlink" title="T10 CSP2021-S-1-廊桥分配"></a>T10 CSP2021-S-1-廊桥分配</h4><p>这道题的一个关键就是你无法调整飞机靠不靠廊桥，只能控制放几个在国内或国际。飞机是有位置就靠上去，没位置就停在远机位。</p><p>对国内区，国际区其实是一样的。</p><p>$计算出停靠在国内区i廊桥上的飞机数量C_{1,i}，国际区i号廊桥上的数量C_{2,i}。$</p><p>$计算出C_1和c_2的前缀和序列S_1和S_2。$</p><p>答案是$max_{0\le i\le n}(s_{1,i}+s_{2,i})$</p><h2 id="带反悔的贪心"><a href="#带反悔的贪心" class="headerlink" title="带反悔的贪心"></a>带反悔的贪心</h2><h3 id="T13-股票"><a href="#T13-股票" class="headerlink" title="T13 股票"></a>T13 股票</h3><p>这题其实有多种解法，这里选择反悔的贪心。</p><p>在第$i$天，如果有价值低于$P_i$的股票，就把最便宜的一股买下，但是保留<strong>反悔</strong>的选项，可以撤消这个行为。</p><h3 id="T14-奶牛优惠券"><a href="#T14-奶牛优惠券" class="headerlink" title="T14 奶牛优惠券"></a>T14 奶牛优惠券</h3><p>$先买C_i前K小的牛。如果还有钱，以后每次买剩余中的min(C_i+Δ_K,P_i)最小的牛。其中，Δ_K代表了最小优惠。$</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>学习</category>
+      
+      <category>编程</category>
+      
+      <category>笔记</category>
+      
+      <category>总结</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>原创</tag>
+      
+      <tag>夏令营</tag>
+      
+      <tag>总结</tag>
+      
+      <tag>笔记</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>夏令营7.11总结</title>
+    <link href="/2025/07/11/%E5%A4%8F%E4%BB%A4%E8%90%A57-11%E6%80%BB%E7%BB%93/"/>
+    <url>/2025/07/11/%E5%A4%8F%E4%BB%A4%E8%90%A57-11%E6%80%BB%E7%BB%93/</url>
+    
+    <content type="html"><![CDATA[<p>今天第一次模考，写一篇总结。</p><h1 id="7-11模考总结"><a href="#7-11模考总结" class="headerlink" title="7.11模考总结"></a>7.11模考总结</h1><h2 id="时间线"><a href="#时间线" class="headerlink" title="时间线"></a>时间线</h2><p><del>（记不清了，都是似乎）</del><br>$8:30\sim8:40$看题目<br>$8:40\sim8:55$写T1<br>$8:55\sim9:15$写T2<br>$9:00\sim9:30$优化T2，并失败<br>$9:30\sim9:40$想T3<br>$9:40\sim10:00$写T4暴力<br>$10:00\sim11:00$又写T2<br>$11:00\sim12:00$检查<br><strong>得分情况：</strong></p><table><thead><tr><th>题目</th><th>1.小信分糖果</th><th>2.派发礼物</th><th>3.小信打分</th><th>4.小信的生产线</th></tr></thead><tbody><tr><td>得分</td><td>TLE+WA+AC10tps</td><td>TLE+AC+WA50tps</td><td>WA0tps</td><td>MLE+RE+WA+AC0tps</td></tr></tbody></table><h2 id="错题-错因"><a href="#错题-错因" class="headerlink" title="错题&amp;错因"></a>错题&amp;错因</h2><h3 id="小信分糖果"><a href="#小信分糖果" class="headerlink" title="小信分糖果"></a>小信分糖果</h3><p>在考试的时候没想到把小的赋值为大的，写成了把最大的设成最小的。</p><p>改了就$\Huge AC$了。</p><h3 id="小信的生产线"><a href="#小信的生产线" class="headerlink" title="小信的生产线"></a>小信的生产线</h3><p>在考试的时候想用模拟的方法过，但是遇到了<code>bool</code>数组太大的问题，就一直专注于解决这个问题了，就没有留足够的时间思考其他解放。</p><p>正解就是通过区间来维护商品可以到达的位置。当两个生产线之间有机械臂时就并集。这里原本应该考虑到多个机械臂在同一位置的情况，但是因为这个数据的缘故，所以不用判断也可以通过。</p><h3 id="派发礼物"><a href="#派发礼物" class="headerlink" title="派发礼物"></a>派发礼物</h3><p>想的是用DP，状态转移方程：<br>$$<br>dp[i][k]&#x3D;\min_{j&lt;i}(dp[j][k-1]+\text{cost}(j+1..i))<br>$$<br>$\Huge But$<del>显然</del>拿不了满分。</p><p>正解<del>还</del>是用DP，但是状态转移方程不一样。</p><p>状态定义：<br><em>定义<code>dp[i][k]</code>表示前 i个礼物使用 k天分发的最小惩罚。</em></p><p>枚举前j个礼物用k-1天发，剩下j+1到i个第k天发。</p><h1 id="Huge-The-end"><a href="#Huge-The-end" class="headerlink" title="$\Huge The\ end$"></a>$\Huge The\ end$</h1>]]></content>
+    
+    
+    <categories>
+      
+      <category>学习</category>
+      
+      <category>编程</category>
+      
+      <category>总结</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>原创</tag>
+      
+      <tag>夏令营</tag>
+      
+      <tag>总结</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>题解：B4223 [常州市赛 2024] 早起的鸟儿有虫吃</title>
+    <link href="/2025/07/11/B4223%E9%A2%98%E8%A7%A3/"/>
+    <url>/2025/07/11/B4223%E9%A2%98%E8%A7%A3/</url>
+    
+    <content type="html"><![CDATA[<p><a href="https://www.luogu.com.cn/article/qfhcn7tr">洛谷同文链接</a></p><h1 id="题解：B4223-常州市赛-2024-早起的鸟儿有虫吃"><a href="#题解：B4223-常州市赛-2024-早起的鸟儿有虫吃" class="headerlink" title="题解：B4223 [常州市赛 2024] 早起的鸟儿有虫吃"></a>题解：B4223 [常州市赛 2024] 早起的鸟儿有虫吃</h1>]]></content>
+    
+    
+    <categories>
+      
+      <category>学习</category>
+      
+      <category>编程</category>
+      
+      <category>题解</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>题解</tag>
+      
+      <tag>原创</tag>
+      
+      <tag>洛谷</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>一个函数求解</title>
+    <link href="/2025/07/10/%E4%B8%80%E4%B8%AA%E5%87%BD%E6%95%B0%E6%B1%82%E8%A7%A3/"/>
+    <url>/2025/07/10/%E4%B8%80%E4%B8%AA%E5%87%BD%E6%95%B0%E6%B1%82%E8%A7%A3/</url>
+    
+    <content type="html"><![CDATA[<p>有一个人才写了一个方程：<br>$$<br>(\frac{1+2\times\sqrt{2}+x}{2})\times(\frac{1+2\times\sqrt{2}+x}{2}-1)\times(\frac{1+2\times\sqrt{2}+x}{2}-2\times\sqrt{2})\times(\frac{1+2\times\sqrt{2}+x}{2}-x)&#x3D;6\times\sqrt{2}<br>$$<br>让我们求解。</p><p>这能忍？</p><p>开解！</p><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>显然，<del>直接解是不可能的</del>，所以要<del>借助科技的力量</del>，就是转化为一个函数，找这个函数与 x 轴的交点，即 y&#x3D;0 的位置。</p><p>转化为函数之后长这样：<br>$$<br>y&#x3D;(\frac{1+2\times\sqrt{2}+x}{2})\times(\frac{1+2\times\sqrt{2}+x}{2}-1)\times(\frac{1+2\times\sqrt{2}+x}{2}-2\times\sqrt{2})\times(\frac{1+2\times\sqrt{2}+x}{2}-x)-6\times\sqrt{2}<br>$$</p><h2 id="带入！"><a href="#带入！" class="headerlink" title="带入！"></a>带入！</h2><div class="note note-success">            <p>（奇怪的是，函数图像的网站竟然支持直接$\LaTeX$写函数）</p>          </div><p>奇迹出现了！！！！！</p><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="https://cdn.luogu.com.cn/upload/image_hosting/imj19x9j.png"></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="https://cdn.luogu.com.cn/upload/image_hosting/w6wl7a3c.png"></div><div class="group-image-wrap"><img src="https://cdn.luogu.com.cn/upload/image_hosting/xn8x2o8n.png"></div><div class="group-image-wrap"><img src="https://cdn.luogu.com.cn/upload/image_hosting/17opvwhw.png"></div></div></div><p>$\Huge这个方程竟然无解$</p><p>原帖：<a href="https://discourse.xinyoudui.com/t/topic/39622">这里</a><sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="这个原帖还是我的，只是搬运了而已">[1]</span></a></sup></p><section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span>这个原帖还是我的，只是搬运了而已<a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>]]></content>
+    
+    
+    <categories>
+      
+      <category>学习</category>
+      
+      <category>数学</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>原创</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>P12592题解</title>
+    <link href="/2025/07/10/P12592%E9%A2%98%E8%A7%A3/"/>
+    <url>/2025/07/10/P12592%E9%A2%98%E8%A7%A3/</url>
+    
+    <content type="html"><![CDATA[<p><a href="https://www.luogu.com.cn/article/1ebywmac">洛谷同文链接</a></p><h1 id="P12592-重生有惊喜-题解"><a href="#P12592-重生有惊喜-题解" class="headerlink" title="P12592 重生有惊喜 题解"></a>P12592 重生有惊喜 题解</h1><h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>给定一个字符串，你可以任意次交换任意两个字符，问能否通过这些操作让字符串变成<strong>回文串</strong>。</p><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>因为可以任意次交换字符，这就意味着我们可以重新排列字符顺序。</p><p>要判断是否能构成回文串，只需要判断字符出现的频次是否满足回文的结构要求。</p><h3 id="回文的字符判断方法"><a href="#回文的字符判断方法" class="headerlink" title="回文的字符判断方法"></a>回文的字符判断方法</h3><ul><li>若字符串长度是<strong>偶数</strong>：所有字符必须出现<strong>偶数次</strong>。</li><li>若字符串长度是<strong>奇数</strong>：<strong>最多只有一个字符</strong>可以出现<strong>奇数次</strong>，其余字符必须出现偶数次。</li></ul><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>我们只需统计每个字符出现的次数，判断有多少个字符出现了奇数次即可。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> collections <span class="hljs-keyword">import</span> Counter<br><br>T = <span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>())<br><span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(T):<br>    s = <span class="hljs-built_in">input</span>()<br>    a = Counter(s)<br>    b = <span class="hljs-built_in">sum</span>(<span class="hljs-number">1</span> <span class="hljs-keyword">for</span> c <span class="hljs-keyword">in</span> a.values() <span class="hljs-keyword">if</span> c % <span class="hljs-number">2</span> == <span class="hljs-number">1</span>)<br>    <span class="hljs-keyword">if</span> b &lt;= <span class="hljs-number">1</span>:<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Yes&quot;</span>)<br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;No&quot;</span>)<br><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>学习</category>
+      
+      <category>编程</category>
+      
+      <category>题解</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>题解</tag>
+      
+      <tag>原创</tag>
+      
+      <tag>洛谷</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>B4206题解</title>
+    <link href="/2025/07/10/B4206%E9%A2%98%E8%A7%A3/"/>
+    <url>/2025/07/10/B4206%E9%A2%98%E8%A7%A3/</url>
+    
+    <content type="html"><![CDATA[<p><a href="https://www.luogu.com.cn/article/eygmqzi7">洛谷同文链接</a></p><h1 id="B4206-常州市程序设计小能手-2021-数字翻转"><a href="#B4206-常州市程序设计小能手-2021-数字翻转" class="headerlink" title="B4206 [常州市程序设计小能手 2021] 数字翻转"></a>B4206 [常州市程序设计小能手 2021] 数字翻转</h1><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><h3 id="暴力"><a href="#暴力" class="headerlink" title="暴力"></a>暴力</h3><p><del>首先考虑打表</del>，看一眼数据范围，$10^{14}$，啥都不用想，就算你打出了数组代码也一定会太长。</p><p>那么，我们就可以写一个函数，遍历 $L$ 到 $R$ 之间的数，检查，如果是，就增加答案数。</p><p>70 分的超时代码：</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-type">int</span> change[<span class="hljs-number">10</span>]=&#123;<span class="hljs-number">0</span>,<span class="hljs-number">-1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">-1</span>,<span class="hljs-number">-1</span>,<span class="hljs-number">5</span>,<span class="hljs-number">9</span>,<span class="hljs-number">-1</span>,<span class="hljs-number">8</span>,<span class="hljs-number">6</span>&#125;;<br><span class="hljs-comment">//#define int unsigned long long</span><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">daozhi</span><span class="hljs-params">(<span class="hljs-type">int</span> x)</span></span>&#123;<br><span class="hljs-type">int</span> ans=<span class="hljs-number">0</span>;<br><span class="hljs-keyword">while</span>(x!=<span class="hljs-number">0</span>)&#123;<br>ans+=x%<span class="hljs-number">10</span>;<br>x/=<span class="hljs-number">10</span>;<br>ans*=<span class="hljs-number">10</span>;<br>&#125;<br><span class="hljs-keyword">return</span> ans/<span class="hljs-number">10</span>;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">weishu</span><span class="hljs-params">(<span class="hljs-type">int</span> x)</span></span>&#123;<br><span class="hljs-type">int</span> ans=<span class="hljs-number">0</span>;<br><span class="hljs-keyword">while</span>(x!=<span class="hljs-number">0</span>)&#123;<br>ans++;<br>x/=<span class="hljs-number">10</span>;<br>&#125;<br><span class="hljs-keyword">return</span> ans;<br>&#125;<br><span class="hljs-function">string <span class="hljs-title">check</span><span class="hljs-params">(<span class="hljs-type">int</span> x)</span></span>&#123;<br>x=<span class="hljs-built_in">daozhi</span>(x);<br><span class="hljs-type">int</span> n=<span class="hljs-built_in">weishu</span>(x);<br>string ans=<span class="hljs-built_in">to_string</span>(x);<br><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++)&#123;<br>ans[i]=change[ans[i]-<span class="hljs-string">&#x27;0&#x27;</span>]+<span class="hljs-string">&#x27;0&#x27;</span>;<br>&#125;<br><span class="hljs-keyword">return</span> ans;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">signed</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br><span class="hljs-type">int</span> T;<br>cin&gt;&gt;T;<br><span class="hljs-keyword">while</span>(T--)&#123;<br><span class="hljs-type">int</span> l,r;<br>cin&gt;&gt;l&gt;&gt;r;<br><span class="hljs-type">int</span> ans=<span class="hljs-number">0</span>;<br><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=l;i&lt;=r;i++)&#123;<br><span class="hljs-keyword">if</span>(<span class="hljs-built_in">check</span>(i)==<span class="hljs-built_in">to_string</span>(i))&#123;<br>ans++;<br>&#125;<br>&#125;<br>cout&lt;&lt;ans&lt;&lt;endl;<br>&#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure><h3 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h3><h4 id="优化思路"><a href="#优化思路" class="headerlink" title="优化思路"></a>优化思路</h4><p>可以看到，在 70 分代码中，数字在翻转时调用了很多的函数，导致时间复杂度爆炸。我们可以优化这个翻转的过程。</p><h4 id="优化过程"><a href="#优化过程" class="headerlink" title="优化过程"></a>优化过程</h4><p>首先看到翻转数字的部分。我把两部分分开了，但是可以把两部分合到一起。</p><p>再看到检查函数部分。我的写法是每一位先翻转再把翻转后的结果返回并比较两个结果的关系。但是其实可以一边剥离每一位，另一边检查这一位翻转后是否有意义，并合成回原数字。</p><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-keyword">typedef</span> <span class="hljs-type">long</span> <span class="hljs-type">long</span> ll;<br>ll q,r,l,a[<span class="hljs-number">11</span>]=&#123;<span class="hljs-number">0</span>,<span class="hljs-number">-1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">-1</span>,<span class="hljs-number">-1</span>,<span class="hljs-number">5</span>,<span class="hljs-number">9</span>,<span class="hljs-number">-1</span>,<span class="hljs-number">8</span>,<span class="hljs-number">6</span>&#125;;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    cin&gt;&gt;q;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=q;i++)&#123;<br>        cin&gt;&gt;l&gt;&gt;r;<br>        <span class="hljs-type">int</span> cnt=<span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j=l;j&lt;=r;j++)&#123;<br>            <span class="hljs-type">bool</span> vis=<span class="hljs-literal">true</span>;<br>            <span class="hljs-type">int</span> t=j,f=<span class="hljs-number">0</span>;<br>            <span class="hljs-keyword">while</span>(t)&#123;<br>                <span class="hljs-keyword">if</span>(a[t%<span class="hljs-number">10</span>]==<span class="hljs-number">-1</span>)&#123;<br>                    vis=<span class="hljs-number">0</span>;<br>                    <span class="hljs-keyword">break</span>;<br>                &#125;<br>                f=f*<span class="hljs-number">10</span>+a[t%<span class="hljs-number">10</span>];<br>                t/=<span class="hljs-number">10</span>;<br>            &#125;<br>            <span class="hljs-keyword">if</span>(f==j&amp;&amp;vis==<span class="hljs-number">1</span>)&#123;<br>                cnt++;<br>            &#125;<br>        &#125;<br>        cout&lt;&lt;cnt&lt;&lt;endl;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure><p><a href="https://www.luogu.com.cn/record/216743302">通过记录</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>学习</category>
+      
+      <category>编程</category>
+      
+      <category>题解</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>题解</tag>
+      
+      <tag>原创</tag>
+      
+      <tag>洛谷</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>B4219题解</title>
+    <link href="/2025/07/10/B4219%E9%A2%98%E8%A7%A3/"/>
+    <url>/2025/07/10/B4219%E9%A2%98%E8%A7%A3/</url>
+    
+    <content type="html"><![CDATA[<p><a href="https://www.luogu.com.cn/article/66rctor1">洛谷同文链接</a></p><h1 id="B4219-常州市程序设计小能手-2023-数学作业-题解"><a href="#B4219-常州市程序设计小能手-2023-数学作业-题解" class="headerlink" title="B4219 [常州市程序设计小能手 2023] 数学作业 题解"></a>B4219 [常州市程序设计小能手 2023] 数学作业 题解</h1><h4 id="题目传送门"><a href="#题目传送门" class="headerlink" title="题目传送门"></a><a href="https://www.luogu.com.cn/problem/B4219">题目传送门</a></h4><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>先输入 $n$，将小于等于 $n$ 的所有斐波那契数提前初始化好，存在数组中。也可以提前用打表处理好。然后用 DFS 对于每一个斐波那契数进行选或不选的搜索即可。</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">dfs</span><span class="hljs-params">(<span class="hljs-type">int</span> i,<span class="hljs-type">int</span> sum)</span></span>&#123;<br>    <span class="hljs-keyword">if</span>(sum+a[i]==n)&#123;<br>        ans++;<br>        <span class="hljs-keyword">break</span>;<br>    &#125;<br>    <span class="hljs-built_in">dfs</span>(i<span class="hljs-number">+1</span>,sum);<br>    <span class="hljs-built_in">dfs</span>(i<span class="hljs-number">+1</span>,sum+a[i]);<br>&#125;<br></code></pre></td></tr></table></figure><p>但是，观察一下数据范围：数据范围是 $n\le10^{12}$，而小于等于 $10^{12}$ 的斐波那契数共有大约 $58$ 个，但是我们的算法复杂度为 $O(2^n)$，显然直接就 TLE 了。</p><p>于是我们就得想一个优化方法。</p><h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><h3 id="使用前缀和优化"><a href="#使用前缀和优化" class="headerlink" title="使用前缀和优化"></a>使用前缀和优化</h3><p>我们可以创建前缀和数组 $h$ 使 $h_i$ 表示数列 $f$ 从 $f_0$ 到 $f_{i-1}$的和，若当前选择的斐波那契数和 $s$ 加上后面所有斐波那契数的和还是小于 $n$，则直接退出搜索。</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs cpp">  <span class="hljs-keyword">if</span>(i&gt;=m)&#123;<br><span class="hljs-keyword">continue</span>;<br>&#125;<span class="hljs-comment">//我这里是模拟递归</span><br></code></pre></td></tr></table></figure><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-keyword">typedef</span> <span class="hljs-type">long</span> <span class="hljs-type">long</span> ll;<br><br><span class="hljs-keyword">struct</span> <span class="hljs-title class_">node</span>&#123;<br><span class="hljs-type">int</span> i;<br>ll s;<br>&#125;;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>ll n;<br>cin&gt;&gt;n;<br>vector&lt;ll&gt; fib;<br><span class="hljs-keyword">if</span>(n&gt;=<span class="hljs-number">1</span>)&#123;<br>fib.<span class="hljs-built_in">push_back</span>(<span class="hljs-number">1</span>);<br>&#125;<br><span class="hljs-keyword">if</span>(n&gt;=<span class="hljs-number">2</span>)&#123;<br>fib.<span class="hljs-built_in">push_back</span>(<span class="hljs-number">2</span>);<br>ll a=<span class="hljs-number">1</span>,b=<span class="hljs-number">2</span>;<br><span class="hljs-keyword">while</span>(<span class="hljs-number">1</span>)&#123;<br>ll c=a+b;<br><span class="hljs-keyword">if</span>(c&gt;n) <span class="hljs-keyword">break</span>;<br>fib.<span class="hljs-built_in">push_back</span>(c);<span class="hljs-comment">//计算数列</span><br>a=b;<br>b=c;<br>&#125;<br>&#125;<br><span class="hljs-built_in">reverse</span>(fib.<span class="hljs-built_in">begin</span>(),fib.<span class="hljs-built_in">end</span>());<span class="hljs-comment">//反转数列</span><br><br><span class="hljs-type">int</span> m=fib.<span class="hljs-built_in">size</span>();<br><br><span class="hljs-keyword">if</span>(m==<span class="hljs-number">0</span>)&#123;<span class="hljs-comment">//特判</span><br><span class="hljs-keyword">if</span>(n==<span class="hljs-number">0</span>) cout&lt;&lt;<span class="hljs-number">1</span>;<br><span class="hljs-keyword">else</span> cout&lt;&lt;<span class="hljs-number">0</span>;<br><span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><span class="hljs-function">vector&lt;ll&gt; <span class="hljs-title">prefix</span><span class="hljs-params">(m<span class="hljs-number">+1</span>,<span class="hljs-number">0</span>)</span></span>;<span class="hljs-comment">//前缀和数组</span><br><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=m<span class="hljs-number">-1</span>;i&gt;=<span class="hljs-number">0</span>;i--)&#123;<br>prefix[i]=fib[i]+prefix[i<span class="hljs-number">+1</span>];<span class="hljs-comment">//计算前缀和</span><br>&#125;<br><br>stack&lt;node&gt; st;<br><br>st.<span class="hljs-built_in">push</span>(&#123;<span class="hljs-number">0</span>,n&#125;);<span class="hljs-comment">//初始化栈</span><br><br>ll ans=<span class="hljs-number">0</span>;<br><br><span class="hljs-keyword">while</span>(!st.<span class="hljs-built_in">empty</span>())&#123;<br>node temp=st.<span class="hljs-built_in">top</span>();<br>st.<span class="hljs-built_in">pop</span>();<br><span class="hljs-type">int</span> i=temp.i;<br>ll s=temp.s;<br><br><span class="hljs-keyword">if</span>(s==<span class="hljs-number">0</span>)&#123;<span class="hljs-comment">//如果s=0，答案+1</span><br>ans++;<br><span class="hljs-keyword">continue</span>;<br>&#125;<br><span class="hljs-keyword">if</span>(i&gt;=m)&#123;<span class="hljs-comment">//如果i&gt;=m，跳过</span><br><span class="hljs-keyword">continue</span>;<br>&#125;<br><br><span class="hljs-keyword">if</span>(fib[i]&gt;s)&#123;<span class="hljs-comment">//如果当前数大于s，将当前数入栈</span><br>st.<span class="hljs-built_in">push</span>(&#123;i<span class="hljs-number">+1</span>,s&#125;);<br>&#125;<br><span class="hljs-keyword">else</span>&#123;<br><span class="hljs-keyword">if</span>((i<span class="hljs-number">+1</span>&lt;m)?prefix[i<span class="hljs-number">+1</span>]&lt;s:<span class="hljs-number">0</span>&lt;s)&#123;<span class="hljs-comment">//如果当前数小于s，将当前数入栈，将当前数的下一个数入栈</span><br>st.<span class="hljs-built_in">push</span>(&#123;i<span class="hljs-number">+1</span>,s-fib[i]&#125;);<br>&#125;<br><span class="hljs-keyword">else</span>&#123;<span class="hljs-comment">//如果当前数小于s，将当前数入栈，将当前数的下一个数入栈</span><br>st.<span class="hljs-built_in">push</span>(&#123;i<span class="hljs-number">+1</span>,s&#125;);<br>st.<span class="hljs-built_in">push</span>(&#123;i<span class="hljs-number">+2</span>,s-fib[i]&#125;);<br>&#125;<br>&#125;<br>&#125;<br>cout&lt;&lt;ans;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>学习</category>
+      
+      <category>编程</category>
+      
+      <category>题解</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>题解</tag>
+      
+      <tag>原创</tag>
+      
+      <tag>洛谷</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>P3843 [TJOI2007] 迷路 题解</title>
+    <link href="/2025/07/10/P3843%E9%A2%98%E8%A7%A3/"/>
+    <url>/2025/07/10/P3843%E9%A2%98%E8%A7%A3/</url>
+    
+    <content type="html"><![CDATA[<p><a href="https://www.luogu.com.cn/article/unhlmhyr">洛谷同文链接</a></p><h1 id="P3843-TJOI2007-迷路-题解"><a href="#P3843-TJOI2007-迷路-题解" class="headerlink" title="P3843 [TJOI2007] 迷路 题解"></a>P3843 [TJOI2007] 迷路 题解</h1><p><a href="https://www.luogu.com.cn/problem/P3843">题目传送门</a></p><h2 id="14-分错因："><a href="#14-分错因：" class="headerlink" title="14 分错因："></a>14 分错因：</h2><p>有很大可能是看错了题， $d$ 是每个任务总共要走的路程，而两个人每秒只能走一个单位。</p><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>因为小 A 和小 B 的运动轨迹是周期性的，会循环，因此我们只需要 $\gcd$ 一下，求出最小公倍数，然后暴力枚举，用两点之间距离公式来计算所有时刻的距离，最后取 $\min$ 并输出就可以了。</p><p>两点距离公式：<br>$\sqrt{(x_1−x_2)×(x_1−x_2)+(y_1−y_2)×(y_1−y_2)}$。</p><p>剩下问题见于代码。</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">gcd</span><span class="hljs-params">(<span class="hljs-type">int</span> a,<span class="hljs-type">int</span> b)</span></span>&#123;<br>    <span class="hljs-keyword">return</span> b==<span class="hljs-number">0</span>?a:<span class="hljs-built_in">gcd</span>(b,a%b);<span class="hljs-comment">//求最大公约数</span><br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">lcm</span><span class="hljs-params">(<span class="hljs-type">int</span> a,<span class="hljs-type">int</span> b)</span></span>&#123;<br>    <span class="hljs-keyword">return</span> a/<span class="hljs-built_in">gcd</span>(a,b)*b;<span class="hljs-comment">//调用gcd，求最小公倍数</span><br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">path_read</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp;x_coords,vector&lt;<span class="hljs-type">int</span>&gt;&amp;y_coords)</span></span>&#123;<span class="hljs-comment">//读取轨道坐标</span><br>    <span class="hljs-type">int</span> sx,sy,m;<br>    cin&gt;&gt;sx&gt;&gt;sy&gt;&gt;m;<span class="hljs-comment">//起始点坐标，指令条数</span><br>    x_coords.<span class="hljs-built_in">clear</span>();<span class="hljs-comment">//清空坐标</span><br>    y_coords.<span class="hljs-built_in">clear</span>();<br>    <span class="hljs-type">int</span> current_x=sx;<br>    <span class="hljs-type">int</span> current_y=sy;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;m;++i)&#123;<span class="hljs-comment">//m条指令</span><br>        <span class="hljs-type">int</span> d;<br>        <span class="hljs-type">char</span> c;<br>        cin&gt;&gt;d&gt;&gt;c;<br>        <span class="hljs-type">int</span> s=<span class="hljs-built_in">abs</span>(d);<br>        <span class="hljs-type">int</span> dir_x=<span class="hljs-number">0</span>,dir_y=<span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">if</span>(c==<span class="hljs-string">&#x27;X&#x27;</span>)&#123;<br>            dir_x=d&gt;<span class="hljs-number">0</span>?<span class="hljs-number">1</span>:<span class="hljs-number">-1</span>; <br>        &#125;<br>        <span class="hljs-keyword">else</span>&#123;<br>            dir_y=d&gt;<span class="hljs-number">0</span>?<span class="hljs-number">1</span>:<span class="hljs-number">-1</span>; <br>        &#125;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j=<span class="hljs-number">0</span>;j&lt;s;++j)&#123;<span class="hljs-comment">//s步</span><br>            current_x+=dir_x;<br>            current_y+=dir_y;<br>            x_coords.<span class="hljs-built_in">push_back</span>(current_x);<span class="hljs-comment">//将坐标存入</span><br>            y_coords.<span class="hljs-built_in">push_back</span>(current_y);<br>        &#125;<br>    &#125;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>vector&lt;<span class="hljs-type">int</span>&gt;a_x,a_y,b_x,b_y;<br>    <span class="hljs-built_in">path_read</span>(a_x,a_y);<span class="hljs-comment">//读取小A的轨道</span><br>    <span class="hljs-built_in">path_read</span>(b_x,b_y);<span class="hljs-comment">//读取小B的轨道</span><br><br>    <span class="hljs-type">int</span> ta=a_x.<span class="hljs-built_in">size</span>();<span class="hljs-comment">//小A的轨道长度</span><br>    <span class="hljs-type">int</span> tb=b_x.<span class="hljs-built_in">size</span>();<span class="hljs-comment">//小B的轨道长度</span><br><br>    <span class="hljs-keyword">if</span>(ta==<span class="hljs-number">0</span>||tb==<span class="hljs-number">0</span>)&#123;<span class="hljs-comment">//特判，如果轨道长度为0，直接输出0.00</span><br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;0.00\n&quot;</span>);<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>    &#125;<br><br>    <span class="hljs-type">int</span> L=<span class="hljs-built_in">lcm</span>(ta,tb);<span class="hljs-comment">//计算最小公倍数</span><br>    <span class="hljs-type">double</span> min_dist=<span class="hljs-number">1e18</span>;<span class="hljs-comment">//初始化最小距离为1e18</span><br><br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> t=<span class="hljs-number">0</span>;t&lt;L;++t)&#123;<span class="hljs-comment">//枚举每个时刻</span><br>        <span class="hljs-type">int</span> a_idx=t%ta;<span class="hljs-comment">//小A的当前位置</span><br>        <span class="hljs-type">int</span> b_idx=t%tb;<span class="hljs-comment">//小B的当前位置</span><br><span class="hljs-type">int</span> dx=a_x[a_idx]-b_x[b_idx];<span class="hljs-comment">//下一个x坐标</span><br>        <span class="hljs-type">int</span> dy=a_y[a_idx]-b_y[b_idx];<span class="hljs-comment">//下一个y坐标</span><br>        <span class="hljs-type">double</span> dist=<span class="hljs-built_in">sqrt</span>(dx*dx+dy*dy);<span class="hljs-comment">//计算距离</span><br>        min_dist=<span class="hljs-built_in">min</span>(min_dist,dist);<span class="hljs-comment">//更新最小距离</span><br>    &#125;<br><span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%.2f\n&quot;</span>,min_dist);<span class="hljs-comment">//输出最小距离，保留两位小数，没得说</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<span class="hljs-comment">//完美结束</span><br>&#125;<br></code></pre></td></tr></table></figure><p>完美结束。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>学习</category>
+      
+      <category>编程</category>
+      
+      <category>题解</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>题解</tag>
+      
+      <tag>原创</tag>
+      
+      <tag>洛谷</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>夏令营7.10总结</title>
+    <link href="/2025/07/10/%E5%A4%8F%E4%BB%A4%E8%90%A57-10%E6%80%BB%E7%BB%93/"/>
+    <url>/2025/07/10/%E5%A4%8F%E4%BB%A4%E8%90%A57-10%E6%80%BB%E7%BB%93/</url>
+    
+    <content type="html"><![CDATA[<p>今天是夏令营的第一天</p><h2 id="上午"><a href="#上午" class="headerlink" title="上午"></a>上午</h2><p>学习了枚举，就是一种<em>优雅的暴力</em></p><p>开始做题~</p><h3 id="T1"><a href="#T1" class="headerlink" title="T1"></a>T1</h3><h4 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h4><p>题意为给定一个 N，求满足 $A\le B \le C$ 且 $A\times B\times C\le N$ 的整数 $a,b,c$ 的数量。</p><p>数据范围是</p><ul><li>$1\le N\le 10^{11}$，要用 <code>long long</code>。</li><li>答案 $\le 2^{63}$，也要用 <code>long long</code>。</li></ul><h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>枚举 AB，计算 C 的可能个数。</p><p>使用双重循环，第一层枚举 $A^3$，第二层枚举 $A\times B^2$。</p><h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-meta">#<span class="hljs-keyword">define</span> int long long</span><br><span class="hljs-type">int</span> n;<br><span class="hljs-type">int</span> ans=<span class="hljs-number">0</span>;<br><span class="hljs-function"><span class="hljs-type">signed</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>cin&gt;&gt;n;<br><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> a=<span class="hljs-number">1</span>;a*a*a&lt;=n;a++)&#123;<br><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> b=a;a*b*b&lt;=n;b++)&#123;<br><span class="hljs-type">int</span> c=n/(a*b);<br><span class="hljs-keyword">if</span>(c&lt;b) <span class="hljs-keyword">continue</span>;<br>ans+=c-b<span class="hljs-number">+1</span>;<br>&#125;<br>&#125;<br>cout&lt;&lt;ans;<br><span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure><h3 id="T2"><a href="#T2" class="headerlink" title="T2"></a>T2</h3><h4 id="题意-1"><a href="#题意-1" class="headerlink" title="题意"></a>题意</h4><p>求大于 X 的一个十进制数 N，使得 N 的全部位数按位数排序后为等差数列。</p><h4 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h4><p>是长度为 L 的，各项为 0 到 9 的，首项不是 9 的等差数列。</p><p>数列由首项与公差决定。</p><ul><li>首项: 1,2,…,9</li><li>公差: -9,-8,…,9</li></ul><p>直接枚举，枚举量小于 200。</p><h4 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-meta">#<span class="hljs-keyword">define</span> int long long</span><br><span class="hljs-function"><span class="hljs-type">signed</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br><span class="hljs-type">int</span> x;<br>cin&gt;&gt;x;<br><span class="hljs-type">int</span> ans=x*<span class="hljs-number">10</span>;<br><span class="hljs-type">int</span> len=<span class="hljs-built_in">to_string</span>(x).<span class="hljs-built_in">size</span>();<br><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> a=<span class="hljs-number">1</span>;a&lt;=<span class="hljs-number">9</span>;a++)&#123;<br><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> d=<span class="hljs-number">-9</span>;d&lt;=<span class="hljs-number">9</span>;d++)&#123;<br><span class="hljs-type">int</span> sum=<span class="hljs-number">0</span>;<br><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;len;i++)&#123;<br><span class="hljs-type">int</span> t=a+d*i;<br><span class="hljs-keyword">if</span>(t&lt;<span class="hljs-number">0</span>||t&gt;<span class="hljs-number">9</span>) <span class="hljs-keyword">break</span>;<br>sum=sum*<span class="hljs-number">10</span>+t;<br>&#125;<br><span class="hljs-keyword">if</span>(sum&gt;=x)&#123;<br>ans=<span class="hljs-built_in">min</span>(ans,sum);<br>&#125;<br>&#125;<br>&#125;<br>cout&lt;&lt;ans;<br><span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure><h3 id="T3"><a href="#T3" class="headerlink" title="T3"></a>T3</h3><h4 id="题意-2"><a href="#题意-2" class="headerlink" title="题意"></a>题意</h4><p>给定正整数 N 和 M，找到最小正整数 X，使得 X 可以表示为 a，b 两个整数的乘积且 $1\le a,b\le N$（a，b 可以相同）且 $M\le X$。</p><p>数据范围：</p><ul><li>$1\le N\le 10^{12}$</li><li>$1\le N\le 10^{18}$</li></ul><h5 id="简化"><a href="#简化" class="headerlink" title="简化"></a>简化</h5><p>找到 a,b 满足：</p><ul><li>$1\le a,b\le N$</li><li>$m\le a\times b$</li></ul><h4 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h4><p>枚举 a，从 1 到 $min(N,\sqrt{M})$</p><h4 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-meta">#<span class="hljs-keyword">define</span> int long long</span><br><span class="hljs-function"><span class="hljs-type">signed</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br><span class="hljs-type">int</span> n,m;<br>cin&gt;&gt;n&gt;&gt;m;<br><span class="hljs-type">int</span> ans=<span class="hljs-number">-1</span>;<br><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> a=<span class="hljs-number">1</span>;a&lt;=n;a++)&#123;<br><span class="hljs-type">int</span> b=(m+(a<span class="hljs-number">-1</span>))/a;<br><span class="hljs-keyword">if</span>(b&lt;=n)&#123;<br><span class="hljs-keyword">if</span>(ans==<span class="hljs-number">-1</span>||ans&gt;a*b)&#123;<br>ans=a*b;<br>&#125;<br>&#125;<br><span class="hljs-keyword">if</span>(a*a&gt;=m)&#123;<br><span class="hljs-keyword">break</span>;<br>&#125;<br>&#125;<br>cout&lt;&lt;ans;<br><span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure><h2 id="中午"><a href="#中午" class="headerlink" title="中午"></a>中午</h2><p>睡觉………………</p><h2 id="下午"><a href="#下午" class="headerlink" title="下午"></a>下午</h2><p><del><strong>题目逐渐变得难了起来…</strong></del></p><h3 id="T4（随堂练习）"><a href="#T4（随堂练习）" class="headerlink" title="T4（随堂练习）"></a>T4（随堂练习）</h3><h4 id="题意-3"><a href="#题意-3" class="headerlink" title="题意"></a>题意</h4><p>有三种物品，是易拉罐，普通罐头和开罐器。易拉罐可以获得 x 点体力，普通罐头要消耗开罐器的一点耐久，获得 x 点体力，开罐器可以开罐 x 次。从 N 个中拿走 N 个，求最大可以获取的体力值。</p><p>数据范围：</p><ul><li>$1\le M\le N\le2\times10^5$</li><li>$1\le x_i\le10^9$</li></ul><h4 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h4><ul><li>无论是什么东西，都优先拿 x 更大的。</li><li>如果要拿普通罐头，则一定要打开。打不开的干脆不拿。</li><li>由拿的普通罐头数量决定开罐器的数量。尽量不要多拿。</li><li>其实也可以那小于 m 个物品，效果一样。</li></ul><h4 id="代码逻辑"><a href="#代码逻辑" class="headerlink" title="代码逻辑"></a>代码逻辑</h4><ol><li>把物品分类后按 x 的大小排序</li><li>计算每种物品的前缀和数组</li><li>枚举拿几个普通罐头，几个开罐器，几个易拉罐头。</li></ol><h4 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-keyword">typedef</span> <span class="hljs-type">long</span> <span class="hljs-type">long</span> ll;<br><br><span class="hljs-function"><span class="hljs-type">signed</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br><span class="hljs-type">int</span> n,m;<br>cin&gt;&gt;n&gt;&gt;m;<br>vector&lt;<span class="hljs-type">int</span>&gt; X[<span class="hljs-number">3</span>];<br><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++)&#123;<br><span class="hljs-type">int</span> t,x;<br>cin&gt;&gt;t&gt;&gt;x;<br>X[t].<span class="hljs-built_in">push_back</span>(x);<br>&#125;<br><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">3</span>;i++)&#123;<br><span class="hljs-built_in">sort</span>(X[i].<span class="hljs-built_in">rbegin</span>(),X[i].<span class="hljs-built_in">rend</span>());<br>&#125;<br>vector&lt;ll&gt; sum[<span class="hljs-number">3</span>];<br><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">3</span>;i++)&#123;<br>sum[i].<span class="hljs-built_in">resize</span>(X[i].<span class="hljs-built_in">size</span>()<span class="hljs-number">+1</span>);<br><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j=<span class="hljs-number">0</span>;j&lt;X[i].<span class="hljs-built_in">size</span>();j++)&#123;<br>sum[i][j<span class="hljs-number">+1</span>]=sum[i][j]+X[i][j];<br>&#125;<br>&#125;<br>ll ans=<span class="hljs-number">0</span>;<br><span class="hljs-type">int</span> j=<span class="hljs-number">0</span>;<br><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;=(<span class="hljs-type">int</span>)X[<span class="hljs-number">1</span>].<span class="hljs-built_in">size</span>();i++)&#123;<br><span class="hljs-keyword">if</span>(i&gt;m) <span class="hljs-keyword">break</span>;<br><span class="hljs-keyword">if</span>(sum[<span class="hljs-number">2</span>][j]&lt;i) j++;<br><span class="hljs-keyword">if</span>(j&gt;(<span class="hljs-type">int</span>)X[<span class="hljs-number">2</span>].<span class="hljs-built_in">size</span>()||i+j&gt;m) <span class="hljs-keyword">break</span>;<br><span class="hljs-type">int</span> k=<span class="hljs-built_in">min</span>(m-i-j,(<span class="hljs-type">int</span>)X[<span class="hljs-number">0</span>].<span class="hljs-built_in">size</span>());<br>ans=<span class="hljs-built_in">max</span>(ans,sum[<span class="hljs-number">0</span>][k]+sum[<span class="hljs-number">1</span>][i]);<br>&#125;<br>cout&lt;&lt;ans;<br><span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>学习</category>
+      
+      <category>编程</category>
+      
+      <category>总结</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>原创</tag>
+      
+      <tag>夏令营</tag>
+      
+      <tag>总结</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>如何使用hexo-fluid与常用操作</title>
+    <link href="/2025/07/10/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8hexo-fluid%E4%B8%8E%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/"/>
+    <url>/2025/07/10/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8hexo-fluid%E4%B8%8E%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/</url>
+    
+    <content type="html"><![CDATA[<div class="note note-success">            <p>文字 或者 <code>markdown</code> 均可</p>          </div><div class="note note-warning">            <p>文字 或者 <code>markdown</code> 均可</p>          </div><div class="note note-info">            <p>文字 或者 <code>markdown</code> 均可</p>          </div><div class="note note-danger">            <p>文字 或者 <code>markdown</code> 均可</p>          </div><div class="note note-info">            <p>文字 或者 <code>markdown</code> 均可</p>          </div><div class="note note-primary">            <p>文字 或者 <code>markdown</code> 均可</p>          </div><div class="note note-success">            <p>文字 或者 <code>markdown</code> 均可</p>          </div>]]></content>
+    
+    
+    <categories>
+      
+      <category>非学习</category>
+      
+      <category>帮助/教程</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>原创</tag>
+      
+      <tag>教程</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>手把手教你创建VmWare Workstation17虚拟机</title>
+    <link href="/2025/06/29/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E5%88%9B%E5%BB%BAVmWare-Workstation17%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
+    <url>/2025/06/29/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E5%88%9B%E5%BB%BAVmWare-Workstation17%E8%99%9A%E6%8B%9F%E6%9C%BA/</url>
+    
+    <content type="html"><![CDATA[<p><del>众所周知</del>，VmWare Workstation 是一款十分好的虚拟机软件，而 VmWare Workstation 17，则更好了：相比于之前的版本，它支持个人使用，无需破解即可使用。</p><p><a href="https://pan.quark.cn/s/fb7ca018d7a8">下载链接（无限有效）</a></p><h2 id="安装-VmWare-17"><a href="#安装-VmWare-17" class="headerlink" title="安装 VmWare 17"></a>安装 VmWare 17</h2><p>下载完之后直接按照正常的安装方法安装就可以了。这里需要注意，到了许可证那一步的时候，要选择<strong>个人使用</strong>，这样就不用输入许可证号了。</p><p>安装完成后，你应该看到这样一个界面。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/buf7n7z6.png" alt="vmware主界面"></p><h2 id="下载系统镜像"><a href="#下载系统镜像" class="headerlink" title="下载系统镜像"></a>下载系统镜像</h2><h3 id="下载下载工具"><a href="#下载下载工具" class="headerlink" title="下载下载工具"></a>下载下载工具</h3><p>这里以 windows10 为例，其他系统请自行寻找：<br>前往<a href="https://www.microsoft.com/zh-cn/software-download/windows10">这里</a>，下载镜像下载器。<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="也可以直接下载镜像，（iso文件），在windows官网，这里不做详细介绍。">[1]</span></a></sup></p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/qqqvx7fp.png" alt="镜像下载器下载页面"></p><h3 id="下载镜像"><a href="#下载镜像" class="headerlink" title="下载镜像"></a>下载镜像</h3><p>打开下载器。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/n1csvw6x.png" alt="镜像下载器"></p><p>等待准备完成。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/je2gtl4d.png" alt="镜像下载器"></p><p>点击接受。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/3zefi8d4.png" alt="点击接受按钮"></p><p><del>又</del>等待准备完成。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/je2gtl4d.png" alt="镜像下载器"></p><p>点击<strong>为另一台电脑创建安装介质</strong>选项。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/u0mdv60r.png" alt="为另一台电脑创建安装介质后点击下一步"></p><p>自行选择系统信息，注意要先取消勾选下面的那个。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/qsxz7ske.png" alt="选择系统类型"></p><p>将介质改为 ISO 文件。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/xniz7yc9.png" alt="镜像下载器"></p><p>选择保存路径，建议在 D 盘专门建一个虚拟机文件夹，并创建子目录专门用于存放各种系统的 ISO 镜像文件。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/xqq9f9ks.png" alt="选择保存路径"></p><p>又叕叕叕叕叕等待。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/hwrhw4nq.png" alt="镜像下载器"></p><p>等待下载完成。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/qvc2a45p.png" alt="镜像下载器"></p><p>下载完后，直接退出即可。</p><h2 id="安装虚拟机"><a href="#安装虚拟机" class="headerlink" title="安装虚拟机"></a>安装虚拟机</h2><h3 id="虚拟机创建"><a href="#虚拟机创建" class="headerlink" title="虚拟机创建"></a>虚拟机创建</h3><p>打开 VmWare，点击<strong>创建新的虚拟机</strong>。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/0knykvvr.png"></p><p>点击典型（或者高级也行，但是这里以典型为例）并点击下一步。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/b1bneubi.png"></p><p>选择中间的选项，并浏览刚刚下载的 ISO 文件。这时如果出现了“已检测到……”的字样，说明镜像已经搞定了。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/gdbz0ew4.png"></p><p>选择虚拟机的目录并命名，建议放在刚刚的 D 盘的虚拟机目录里。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/8l1z2r1h.png"></p><p>设置磁盘大小。这里就使用 60G，也可以自行调整。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/om3fohnk.png"></p><p>确认信息。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/afq03i0h.png"></p><p>以后要更改配置的话在左边右键，点管理即可。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/lcjsbqvw.png"></p><p>点击完成，等磁盘创建完之后就开机了。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/wc6wc1pc.png"></p><h3 id="安装系统"><a href="#安装系统" class="headerlink" title="安装系统"></a>安装系统</h3><h4 id="安装部分"><a href="#安装部分" class="headerlink" title="安装部分"></a>安装部分</h4><p>在这个页面，赶紧点击屏幕中心部分，然后乱按一通键盘。如果出现 time out 的字样，就重启，在来一次。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/6swnpnem.png"></p><p>出现这个页面，说明成功了。直接下一页即可。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/7q3bg1h3.png"></p><p>点击现在安装。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/hr7mpz0f.png"></p><p>等他这么一下子。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/ihzmdmak.png"></p><p>点击我没有产品密钥。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/myhk9r4m.png"></p><p>选择版本，这里选择专业版。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/6omr9qhi.png"></p><p>点击接受，然后下一页。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/bx1t1wu3.png"></p><p>点下面这个自定义：仅安装 windows。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/68mcia9z.png"></p><h4 id="分区"><a href="#分区" class="headerlink" title="分区"></a>分区</h4><p>硬盘分区。这里先点新建，直接点应用，在弹窗里点击确定，然后再在三个分区里点“驱动器0分区3”，类型是主分区的这个。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/zwwgp0yp.png"></p><h4 id="安装系统-1"><a href="#安装系统-1" class="headerlink" title="安装系统"></a>安装系统</h4><p>等他安装，这要用一些时间。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/gzue5x1f.png"></p><p>等他出现这个，就<del>继续等</del>。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/t8fq0tvs.png"></p><p>然后虚拟机会重启。又可以见到<del>奇怪的翻译</del>了。设置地区。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/8ute7rgq.png"></p><p>设置键盘布局。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/w0569dbo.png"></p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/prheemeq.png"></p><p>这里选通过个人设置。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/rhk5bnrh.png"></p><p>这里可以<strong>点左下角的脱机账户，再点有限的体验</strong>免登录微软账号。当然你直接登录微软账号也可以，但是我不推荐。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/w6bbnpxk.png"></p><p>设置用户名和密码，密码可以为空。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/abmtqz5j.png"></p><p>后面就是一堆接受和跳过。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/g0axbmdk.png"></p><p>然后，你就进入桌面了。</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/6z8bq2k1.png"></p><p>再安装Vmware tools，就可以随意调整屏幕大小了。<sup id="fnref:2" class="footnote-ref"><a href="#fn:2" rel="footnote"><span class="hint--top hint--rounded" aria-label="Vmware tools是个好东西，可以随意调整屏幕大小，还能让虚拟机和主机之间的文件沟通更加顺畅。">[2]</span></a></sup></p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/zzs6w69j.png"></p><p>按提示安装即可。</p><h2 id="完成！"><a href="#完成！" class="headerlink" title="完成！"></a>完成！</h2><p>求赞。（用于 luogu，原文章在<a href="https://www.luogu.com.cn/article/mtpxcv12">这里</a>）。<sup id="fnref:3" class="footnote-ref"><a href="#fn:3" rel="footnote"><span class="hint--top hint--rounded" aria-label="这篇文章是洛谷上我自己的原创文章，经过升级改版而来，图片使用洛谷图床，可能无法加载，可以过一段时间再试一次。">[3]</span></a></sup></p><section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span>也可以直接下载镜像，（iso文件），在windows官网，这里不做详细介绍。<a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:2" class="footnote-text"><span>Vmware tools是个好东西，可以随意调整屏幕大小，还能让虚拟机和主机之间的文件沟通更加顺畅。<a href="#fnref:2" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:3" class="footnote-text"><span>这篇文章是洛谷上我自己的原创文章，经过升级改版而来，图片使用洛谷图床，可能无法加载，可以过一段时间再试一次。<a href="#fnref:3" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>]]></content>
+    
+    
+    <categories>
+      
+      <category>非学习</category>
+      
+      <category>帮助/教程</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>原创</tag>
+      
+      <tag>洛谷</tag>
+      
+      <tag>教程</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>题解：B4205 [常州市赛 2021] 特殊字符</title>
+    <link href="/2025/06/14/B4205%E9%A2%98%E8%A7%A3/"/>
+    <url>/2025/06/14/B4205%E9%A2%98%E8%A7%A3/</url>
+    
+    <content type="html"><![CDATA[<p><a href="https://www.luogu.com.cn/article/bpl6y4yw">洛谷同文链接</a></p><h1 id="题解：B4205-常州市赛-2021-特殊字符"><a href="#题解：B4205-常州市赛-2021-特殊字符" class="headerlink" title="题解：B4205 [常州市赛 2021] 特殊字符"></a>题解：B4205 [常州市赛 2021] 特殊字符</h1><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>因为 $n\le10^6$ 且 $K\le10^9 $，直接构造整个字符串会超时甚至内存爆炸。因此考虑模拟加上跳过模拟扩展的片段。</p><h2 id="代码逻辑"><a href="#代码逻辑" class="headerlink" title="代码逻辑"></a>代码逻辑</h2><p>对于每个特殊字符，从左往右遍历：</p><ul><li><p>若遇到一段连续的 $c$ 长度为 $t$，取出后续的 <code>min(t,n-i)</code> 个字符 $p$。</p></li><li><p>经过处理后，这段会变成 $p$ 重复 $t$ 遍。</p></li><li><p>然后判断：</p><ul><li>若当前 $K$ 还在这段之前，正常推进；</li><li>若 $K$ 落在这段里，用取模找出具体落在 $p$ 的哪一位。</li></ul></li><li><p>若不是特殊字符，就正常推进 $K$。</p></li></ul><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-keyword">typedef</span> <span class="hljs-type">long</span> <span class="hljs-type">long</span> ll;<br><br><br><span class="hljs-type">int</span> n,k;<br>string s;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>cin&gt;&gt;n&gt;&gt;k;<br>cin&gt;&gt;s;<br><span class="hljs-keyword">for</span>(<span class="hljs-type">char</span> c=<span class="hljs-string">&#x27;a&#x27;</span>;c&lt;=<span class="hljs-string">&#x27;z&#x27;</span>;c++)&#123;<br>ll d=k;<br><span class="hljs-type">int</span> t=<span class="hljs-number">0</span>;<br><span class="hljs-type">int</span> i;<br><span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;i&lt;=n;i++)&#123;  <br><span class="hljs-keyword">if</span>(s[i]==c) t++;<span class="hljs-comment">//符合条件，t++</span><br><span class="hljs-keyword">else</span>&#123;<br><span class="hljs-keyword">if</span>(t)&#123;<br>ll z=<span class="hljs-built_in">min</span>(t,n-i);<span class="hljs-comment">//取t和n-i的最小值</span><br><span class="hljs-keyword">if</span>(d&gt;z*t)&#123;<span class="hljs-comment">//如果d&gt;z*t，d减去z*t，i加上z-1，t置0</span><br>d-=z*t;<br>i+=z<span class="hljs-number">-1</span>;<br>t=<span class="hljs-number">0</span>;<br>&#125;<br><span class="hljs-keyword">else</span>&#123;<br>d%=z;<br><span class="hljs-keyword">if</span>(!d) d=z;<br>cout&lt;&lt;s[i+d<span class="hljs-number">-1</span>];<br>d=<span class="hljs-number">0</span>;<br>t=<span class="hljs-number">0</span>;<br><span class="hljs-keyword">break</span>;<br>&#125;<br>&#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(i!=n)&#123;<span class="hljs-comment">//如果t=0，i!=n，d--，如果d=0，输出s[i]</span><br>d--;<br><span class="hljs-keyword">if</span>(d==<span class="hljs-number">0</span>)&#123;<br>cout&lt;&lt;s[i];<br><span class="hljs-keyword">break</span>;<br>&#125;   <br>&#125;<br><br>&#125;<br>&#125;<br><span class="hljs-keyword">if</span>(d) cout&lt;&lt;<span class="hljs-string">&quot;*&quot;</span>;<span class="hljs-comment">//如果d&gt;0，输出*</span><br>&#125;<br><span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure><h2 id="时空间复杂度分析"><a href="#时空间复杂度分析" class="headerlink" title="时空间复杂度分析"></a>时空间复杂度分析</h2><p>时间复杂度：$O(26\times n)$，每个字符模拟一遍。<br>空间复杂度：$O(n)$，仅存储字符串。</p><p><a href="https://www.luogu.com.cn/record/218392364">AC 记录</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>学习</category>
+      
+      <category>编程</category>
+      
+      <category>题解</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>题解</tag>
+      
+      <tag>原创</tag>
+      
+      <tag>洛谷</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="/2000/01/01/hello-world/"/>
+    <url>/2000/01/01/hello-world/</url>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>非学习</category>
+      
+      <category>不知道该放哪</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>搬运/非原创</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  
+</search>
