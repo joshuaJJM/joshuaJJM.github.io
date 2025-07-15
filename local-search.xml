@@ -4,6 +4,39 @@
   
   
   <entry>
+    <title>夏令营7.15总结</title>
+    <link href="/2025/07/15/%E5%A4%8F%E4%BB%A4%E8%90%A57-15%E6%80%BB%E7%BB%93/"/>
+    <url>/2025/07/15/%E5%A4%8F%E4%BB%A4%E8%90%A57-15%E6%80%BB%E7%BB%93/</url>
+    
+    <content type="html"><![CDATA[<p>今天<del>又</del>模考了。</p><h2 id="时间线"><a href="#时间线" class="headerlink" title="时间线"></a>时间线</h2><p>$8:30\sim8:40$自习，题目坏了</p><p>$8:40-9:03$做T1，AC</p><p>$9:04\sim9:30$做T2，69tps</p><p>$9:30\sim10:00$想T3-T4</p><p>$10:00\sim10:40$尝试T4</p><p>$10:40\sim11:20$尝试T3</p><p>$11:20\sim12:00$再次T2，变成60tps</p><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><h3 id="T2"><a href="#T2" class="headerlink" title="T2"></a>T2</h3><p>（T1太简单，先不写了）</p><p>每个值出现了几次？</p><p><code>map&lt;long long,int&gt; cnt</code></p><p>记录整体操作，加了多少s。</p><p>set 把$x-s改成y-s$，注意x&#x3D;&#x3D;y</p><p>这题用到了计数排序的思想，定义$a_i$表示数字$i$出现了$a_i$次。</p><p>出现<code>INFLATION</code>时，记录一个偏移量，到时候读取时下表要减去这个偏移量。</p><p><del>不知道为什么还没过</del></p><h3 id="T3"><a href="#T3" class="headerlink" title="T3"></a>T3</h3><p>核心思路是通过逐步缩小序列中最大元素与最小元素的差距，最终使所有元素相等。</p><p>就是每次都把最下的那一部分增加一个值，然后排序。重复操作直到所有的值相同。</p><p>步骤：</p><ul><li><p>计算增量：<code>d = (最大元素 - 最小元素 + 1) / 2</code>。这里加 1 是为了向上取整。</p></li><li><p>寻找可加的前缀：遍历序列，找到最大的 <code>i</code> 使得前 <code>i</code> 个元素加 <code>d</code> 后不超过当前最大元素。</p></li><li><p>执行操作：为前 <code>i</code> 个元素加 <code>d</code>，记录操作（<code>i</code> 和 <code>d</code>），然后排序序列。</p></li></ul><h3 id="T4"><a href="#T4" class="headerlink" title="T4"></a>T4</h3><p>用dp。</p><p>核心逻辑：<br>每张牌可以选择 “打出” 或 “不打出”。若打出，则需要考虑它在当前轮次的消耗（基于已打出的牌数，费用翻倍）。但直接按轮次处理会很复杂，可通过逆向思维优化（就是滚动数组）：</p><ul><li>假设最后一张打出的牌是$i$，此时它的消耗是$C_i$（因为之后没有牌了，无需考虑翻倍）。</li><li>倒数第二张打出的牌$j$，消耗是$2\times C_j$（因为后面有 1 张牌，所以它的费用在打出后翻倍一次）。</li><li>以此类推，第$t$张（从后往前数）的消耗是$2^{t-1}×C$。</li></ul><p>因此，逆向定义状态：<code>dp[s]</code> 表示 “还需打出一些牌，当前剩余能量为 <code>s</code> 时的最大伤害”，则转移方程为：<br>对于每张牌$i$，若选择它作为 “下一张要打出的牌”（即当前轮次的第一张），则消耗 <code>C_i</code>，剩余能量变为$(s - C_i) &#x2F; 2$（因为后续牌的费用会翻倍，相当于剩余能量需除以 2 来匹配），即：$dp[s] &#x3D; max(dp[s], dp[(s - C_i)&#x2F;2] + D_i)$（需满足$s ≥ C_i$且$(s - C_i)$为非负偶数）。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>学习</category>
+      
+      <category>编程</category>
+      
+      <category>总结</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>原创</tag>
+      
+      <tag>夏令营</tag>
+      
+      <tag>总结</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>夏令营7.14总结</title>
     <link href="/2025/07/14/%E5%A4%8F%E4%BB%A4%E8%90%A57-14%E6%80%BB%E7%BB%93/"/>
     <url>/2025/07/14/%E5%A4%8F%E4%BB%A4%E8%90%A57-14%E6%80%BB%E7%BB%93/</url>
@@ -83,9 +116,9 @@
       
       <category>编程</category>
       
-      <category>总结</category>
-      
       <category>笔记</category>
+      
+      <category>总结</category>
       
     </categories>
     
@@ -462,7 +495,7 @@
     <link href="/2011/11/11/%E6%B5%8B%E8%AF%95/"/>
     <url>/2011/11/11/%E6%B5%8B%E8%AF%95/</url>
     
-    <content type="html"><![CDATA[<p>$$</p><p>\sqrt{2}</p><p>$$<br>$\sqrt{2}$<br>1$\sqrt{2}$1<br>s$\sqrt{2}$d<br>的$\sqrt{2}$的</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/je2gtl4d.png" alt="1ds fdasd a14cxds dsf f 5 d dsad 14"></p><p>后排兜售爆米花炸鸡可乐，前往前排需要翻过1733排座位<br>$$<br>\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\huge但是灌水区已经不在了}}}}}}}}}}}}}}}}}}}}}}}}}}}}<br>$$</p><p>于是，只要判断是否有$K\le\int{\frac{R-K}{x-1}}+\int{\frac{B-K}{y-1}}$。</p>]]></content>
+    <content type="html"><![CDATA[<p>$$</p><p>\sqrt{2}</p><p>$$<br>$\sqrt{2}$<br>1$\sqrt{2}$1<br>s$\sqrt{2}$d<br>的$\sqrt{2}$的</p><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/je2gtl4d.png" alt="1ds fdasd a14cxds dsf f 5 d dsad 14"></p><p>后排兜售爆米花炸鸡可乐，前往前排需要翻过1733排座位<br>$$<br>\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\huge但是灌水区已经不在了}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}<br>$$</p><p>于是，只要判断是否有$K\le\int{\frac{R-K}{x-1}}+\int{\frac{B-K}{y-1}}$。</p>]]></content>
     
     
     <categories>
