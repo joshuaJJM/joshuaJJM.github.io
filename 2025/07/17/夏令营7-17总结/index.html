@@ -19,26 +19,26 @@
   <meta name="author" content="Joshua0729">
   <meta name="keywords" content="">
   
-    <meta name="description" content="洛谷同文链接 P12592 重生有惊喜 题解题意给定一个字符串，你可以任意次交换任意两个字符，问能否通过这些操作让字符串变成回文串。 思路因为可以任意次交换字符，这就意味着我们可以重新排列字符顺序。 要判断是否能构成回文串，只需要判断字符出现的频次是否满足回文的结构要求。 回文的字符判断方法 若字符串长度是偶数：所有字符必须出现偶数次。 若字符串长度是奇数：最多只有一个字符可以出现奇数次，其余字符">
+    <meta name="description" content="数上问题数的定义和性质什么是树？  有$n-1$条边且连通 有$n-1$条边且无环 任意两点之间有唯一路径  T1 构图判树直接找所有的包含区间，找到就加边，如果超过了，就输出no。 条件：数只有$n-1$条变F. 有根数指定一个顶点r为根节点，就可以解决很多问题。 节点到根节点的深度称为深度，深度相同的节点位于同一层。高度是深度的最大值。 还有一堆：  树上DFS白点：没访问过 黑点：已经访问但">
 <meta property="og:type" content="article">
-<meta property="og:title" content="P12592题解">
-<meta property="og:url" content="https://joshua0729.github.io/2025/07/10/P12592%E9%A2%98%E8%A7%A3/index.html">
+<meta property="og:title" content="夏令营7.17总结">
+<meta property="og:url" content="https://joshua0729.github.io/2025/07/17/%E5%A4%8F%E4%BB%A4%E8%90%A57-17%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="Joshua0729的个人博客">
-<meta property="og:description" content="洛谷同文链接 P12592 重生有惊喜 题解题意给定一个字符串，你可以任意次交换任意两个字符，问能否通过这些操作让字符串变成回文串。 思路因为可以任意次交换字符，这就意味着我们可以重新排列字符顺序。 要判断是否能构成回文串，只需要判断字符出现的频次是否满足回文的结构要求。 回文的字符判断方法 若字符串长度是偶数：所有字符必须出现偶数次。 若字符串长度是奇数：最多只有一个字符可以出现奇数次，其余字符">
+<meta property="og:description" content="数上问题数的定义和性质什么是树？  有$n-1$条边且连通 有$n-1$条边且无环 任意两点之间有唯一路径  T1 构图判树直接找所有的包含区间，找到就加边，如果超过了，就输出no。 条件：数只有$n-1$条变F. 有根数指定一个顶点r为根节点，就可以解决很多问题。 节点到根节点的深度称为深度，深度相同的节点位于同一层。高度是深度的最大值。 还有一堆：  树上DFS白点：没访问过 黑点：已经访问但">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/kbsf05ct.png">
-<meta property="article:published_time" content="2025-07-10T10:52:53.000Z">
-<meta property="article:modified_time" content="2025-07-11T03:32:01.738Z">
+<meta property="og:image" content="https://cdn.rthsoftware.cn/cached-a5c9cba9f3be6f392e92ad6fb737889f-avif/mapbad/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-07-17%20143049.png">
+<meta property="article:published_time" content="2025-07-17T06:32:36.000Z">
+<meta property="article:modified_time" content="2025-07-17T08:10:24.393Z">
 <meta property="article:author" content="Joshua0729">
-<meta property="article:tag" content="题解">
 <meta property="article:tag" content="原创">
-<meta property="article:tag" content="洛谷">
+<meta property="article:tag" content="夏令营">
+<meta property="article:tag" content="总结">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cdn.luogu.com.cn/upload/image_hosting/kbsf05ct.png">
+<meta name="twitter:image" content="https://cdn.rthsoftware.cn/cached-a5c9cba9f3be6f392e92ad6fb737889f-avif/mapbad/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-07-17%20143049.png">
   
   
   
-  <title>P12592题解 - Joshua0729的个人博客</title>
+  <title>夏令营7.17总结 - Joshua0729的个人博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -210,13 +210,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('https://cdn.luogu.com.cn/upload/image_hosting/kbsf05ct.png') no-repeat center center; background-size: cover;">
+     style="background: url('https://cdn.rthsoftware.cn/cached-a5c9cba9f3be6f392e92ad6fb737889f-avif/mapbad/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-07-17%20143049.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="P12592题解"></span>
+            <span id="subtitle" data-typed-text="夏令营7.17总结"></span>
           
         </div>
 
@@ -227,8 +227,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-07-10 18:52" pubdate>
-          2025年7月10日 晚上
+        <time datetime="2025-07-17 14:32" pubdate>
+          2025年7月17日 下午
         </time>
       </span>
     
@@ -239,7 +239,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          245 字
+          440 字
         
       </span>
     
@@ -250,7 +250,7 @@
         
         
         
-          3 分钟
+          4 分钟
         
       </span>
     
@@ -287,12 +287,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">P12592题解</h1>
+            <h1 id="seo-header">夏令营7.17总结</h1>
             
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于 2025-07-11T11:32:01+08:00
+                    本文最后更新于 2025-07-17T16:10:24+08:00
                   
                   
 
@@ -302,16 +302,34 @@
             
               <div class="markdown-body">
                 
-                <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/article/1ebywmac">洛谷同文链接</a></p>
-<h1 id="P12592-重生有惊喜-题解"><a href="#P12592-重生有惊喜-题解" class="headerlink" title="P12592 重生有惊喜 题解"></a>P12592 重生有惊喜 题解</h1><h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>给定一个字符串，你可以任意次交换任意两个字符，问能否通过这些操作让字符串变成<strong>回文串</strong>。</p>
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>因为可以任意次交换字符，这就意味着我们可以重新排列字符顺序。</p>
-<p>要判断是否能构成回文串，只需要判断字符出现的频次是否满足回文的结构要求。</p>
-<h3 id="回文的字符判断方法"><a href="#回文的字符判断方法" class="headerlink" title="回文的字符判断方法"></a>回文的字符判断方法</h3><ul>
-<li>若字符串长度是<strong>偶数</strong>：所有字符必须出现<strong>偶数次</strong>。</li>
-<li>若字符串长度是<strong>奇数</strong>：<strong>最多只有一个字符</strong>可以出现<strong>奇数次</strong>，其余字符必须出现偶数次。</li>
+                <h1 id="数上问题"><a href="#数上问题" class="headerlink" title="数上问题"></a>数上问题</h1><h2 id="数的定义和性质"><a href="#数的定义和性质" class="headerlink" title="数的定义和性质"></a>数的定义和性质</h2><p>什么是树？</p>
+<ul>
+<li>有$n-1$条边且连通</li>
+<li>有$n-1$条边且无环</li>
+<li>任意两点之间有唯一路径</li>
 </ul>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>我们只需统计每个字符出现的次数，判断有多少个字符出现了奇数次即可。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> collections <span class="hljs-keyword">import</span> Counter<br><br>T = <span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>())<br><span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(T):<br>    s = <span class="hljs-built_in">input</span>()<br>    a = Counter(s)<br>    b = <span class="hljs-built_in">sum</span>(<span class="hljs-number">1</span> <span class="hljs-keyword">for</span> c <span class="hljs-keyword">in</span> a.values() <span class="hljs-keyword">if</span> c % <span class="hljs-number">2</span> == <span class="hljs-number">1</span>)<br>    <span class="hljs-keyword">if</span> b &lt;= <span class="hljs-number">1</span>:<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Yes&quot;</span>)<br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;No&quot;</span>)<br><br></code></pre></td></tr></table></figure>
+<h3 id="T1-构图判树"><a href="#T1-构图判树" class="headerlink" title="T1 构图判树"></a>T1 构图判树</h3><p>直接找所有的包含区间，找到就加边，如果超过了，就输出<code>no</code>。</p>
+<p>条件：数只有$n-1$条变F.</p>
+<h2 id="有根数"><a href="#有根数" class="headerlink" title="有根数"></a>有根数</h2><p>指定一个顶点<code>r</code>为根节点，就可以解决很多问题。</p>
+<p>节点到根节点的深度称为深度，深度相同的节点位于同一层。高度是深度的最大值。</p>
+<p>还有一堆：</p>
+<p><img src="https://cdn.rthsoftware.cn/cached-291d9a866a7015d6cbd9ededa3895386-avif/mapbad/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-07-17%20090206.png" srcset="/img/loading.gif" lazyload alt="屏幕截图 2025-07-17 090206.png (1152×611)"></p>
+<h2 id="树上DFS"><a href="#树上DFS" class="headerlink" title="树上DFS"></a>树上DFS</h2><p>白点：没访问过</p>
+<p>黑点：已经访问但是没有回溯</p>
+<p>黑点：已返回且已回溯</p>
+<p><code>dfs</code>时可以使用时间戳。分别标记访问到时和回溯到时。根节点标记为时间0。</p>
+<h3 id="T2-数后代"><a href="#T2-数后代" class="headerlink" title="T2 数后代"></a>T2 数后代</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">int</span> cnt[N];<br>vector&lt;pair&lt;<span class="hljs-type">int</span>,<span class="hljs-type">int</span>&gt;&gt; f[N];<br>vector&lt;<span class="hljs-type">int</span>&gt; g[N];<br><br><span class="hljs-type">int</span> ans[N];<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">dfs</span><span class="hljs-params">(<span class="hljs-type">int</span> x,<span class="hljs-type">int</span> fa)</span></span>&#123;<br>    dep[x]=dep[fa]<span class="hljs-number">+1</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">auto</span> p:f[x])&#123;<br>        <span class="hljs-type">int</span> di=p.first,i=p.second;<br>        ans[i]-=cnt[di];<br>    &#125;<br>    cnt[dep[x]]++;<span class="hljs-comment">//放这里！！！！！！！！！！</span><br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">auto</span> y:g[x])&#123;<br>        <span class="hljs-keyword">if</span>(y!=g[x])&#123;<br>            <span class="hljs-built_in">dfs</span>(y,x);<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">auto</span> p:f[x])&#123;<br>        <span class="hljs-type">int</span> di=p.first,i=p.second;<br>        ans[i]+=cnt[di];<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="T3-树上炸弹"><a href="#T3-树上炸弹" class="headerlink" title="T3 树上炸弹"></a>T3 树上炸弹</h3><p>核心思路就是用只能往下的炸弹模拟既能上又能下的炸弹，再扩展。</p>
+<p>也可以<code>dp</code>：</p>
+<p>令$f[u][i]$为子树$u$里的炸弹$(p,w)$中，满足$i\le w-d(p,u)$的有多少个。那么：</p>
+<ul>
+<li>在子树$u$中，能炸到点$u$的炸弹数量就是$f[u][0]$。</li>
+<li>在子树$a_1$里但不在子树$u$里，能炸到$u$的炸弹数量就是$f[a_1][1]-f[u][2]$。</li>
+<li>在子树$a_2$里但不在子树$a_1$里，能炸到$u$的炸弹数量就是$f[a_2][2]-f[1_1][3]$。</li>
+<li>………..</li>
+</ul>
+<h2 id="k祖先问题"><a href="#k祖先问题" class="headerlink" title="k祖先问题"></a>k祖先问题</h2><h2 id="LCA问题"><a href="#LCA问题" class="headerlink" title="LCA问题"></a>LCA问题</h2>
                 
               </div>
             
@@ -339,7 +357,7 @@
   
     <span>></span>
     
-  <a href="/categories/%E5%AD%A6%E4%B9%A0/%E7%BC%96%E7%A8%8B/%E9%A2%98%E8%A7%A3/" class="category-chain-item">题解</a>
+  <a href="/categories/%E5%AD%A6%E4%B9%A0/%E7%BC%96%E7%A8%8B/%E6%80%BB%E7%BB%93/" class="category-chain-item">总结</a>
   
   
 
@@ -358,11 +376,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E9%A2%98%E8%A7%A3/" class="print-no-link">#题解</a>
-      
         <a href="/tags/%E5%8E%9F%E5%88%9B/" class="print-no-link">#原创</a>
       
-        <a href="/tags/%E6%B4%9B%E8%B0%B7/" class="print-no-link">#洛谷</a>
+        <a href="/tags/%E5%A4%8F%E4%BB%A4%E8%90%A5/" class="print-no-link">#夏令营</a>
+      
+        <a href="/tags/%E6%80%BB%E7%BB%93/" class="print-no-link">#总结</a>
       
     </div>
   
@@ -374,8 +392,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>P12592题解</div>
-      <div>https://joshua0729.github.io/2025/07/10/P12592题解/</div>
+      <div>夏令营7.17总结</div>
+      <div>https://joshua0729.github.io/2025/07/17/夏令营7-17总结/</div>
     </div>
     <div class="license-meta">
       
@@ -387,13 +405,13 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025-07-10 18:07:00.5353</div>
+          <div>2025-07-17 14:07:00.3636</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025-07-11 11:07:73.011</div>
+          <div>2025-07-17 16:07:39.2424</div>
         </div>
       
       
@@ -424,18 +442,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/07/10/%E4%B8%80%E4%B8%AA%E5%87%BD%E6%95%B0%E6%B1%82%E8%A7%A3/" title="一个函数求解">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">一个函数求解</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/07/10/B4206%E9%A2%98%E8%A7%A3/" title="B4206题解">
-                        <span class="hidden-mobile">B4206题解</span>
+                      <a href="/2025/07/15/%E5%A4%8F%E4%BB%A4%E8%90%A57-15%E6%80%BB%E7%BB%93/" title="夏令营7.15总结">
+                        <span class="hidden-mobile">夏令营7.15总结</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
