@@ -19,26 +19,26 @@
   <meta name="author" content="Joshua0729">
   <meta name="keywords" content="">
   
-    <meta name="description" content="二分lower_bound与upper_bound用于查找在一个有序数组中的元素。lower_bound(a,b,x)返回第一个不小于x 的元素的指针或迭代器。如果不存在就返回e；upper_bound(a,b,x)是返回第一个大于x 的指针或迭代器。如不存在返回e。 lower_bound是大于等于，upper_bound是大于。 参数：初始地址，结束地址，数字返回的参数也是地址，要减去开始地址">
+    <meta name="description" content="动态规划全称dynamic programming,DP 狭义上是子问题的递推。广义上等于递推，但是几乎不考虑。 三要素：  子问题（状态） 递推式（状态转移） 边界条件（边界状态）  $DP$的两种方式  后向$DP$填表法$pull\ DP$从前往后更新 前向$DP$刷表法$push\ DP$从后往前找哪些可以更新状态，并更新。  在一个序列上的$DP$：序列又两种子结构前缀（一个参数）和区间">
 <meta property="og:type" content="article">
-<meta property="og:title" content="夏令营7.14总结">
-<meta property="og:url" content="https://joshua0729.github.io/2025/07/14/%E5%A4%8F%E4%BB%A4%E8%90%A57-14%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:title" content="夏令营9.19总结">
+<meta property="og:url" content="https://joshua0729.github.io/2025/07/19/%E5%A4%8F%E4%BB%A4%E8%90%A59-19%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="Joshua0729的个人博客">
-<meta property="og:description" content="二分lower_bound与upper_bound用于查找在一个有序数组中的元素。lower_bound(a,b,x)返回第一个不小于x 的元素的指针或迭代器。如果不存在就返回e；upper_bound(a,b,x)是返回第一个大于x 的指针或迭代器。如不存在返回e。 lower_bound是大于等于，upper_bound是大于。 参数：初始地址，结束地址，数字返回的参数也是地址，要减去开始地址">
+<meta property="og:description" content="动态规划全称dynamic programming,DP 狭义上是子问题的递推。广义上等于递推，但是几乎不考虑。 三要素：  子问题（状态） 递推式（状态转移） 边界条件（边界状态）  $DP$的两种方式  后向$DP$填表法$pull\ DP$从前往后更新 前向$DP$刷表法$push\ DP$从后往前找哪些可以更新状态，并更新。  在一个序列上的$DP$：序列又两种子结构前缀（一个参数）和区间">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.rthe.cn/cached-114c416460089e222c15690cc86b5ef4-avif/mapbad/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-07-14%20135334.png">
-<meta property="article:published_time" content="2025-07-14T10:57:48.000Z">
-<meta property="article:modified_time" content="2025-07-14T11:26:55.903Z">
+<meta property="og:image" content="https://cdn.rthsoftware.cn/cached-4b24a945dd110d43f62550d79ec7022b-avif/mapbad/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-07-19%20192123.png">
+<meta property="article:published_time" content="2025-07-19T11:20:32.000Z">
+<meta property="article:modified_time" content="2025-07-19T11:26:25.907Z">
 <meta property="article:author" content="Joshua0729">
 <meta property="article:tag" content="原创">
 <meta property="article:tag" content="夏令营">
 <meta property="article:tag" content="总结">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cdn.rthe.cn/cached-114c416460089e222c15690cc86b5ef4-avif/mapbad/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-07-14%20135334.png">
+<meta name="twitter:image" content="https://cdn.rthsoftware.cn/cached-4b24a945dd110d43f62550d79ec7022b-avif/mapbad/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-07-19%20192123.png">
   
   
   
-  <title>夏令营7.14总结 - Joshua0729的个人博客</title>
+  <title>夏令营9.19总结 - Joshua0729的个人博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -215,13 +215,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('https://cdn.rthe.cn/cached-114c416460089e222c15690cc86b5ef4-avif/mapbad/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-07-14%20135334.png') no-repeat center center; background-size: cover;">
+     style="background: url('https://cdn.rthsoftware.cn/cached-4b24a945dd110d43f62550d79ec7022b-avif/mapbad/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-07-19%20192123.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="夏令营7.14总结"></span>
+            <span id="subtitle" data-typed-text="夏令营9.19总结"></span>
           
         </div>
 
@@ -232,8 +232,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-07-14 18:57" pubdate>
-          2025年7月14日 晚上
+        <time datetime="2025-07-19 19:20" pubdate>
+          2025年7月19日 晚上
         </time>
       </span>
     
@@ -244,7 +244,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1k 字
+          692 字
         
       </span>
     
@@ -255,7 +255,7 @@
         
         
         
-          9 分钟
+          6 分钟
         
       </span>
     
@@ -292,12 +292,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">夏令营7.14总结</h1>
+            <h1 id="seo-header">夏令营9.19总结</h1>
             
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于 2025-07-14T19:26:55+08:00
+                    本文最后更新于 2025-07-19T19:26:25+08:00
                   
                   
 
@@ -307,52 +307,70 @@
             
               <div class="markdown-body">
                 
-                <h1 id="二分"><a href="#二分" class="headerlink" title="二分"></a>二分</h1><h2 id="lower-bound与upper-bound"><a href="#lower-bound与upper-bound" class="headerlink" title="lower_bound与upper_bound"></a><code>lower_bound</code>与<code>upper_bound</code></h2><p>用于查找在一个有序数组中的元素。<code>lower_bound(a,b,x)</code>返回第一个<strong>不小于<code>x</code></strong> 的元素的指针或迭代器。如果不存在就返回<code>e</code>；<code>upper_bound(a,b,x)</code>是返回第一个<strong>大于<code>x</code></strong> 的指针或迭代器。如不存在返回<code>e</code>。</p>
-<p>lower_bound是大于等于，upper_bound是大于。</p>
-<p>参数：<code>初始地址，结束地址，数字</code>返回的参数也是地址，要减去开始地址。</p>
-<p>示例：<code>lower_bound(a+1,a+n+1,n)-a</code>，这样就是一个下标了。</p>
-<p>这两个也支持<code>cmp</code>。原理与<code>sort</code>一样。<code>sort</code>的<code>cmp</code>的一个重要的注意事项：<code>cmp(x,y)</code>与<code>cmp(y,x)</code>绝对不能返回一样。</p>
-<p><del>不知道为什么写着突然就这样了</del><br><img src="https://cdn.luogu.com.cn/upload/image_hosting/dxxgh9pe.png" srcset="/img/loading.gif" lazyload alt="CPU:?"></p>
-<h2 id="运算符重载"><a href="#运算符重载" class="headerlink" title="运算符重载"></a>运算符重载</h2><p>可以在自己定义的数据结构里重载运算符。<strong>尽量不要重载int等常用类型的运算符！！！</strong> 否则肯可能出现各种奇怪的错误，比如会把<code>for</code>的<code>&lt;</code>也重载了。</p>
-<p>但是如果是自己的数据结构，可以在二分时重载运算符。这样二分的判断函数更加简单。</p>
-<h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><p>一个二分搜索的简单模板</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;</span><br><span class="hljs-function">ll <span class="hljs-title">erfensousuo</span><span class="hljs-params">(T check,ll ok,ll ng)</span></span>&#123;<br><br>	<span class="hljs-keyword">while</span>(<span class="hljs-built_in">abs</span>(ok-ng)&gt;<span class="hljs-number">1</span>)&#123;<br>		ll x=(ok+ng)/<span class="hljs-number">2</span>;<br>		<span class="hljs-keyword">if</span>(<span class="hljs-built_in">check</span>(x))&#123;<br>			ok=x;<br>		&#125;<br>		<span class="hljs-keyword">else</span> ng=x;<br>	&#125;<br>	<span class="hljs-keyword">return</span> ok;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-
-
-<h3 id="普通二分"><a href="#普通二分" class="headerlink" title="普通二分"></a>普通二分</h3><h4 id="T1-相交的区间"><a href="#T1-相交的区间" class="headerlink" title="T1 相交的区间"></a>T1 相交的区间</h4><p>给定一个区间，计算完全在这个区间左边的区间有多少个。</p>
-<p>$x&#x3D;lower_bound(a+1,a+n+1,l_i)$</p>
-<p>通过容斥原理排除大量的解，然后把L与R拆开。</p>
-<h4 id="T2-超速检测"><a href="#T2-超速检测" class="headerlink" title="T2 超速检测"></a>T2 超速检测</h4><p>去年$\Huge CSP-S$的T2。</p>
-<p>先算出每一辆车在那一段超速，再简单的<code>lower_bound</code>一下，判断区间内的第一个和最后一个测速仪。这样，就变成了昨天的区间选点问题。</p>
-<p>保留最少的区间（每辆车的超速范围），使得每个区间（超度范围）都有点（测速仪）。</p>
-<h3 id="二分答案"><a href="#二分答案" class="headerlink" title="二分答案"></a>二分答案</h3><h4 id="T3-项目计划"><a href="#T3-项目计划" class="headerlink" title="T3 项目计划"></a>T3 项目计划</h4><p>$a_i&gt;x$最多用$x$个人，$a_i\le x$最多用$a_i$个人。</p>
-<p>判定性问题：$sum+&#x3D;min(a_i,x)$，$if(sum&gt;&#x3D;x\times k)$</p>
-<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/6w7v38nu.png" srcset="/img/loading.gif" lazyload alt="部门人员解决方法"></p>
-<p>上图的意思就是说如果项目弄着弄着没人了，那么只要让另一个人来替补就可以了。</p>
-<p>假设有x个房间。一个部门如果有大于x个人，就拉x个人，否则全部拉来。不够的，就换一个部门，按顺序放进一个房间。这样，有的人都可以用上。</p>
-<h4 id="T4-花束"><a href="#T4-花束" class="headerlink" title="T4 花束"></a>T4 花束</h4><p>可以做$P$个，$1\sim P$都可以。</p>
-<p>约束条件：</p>
+                <h1 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h1><p>全称<strong>dynamic programming,DP</strong></p>
+<p>狭义上是子问题的递推。<del>广义上等于递推</del>，但是几乎不考虑。</p>
+<p>三要素：</p>
 <ul>
-<li>$m\times x+n\le R$</li>
-<li>$m+n\times y\le B$</li>
-<li>$0\le m$</li>
-<li>$0\le n$</li>
-<li>$n,m$为整数</li>
+<li>子问题（状态）</li>
+<li>递推式（状态转移）</li>
+<li>边界条件（边界状态）</li>
 </ul>
-<p>在这些条件下，$m+n&#x3D;K$是否成立。</p>
-<p>把$m\times x+n\le R$写成$m(x-1)+(m+n)\le R$，所以$m\le(R-K)&#x2F;(x-1)$。</p>
-<p>同理可得$n\le (B-K)&#x2F;(y-1)$。</p>
-<p>于是，只要判断是否有$K\le\int{\frac{R-K}{x-1}}+\int{\frac{B-K}{y-1}}$。</p>
-<h4 id="T5-平均数和中位数"><a href="#T5-平均数和中位数" class="headerlink" title="T5 平均数和中位数"></a>T5 平均数和中位数</h4><p>分数二分，所以这题要对精度很敏感。</p>
-<p>这里要用<code>double</code>这个在<code>printf</code>输出时有一个注意点：<code>double</code>是<code>lf</code>，<code>long double</code>是<code>Lf</code>，是一个大写的区别。</p>
-<p>分数在二分时，每次<code>check</code>就可以把答案缩小一半。多进行几次<code>check</code>，就可以把范围弄到很小。</p>
-<h4 id="T6-扫地机器人"><a href="#T6-扫地机器人" class="headerlink" title="T6 扫地机器人"></a>T6 扫地机器人</h4><p>取一个非负整数$L$，判断花$L$秒能不能清理完所有垃圾。</p>
-<p>其中，1、2类机器人的活动范围是固定的。所以问题变成3类机器人能不能在$L$秒内清理完剩余的垃圾。</p>
-<p>这样。我们就可以想到加一个条件：不要让两个3类机器人迎面相遇。这样会浪费3类机器人的时间。</p>
-<p>那么继续思考，就不难想到如果在其他类机器人清理完之后，如果还有其他垃圾的话，那么左边的垃圾都是他负责。否则就一个向右走。</p>
-<h4 id="T7-种树"><a href="#T7-种树" class="headerlink" title="T7 种树"></a>T7 种树</h4><p>$\Huge 又是CSP真题$</p>
-<p>代码有点长，还没搞明白，先不写</p>
+<p>$DP$的两种方式</p>
+<ul>
+<li>后向$DP$填表法$pull\ DP$从前往后更新</li>
+<li>前向$DP$刷表法$push\ DP$从后往前找哪些可以更新状态，并更新。</li>
+</ul>
+<p>在一个序列上的$DP$：序列又两种子结构前缀（一个参数）和区间（两个参数）。</p>
+<p>可以使用$DP$的数据结构：</p>
+<ul>
+<li>序列</li>
+<li>网络</li>
+<li>数</li>
+<li>……..</li>
+</ul>
+<h2 id="例一"><a href="#例一" class="headerlink" title="例一"></a>例一</h2><p>例一就是简单递推。</p>
+<p>目标：$f[N]$</p>
+<p>边界条件：$f[0]&#x3D;1,f[1]&#x3D;2$。</p>
+<p>递推式：$f[i]&#x3D;f[i-1]+f[i-2],2\le i$</p>
+<h2 id="T1-构造序列"><a href="#T1-构造序列" class="headerlink" title="T1 构造序列"></a>T1 构造序列</h2><p>这题可以贪心，因为只能在最后添加。</p>
+<p>目标：$f[N]$</p>
+<p>边界条件：$f[0]&#x3D;0$</p>
+<p>递推式：$f[j]\le f[j+1]（0\le j\le N）$</p>
+<p>一次性添加的项数越大越好。</p>
+<h2 id="T2-阿弥陀签的数量"><a href="#T2-阿弥陀签的数量" class="headerlink" title="T2 阿弥陀签的数量"></a>T2 阿弥陀签的数量</h2><p>由于各行都相对独立，所以从上往下考虑每一行。</p>
+<p>定义$g[i][j]$表示：对于前$i$行，又多少种画法使得从$(0,1)$经过$i$步到达$(i,j)$。</p>
+<p>边界条件：$g[0][1]&#x3D;1$。</p>
+<h2 id="T3-Knapsack-2"><a href="#T3-Knapsack-2" class="headerlink" title="T3 Knapsack 2"></a>T3 Knapsack 2</h2><p>边界条件：$f[0][0]&#x3D;0,f[0][j]&#x3D;W+1,j&#x3D;1,…..,10^5$</p>
+<p>递推式：对于$i&#x3D;1,…,N$，有递推式：<br>$$<br>f[i][j] &#x3D;<br>\begin{cases}<br>f[i - 1][j], &amp; 0 \leq j &lt; v_i, \<br>\min(f[i - 1][j], f[i - 1][j - v_i] + w_i), &amp; v_i \leq j \leq 10^5.<br>\end{cases}<br>$$</p>
+<h2 id="T4-盒饭2"><a href="#T4-盒饭2" class="headerlink" title="T4 盒饭2"></a>T4 盒饭2</h2><p><del>一看就是日本的题目</del></p>
+<p>定义$f[i][j][k]$代表前$i$个盒饭吃了$j$个鱼丸$k$代表了最多的盒饭数。</p>
+<p>想清思路，盒饭数较少但是鱼丸，肉丸数较多。所以盒饭数很重要。</p>
+<h2 id="例题-N-2-：分成三队"><a href="#例题-N-2-：分成三队" class="headerlink" title="例题$N+2$：分成三队"></a>例题$N+2$：分成三队</h2><p><del>看到输出<code>-1</code>，你想到了什么？</del></p>
+<p>空间计算：</p>
+<p>$f[i][j][k]$中$i\le10^2,j\le500,k\le500$，总共$\le2.5\times10^7$，没问题。</p>
+<p>目标：$f[N][M][M]$</p>
+<p>边界条件：$f[0][0][0]&#x3D;0,f[0][i][j]&#x3D;N+1,i\ne0或j\ne0$</p>
+<p>递推式：</p>
+<ul>
+<li><p>第一队：$f[i-1][j-B_i][k]+(A_i\ne1),B_i\le j$</p>
+</li>
+<li><p>第二队：$f[i-1][j][k-B_i]+(A_i\ne2),B_i\le k$</p>
+</li>
+<li><p>第三队：$f[i-1][j][k]+(A_i\ne3)$</p>
+</li>
+</ul>
+<h2 id="例题383-f：abc383f-Diversity"><a href="#例题383-f：abc383f-Diversity" class="headerlink" title="例题383_f：abc383f Diversity"></a>例题383_f：abc383f Diversity</h2><p>按照颜色分组，一次只处理同一颜色的物品。</p>
+<p>目标：$f[N][X]$</p>
+<p>边界条件：$f[0][j]&#x3D;0,0\le j\le X$</p>
+<p>递推式：</p>
+<p>对于每种颜色$i&#x3D;1,…,N$：</p>
+<ol>
+<li>将$f[i][j]$置为$f[i-1][j],0\le j\le X$</li>
+<li>对于每个颜色是$i$的物品$(P,U)$，按照$j&#x3D;X,X-1,…,P$的顺序，置$f[i][j]&#x3D;max(f[i][j],f[i-1][j-P]+U+K,f[i][j-p]+U)$</li>
+</ol>
+<h2 id="T6-分组"><a href="#T6-分组" class="headerlink" title="T6 分组"></a>T6 分组</h2><p>目标：$f[N][0][X]$</p>
+<p>边界条件：$f[0][0][k]&#x3D;1(0\le k\le X)$</p>
+<p>递推式：不好写，看图片吧<br><img src="https://cdn.rthe.cn/cached-d4940fbf1bf1dc8e4885776958440024-avif/mapbad/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-07-19%20192502.png" srcset="/img/loading.gif" lazyload></p>
 
                 
               </div>
@@ -416,8 +434,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>夏令营7.14总结</div>
-      <div>https://joshua0729.github.io/2025/07/14/夏令营7-14总结/</div>
+      <div>夏令营9.19总结</div>
+      <div>https://joshua0729.github.io/2025/07/19/夏令营9-19总结/</div>
     </div>
     <div class="license-meta">
       
@@ -429,13 +447,13 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025-07-14 18:07:00.4848</div>
+          <div>2025-07-19 19:07:00.3232</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025-07-14 19:07:90.5555</div>
+          <div>2025-07-19 19:07:90.2525</div>
         </div>
       
       
@@ -466,18 +484,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/07/15/%E5%A4%8F%E4%BB%A4%E8%90%A57-15%E6%80%BB%E7%BB%93/" title="夏令营7.15总结">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">夏令营7.15总结</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/07/13/%E5%A4%8F%E4%BB%A4%E8%90%A57-13%E6%80%BB%E7%BB%93/" title="夏令营7.13总结">
-                        <span class="hidden-mobile">夏令营7.13总结</span>
+                      <a href="/2025/07/18/%E4%BA%BA%E4%BB%AC%E4%B8%BA%E4%BB%80%E4%B9%88%E8%BF%98%E8%A6%81%E4%BD%BF%E7%94%A8%E7%94%B5%E8%84%91%EF%BC%9F/" title="人们为什么还要使用电脑？">
+                        <span class="hidden-mobile">人们为什么还要使用电脑？</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
