@@ -1,0 +1,838 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/icon.png">
+  <link rel="icon" href="/img/icon.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Joshua0729">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="今天照例还是模考。 时间线我发现写时间线要考试的时候自己记录，容易忘也很烦，以后模考的话时间线就不写了吧。 题目T1当遇到一道题目，如果有两个思路，一个简单但是正确性不确定，另一个较难但是确定正确，就可以通过写对拍等方式验证猜想。 思路是给一个数组中的每个元素分配一个“分数”，然后计算所有分数的总和。分数的分配规则基于元素与其相邻元素的大小关系：  较大的元素应该获得较高的分数 相等的元素应该获得">
+<meta property="og:type" content="article">
+<meta property="og:title" content="夏令营7.25总结">
+<meta property="og:url" content="https://joshua0729.github.io/2025/07/25/%E5%A4%8F%E4%BB%A4%E8%90%A57-25%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="Joshua0729的个人博客">
+<meta property="og:description" content="今天照例还是模考。 时间线我发现写时间线要考试的时候自己记录，容易忘也很烦，以后模考的话时间线就不写了吧。 题目T1当遇到一道题目，如果有两个思路，一个简单但是正确性不确定，另一个较难但是确定正确，就可以通过写对拍等方式验证猜想。 思路是给一个数组中的每个元素分配一个“分数”，然后计算所有分数的总和。分数的分配规则基于元素与其相邻元素的大小关系：  较大的元素应该获得较高的分数 相等的元素应该获得">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.rthe.cn/cached-3fdc1fff290a8a69925834d5f92db733-avif/mapbad/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-07-25%20161425.png">
+<meta property="article:published_time" content="2025-07-25T08:15:03.000Z">
+<meta property="article:modified_time" content="2025-07-25T09:28:16.974Z">
+<meta property="article:author" content="Joshua0729">
+<meta property="article:tag" content="原创">
+<meta property="article:tag" content="夏令营">
+<meta property="article:tag" content="总结">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cdn.rthe.cn/cached-3fdc1fff290a8a69925834d5f92db733-avif/mapbad/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-07-25%20161425.png">
+  
+  
+  
+  <title>夏令营7.25总结 - Joshua0729的个人博客</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/gundongtiaocolor.css">
+<link rel="stylesheet" href="/css/typingchanging.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"joshua0729.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":6},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Joshua0729的个人博客</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://cdn.rthe.cn/cached-3fdc1fff290a8a69925834d5f92db733-avif/mapbad/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-07-25%20161425.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="夏令营7.25总结"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-07-25 16:15" pubdate>
+          2025年7月25日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.1k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          9 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">夏令营7.25总结</h1>
+            
+              <p id="updated-time" class="note note-info" style="display: none">
+                
+                  
+                    本文最后更新于 2025-07-25T17:28:16+08:00
+                  
+                  
+
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <p>今天<del>照例</del>还是模考。</p>
+<h2 id="时间线"><a href="#时间线" class="headerlink" title="时间线"></a>时间线</h2><p>我发现写时间线要考试的时候自己记录，容易忘也很烦，以后模考的话时间线就不写了吧。</p>
+<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><h3 id="T1"><a href="#T1" class="headerlink" title="T1"></a>T1</h3><p>当遇到一道题目，如果有两个思路，一个简单但是正确性不确定，另一个较难但是确定正确，就可以通过写对拍等方式验证猜想。</p>
+<p>思路是给一个数组中的每个元素分配一个“分数”，然后计算所有分数的总和。分数的分配规则基于元素与其相邻元素的大小关系：</p>
+<ul>
+<li>较大的元素应该获得较高的分数</li>
+<li>相等的元素应该获得相同的分数</li>
+<li>最终每个元素的分数是其从左侧和右侧两个方向计算出的分数的最大值</li>
+<li>计算出的最大值即为答案。</li>
+</ul>
+<h3 id="T2"><a href="#T2" class="headerlink" title="T2"></a>T2</h3><p>考虑贪心。</p>
+<ul>
+<li>匹配<code>K</code>的每一位，尽可能保持前缀相同（以保证<code>M</code>最小），仅在必要时调整某一位为更大的数字，并将剩余数字按升序排列（确保后续位最小）。<br>回溯：</li>
+<li>一位无法匹配<code>K</code>时，回溯到前一位寻找更大的数字，避免 “卡死” 在无效路径上。<br>数字排列的化：</li>
+<li>定某一位使用更大的数字后，剩余数字按升序排列，直接保证后续位最小，无需再比较。</li>
+</ul>
+<h3 id="T3"><a href="#T3" class="headerlink" title="T3"></a>T3</h3><p>要使总不满意度最小，关键是让 <code>A</code> 中分给学生的 <code>N-1</code> 个元素与 <code>B</code> 的 <code>N-1</code> 个元素 “最优匹配”（即每个 <code>B[j]</code> 匹配最接近的 <code>A[i]</code>）。由于 <code>A</code> 和 <code>B</code> 都是数字，排序后按顺序匹配是最优策略（这是贪心算法的经典结论：两个数组排序后一一对应，差值之和最小）。</p>
+<h3 id="T4"><a href="#T4" class="headerlink" title="T4"></a>T4</h3><p>分两种情况处理：</p>
+<ul>
+<li>若整个字符串已经是回文串（指针相遇仍未找到不匹配）：<br>此时需要插入一个字符使其仍为回文串。最简单的方式是在中间位置插入一个与中心字符相同的字符（如 “ee” 插入 “y” 变成 “eye”）。</li>
+<li>若存在不匹配的<code>s[i]</code>和<code>s[j]</code>：<br>尝试两种插入方案：<ul>
+<li>在 <code>i</code> 位置左侧插入 <code>s[j]</code>（使 <code>s[j]</code> 与右侧的 <code>s[j]</code> 对称）。</li>
+<li>在 <code>j</code> 位置右侧插入 <code>s[i]</code>（使 <code>s[i]</code> 与左侧的 <code>s[i]</code> 对称）。<br>检查两种方案是否能形成回文串，若能则输出其中一个；若都不能，则输出 <code>NA</code>。</li>
+</ul>
+</li>
+</ul>
+<h3 id="T5"><a href="#T5" class="headerlink" title="T5"></a>T5</h3><h4 id="1-棋子位置的约束分析"><a href="#1-棋子位置的约束分析" class="headerlink" title="1. 棋子位置的约束分析"></a>1. 棋子位置的约束分析</h4><p>设：</p>
+<ul>
+<li><code>r[i]</code>表示第<code>i</code>行是否反转（1&#x3D;反转，0&#x3D;不反转）。</li>
+<li><code>c[j]</code>表示第<code>j</code>列是否反转（1&#x3D;反转，0&#x3D;不反转）。</li>
+</ul>
+<p>棋子<code>(A_i, B_i)</code>最终为白色的条件：<br>初始格子为白色，反转次数为偶数（0或2次）时仍为白色，即：<br><code>r[A_i]+c[B_i]≡0(mod2)</code> → <code>c[B_i]=r[A_i]</code>（因为0+0&#x3D;0，1+1&#x3D;2≡0）。 </p>
+<p>这意味着：<em>列的反转状态由其所在行的反转状态决定</em>，两者必须相同。</p>
+<h4 id="2-连通分量划分"><a href="#2-连通分量划分" class="headerlink" title="2. 连通分量划分"></a>2. 连通分量划分</h4><p>通过棋子的约束关系，行和列形成“连通分量”： </p>
+<ul>
+<li>若棋子<code>(a, b)</code>存在，则行<code>a</code>与列 <code>b</code> 必须同状态（<code>r[a]=c[b]</code>）。 </li>
+<li>由此可构建一张 bipartite 图（行和列作为节点，棋子为边），连通分量内的行和列的反转状态必须一致（要么全反转，要么全不反转）。</li>
+</ul>
+<p>代码通过 DFS 遍历 划分连通分量，记录每个分量包含的行数（<code>x[tot]</code>）和列数（<code>y[tot]</code>）。</p>
+<h4 id="3-动态规划（DP）求解最优反转方案"><a href="#3-动态规划（DP）求解最优反转方案" class="headerlink" title="3. 动态规划（DP）求解最优反转方案"></a>3. 动态规划（DP）求解最优反转方案</h4><p>设最终选择反转的行总数为<code>i</code>（<code>0≤i≤H</code>），则： </p>
+<ul>
+<li>未反转的行数为<code>H-i</code>。 </li>
+<li>根据约束，反转的列数 <code>j</code> 由连通分量的选择决定（需满足 <code>0≤j≤W</code>）。</li>
+</ul>
+<p>黑色格子数量的计算公式（推导见下文）：<br><code>黑色格子数=i×(W-j)+j×(H-i)</code> </p>
+<p>为最大化该值，需通过 DP 计算每个可能的<code>i</code>对应的最小和最大<code>j</code>（<code>j</code>需在<code>[0, W]</code>内）： </p>
+<ul>
+<li><code>f[i]</code>：选择<code>i</code>行反转时，最多能反转的列数。 </li>
+<li><code>g[i]</code>：选择<code>i</code>行反转时，最少能反转的列数。</li>
+</ul>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%BC%96%E7%A8%8B/" class="category-chain-item">编程</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E7%BC%96%E7%A8%8B/%E6%80%BB%E7%BB%93/" class="category-chain-item">总结</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E5%8E%9F%E5%88%9B/" class="print-no-link">#原创</a>
+      
+        <a href="/tags/%E5%A4%8F%E4%BB%A4%E8%90%A5/" class="print-no-link">#夏令营</a>
+      
+        <a href="/tags/%E6%80%BB%E7%BB%93/" class="print-no-link">#总结</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+   <!--
+    <p class="note note-primary">
+  <strong> 本文作者: </strong><a href="/">Joshua0729</a> <br>
+  <strong> 本文链接: </strong><a href="https://joshua0729.github.io/2025/07/25/%E5%A4%8F%E4%BB%A4%E8%90%A57-25%E6%80%BB%E7%BB%93/">https://joshua0729.github.io/2025/07/25/%E5%A4%8F%E4%BB%A4%E8%90%A57-25%E6%80%BB%E7%BB%93/</a> <br>
+  <strong> 版权声明: </strong>
+      
+      
+          <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+          <span class="hint--top hint--rounded" aria-label="BY - 署名">
+              <i class="iconfont icon-cc-by"></i>
+          </span>
+          </a>
+      
+      
+  </p>
+  -->
+  
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>夏令营7.25总结</div>
+      <div>https://joshua0729.github.io/2025/07/25/夏令营7-25总结/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Joshua0729</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025-07-25 16:07:00.033</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2025-07-25 17:07:97.1616</div>
+        </div>
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/07/25/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E7%A5%88%E7%A6%8F%E6%96%B9%E5%BC%8F/" title="程序员的祈福方式">
+                        <span class="hidden-mobile">程序员的祈福方式</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+      
+<a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
+<div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> <head><style> .sel{ margin:5px; justify-content:space-around; }</style></head> <p>每日一句：<a id="rainbow" href=' target="_blank">🌈 获取中...</a></p> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  var relativeDate = function() {
+    var updatedTime = document.getElementById('updated-time');
+    if (updatedTime) {
+      var text = updatedTime.textContent;
+      var reg = /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:Z|[+-]\d{2}:\d{2})/;
+      var matchs = text.match(reg);
+      if (matchs) {
+        var relativeTime = moment(matchs[0]).fromNow();
+        updatedTime.textContent = text.replace(reg, relativeTime);
+      }
+      updatedTime.style.display = '';
+    }
+  };
+  Fluid.utils.createScript('https://lib.baomitu.com/moment.js/2.29.4/moment.min.js', function() {
+    if (!'zh-cn'.startsWith('en')) {
+      Fluid.utils.createScript('https://lib.baomitu.com/moment.js/2.29.4/locale/zh-cn.min.js', function() {
+        relativeDate();
+      });
+    } else {
+      relativeDate();
+    }
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  
+<script src="/js/englishwordshow.js"></script>
+<script src="/js/black_point_under.js"></script>
+<script src="/js/flower_flow_down.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

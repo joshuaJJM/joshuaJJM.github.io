@@ -1,0 +1,832 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/icon.png">
+  <link rel="icon" href="/img/icon.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Joshua0729">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="骗分是什么呢？骗分就是用简单的程序（比标准算法简单很多，保证新手能轻松搞定的程序），尽可能多得骗取分数。这个主要是因为CSP、NOIP、蓝桥杯、PAT 等竞赛的 OI赛制 决定的，只比对输出结果。 打油诗： 数学上来先打表，贪心只能过样例。ＤＰ一般看规律，模拟只会猜题意。图论强行套模板，组合数学靠运气。分治做得像枚举，计算几何瞎暴力。数据结构干瞪眼，数论只会ＧＣＤ。递归递推伤不起，搜索茫然ＴＬＥ。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="骗分导论">
+<meta property="og:url" content="https://joshua0729.github.io/2025/07/17/%E9%AA%97%E5%88%86%E5%AF%BC%E8%AE%BA/index.html">
+<meta property="og:site_name" content="Joshua0729的个人博客">
+<meta property="og:description" content="骗分是什么呢？骗分就是用简单的程序（比标准算法简单很多，保证新手能轻松搞定的程序），尽可能多得骗取分数。这个主要是因为CSP、NOIP、蓝桥杯、PAT 等竞赛的 OI赛制 决定的，只比对输出结果。 打油诗： 数学上来先打表，贪心只能过样例。ＤＰ一般看规律，模拟只会猜题意。图论强行套模板，组合数学靠运气。分治做得像枚举，计算几何瞎暴力。数据结构干瞪眼，数论只会ＧＣＤ。递归递推伤不起，搜索茫然ＴＬＥ。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.rthsoftware.cn/cached-08752e028a4bcc89d1a2a03e04c31f2b-avif/mapbad/1e34e78f64edab76a4b9a1d49b51ba76736798c7.png">
+<meta property="article:published_time" content="2025-07-17T11:44:37.000Z">
+<meta property="article:modified_time" content="2025-07-23T08:32:33.133Z">
+<meta property="article:author" content="Joshua0729">
+<meta property="article:tag" content="原创">
+<meta property="article:tag" content="教程">
+<meta property="article:tag" content="笔记">
+<meta property="article:tag" content="花里胡哨">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cdn.rthsoftware.cn/cached-08752e028a4bcc89d1a2a03e04c31f2b-avif/mapbad/1e34e78f64edab76a4b9a1d49b51ba76736798c7.png">
+  
+  
+  
+  <title>骗分导论 - Joshua0729的个人博客</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/gundongtiaocolor.css">
+<link rel="stylesheet" href="/css/typingchanging.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"joshua0729.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":6},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Joshua0729的个人博客</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://cdn.rthsoftware.cn/cached-08752e028a4bcc89d1a2a03e04c31f2b-avif/mapbad/1e34e78f64edab76a4b9a1d49b51ba76736798c7.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="骗分导论"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-07-17 19:44" pubdate>
+          2025年7月17日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2.9k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          25 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">骗分导论</h1>
+            
+              <p id="updated-time" class="note note-info" style="display: none">
+                
+                  
+                    本文最后更新于 2025-07-23T16:32:33+08:00
+                  
+                  
+
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <p>骗分是什么呢？骗分就是用简单的程序（比标准算法简单很多，保证新手能轻松搞定的程序），尽可能多得骗取分数。这个主要是因为<strong>CSP、NOIP、蓝桥杯、PAT</strong> 等竞赛的 <strong>OI赛制</strong> 决定的，<strong>只比对输出结果</strong>。</p>
+<p>打油诗：</p>
+<p>数学上来先打表，贪心只能过样例。<br>ＤＰ一般看规律，模拟只会猜题意。<br>图论强行套模板，组合数学靠运气。<br>分治做得像枚举，计算几何瞎暴力。<br>数据结构干瞪眼，数论只会ＧＣＤ。<br>递归递推伤不起，搜索茫然ＴＬＥ。</p>
+<p>骗分过样例，暴力出奇迹<br>暴搜挂着机，打表出省一<br>数学先打表，D P看运气<br>穷举 T L E ，递推 U K E<br>模拟 M L E ，贪心还 C E<br>N 方过百万，暴力踩标算<br>肥修赛大象，只是代码短<br>想要骗到分，就要有方法<br>图论背模板，数论背公式<br>动规背方程，高精背代码<br>如果都没背，干脆输样例</p>
+<p>掰开讲：</p>
+<h3 id="1、-若无解，请输出-1"><a href="#1、-若无解，请输出-1" class="headerlink" title="1、 若无解，请输出-1"></a>1、 若无解，请输出-1</h3><p>在很多题目中都有这句话：“若无解，请输出-1.”。</p>
+<p>那么，这时，我们就可以直接<code>printf(&quot;-1&quot;);</code>了。</p>
+<h3 id="2、-样例——白送的分数"><a href="#2、-样例——白送的分数" class="headerlink" title="2、 样例——白送的分数"></a>2、 样例——白送的分数</h3><p>每道题目的后面，都有一组“<strong>样例输入</strong>”和“<strong>样例输出</strong>”。它们的价值极大，不仅能初步帮你检验程序的对错，而且，如果你不会做这道题，你就可以<strong>直接输出样例</strong>！</p>
+<p>例如USACO，它的题目有一个规则，第一组数据必须是样例。那么，只要你输出所有的样例，你就能得到100分（满分1000）！这是相当可观的分数了。</p>
+<p>只要你会基本的输入输出语句，你就能实现这些骗分方法。</p>
+<h3 id="3、模拟"><a href="#3、模拟" class="headerlink" title="3、模拟"></a>3、模拟</h3><p>所谓模拟，就是用计算机程序来模拟实际的事件。例如NOIP2012的“寻宝”，就是写一个程序来模拟小明上藏宝塔的动作。</p>
+<p>模拟主要可以应用在骗高级数据结构题上的分，例如线段树。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs css">排  队(USACO <span class="hljs-number">2007</span> January Silver)<br> <br>【问题描述】<br>每天，农夫约翰的N（<span class="hljs-number">1</span>≤N≤<span class="hljs-number">50000</span>）头奶牛总是按同一顺序排好队，有一天，约翰决定让一些牛玩一场飞盘游戏（Ultimate Frisbee），他决定在队列里选择一群位置连续的奶牛进行比赛，为了避免比赛结果过于悬殊，要求挑出的奶牛身高不要相差太大。<br>约翰准备了<span class="hljs-selector-tag">Q</span>（<span class="hljs-number">1</span>≤<span class="hljs-selector-tag">Q</span>≤<span class="hljs-number">200000</span>）组奶牛选择，并告诉你所有奶牛的身高Hi（<span class="hljs-number">1</span>≤  Hi ≤<span class="hljs-number">106</span>）。他想知道每组里最高的奶牛和最矮的奶牛身高差是多少。<br>注意：在最大的数据上，输入输出将占据大部分时间。<br>【输入】<br>第一行，两个用空格隔开的整数N和<span class="hljs-selector-tag">Q</span>。<br>第<span class="hljs-number">2</span>到第N+<span class="hljs-number">1</span>行，每行一个整数，第<span class="hljs-selector-tag">i</span>+<span class="hljs-number">1</span>行表示第<span class="hljs-selector-tag">i</span>头奶牛的身高Hi<br>第N+<span class="hljs-number">2</span>到第N+<span class="hljs-selector-tag">Q</span>+<span class="hljs-number">1</span>行，每行两个用空格隔开的整数<span class="hljs-selector-tag">A</span>和<span class="hljs-selector-tag">B</span>，表示选择从<span class="hljs-selector-tag">A</span>到<span class="hljs-selector-tag">B</span>的所有牛（<span class="hljs-number">1</span> ≤ <span class="hljs-selector-tag">A</span> ≤ <span class="hljs-selector-tag">B</span> ≤ N）<br>【输出】<br>共<span class="hljs-selector-tag">Q</span>行，每行一个整数，代表每个询问的答案。<br>输入样例：<br><span class="hljs-number">6</span> <span class="hljs-number">3</span><br><span class="hljs-number">1</span><br><span class="hljs-number">7</span><br><span class="hljs-number">3</span><br><span class="hljs-number">4</span><br><span class="hljs-number">2</span><br><span class="hljs-number">5</span><br><span class="hljs-number">1</span> <span class="hljs-number">5</span><br><span class="hljs-number">4</span> <span class="hljs-number">6</span><br><span class="hljs-number">2</span> <span class="hljs-number">2</span> <br>输出样例：  <br><span class="hljs-number">6</span><br><span class="hljs-number">3</span><br><span class="hljs-number">0</span><br></code></pre></td></tr></table></figure>
+
+<p>对于这个例子，大牛们可以写个线段树，新手就模拟吧。</p>
+<figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs mel"><span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=q;i++)<br>&#123;<br>    scanf(“%d%d”,&amp;a,&amp;b);<br>    <span class="hljs-keyword">int</span> <span class="hljs-keyword">min</span>=INT_MAX,<span class="hljs-keyword">max</span>=INT_MIN;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=a;i&lt;=b;i++)<br>    &#123;<br>        <span class="hljs-keyword">if</span>(h[i]&lt;<span class="hljs-keyword">min</span>)<span class="hljs-keyword">min</span>=h[i];<br>        <span class="hljs-keyword">if</span>(h[i]&gt;<span class="hljs-keyword">max</span>)<span class="hljs-keyword">max</span>=h[i];<br>    &#125;<br>    printf(“%d\n”,<span class="hljs-keyword">max</span>-<span class="hljs-keyword">min</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="4、万能钥匙——DFS"><a href="#4、万能钥匙——DFS" class="headerlink" title="4、万能钥匙——DFS"></a>4、万能钥匙——DFS</h3><p>DFS是图论中的重要算法，骗分导论定理：<strong>DFS是万能的</strong></p>
+<p>比如说，</p>
+<p>一些动态规划题，可以DFS；</p>
+<p>数学题，可以DFS；</p>
+<p>剪枝的题，更能DFS。</p>
+<p>例题：NOIP2003，采药</p>
+<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs abnf">题目描述 Description<br>辰辰是个天资聪颖的孩子，他的梦想是成为世界上最伟大的医师。为此，他想拜附近最有威望的医师为师。医师为了判断他的资质，给他出了一个难题。医师把他带到一个到处都是草药的山洞里对他说：“孩子，这个山洞里有一些不同的草药，采每一株都需要一些时间，每一株也有它自身的价值。我会给你一段时间，在这段时间里，你可以采到一些草药。如果你是一个聪明的孩子，你应该可以让采到的草药的总价值最大。”<br>如果你是辰辰，你能完成这个任务吗？<br> <br>输入描述：<br>输入第一行有两个整数T（<span class="hljs-number">1</span>&lt;<span class="hljs-operator">=</span>T&lt;<span class="hljs-operator">=</span><span class="hljs-number">1000</span>）和M（<span class="hljs-number">1</span>&lt;<span class="hljs-operator">=</span>M&lt;<span class="hljs-operator">=</span><span class="hljs-number">100</span>），用一个空格隔开，T代表总共能够用来采药的时间，M代表山洞里的草药的数目。接下来的M行每行包括两个在<span class="hljs-number">1</span>到<span class="hljs-number">100</span>之间（包括<span class="hljs-number">1</span>和<span class="hljs-number">100</span>）的整数，分别表示采摘某株草药的时间和这株草药的价值。<br> <br>输出描述：<br>输出包括一行，这一行只包含一个整数，表示在规定的时间内，可以采到的草药的最大总价值。<br>样例输入：<br><span class="hljs-number">70</span> <span class="hljs-number">3</span><br><span class="hljs-number">71</span> <span class="hljs-number">100</span><br><span class="hljs-number">69</span> <span class="hljs-number">1</span><br><span class="hljs-number">1</span> <span class="hljs-number">2</span><br>样例输出：<br><span class="hljs-number">3</span><br>数据范围及提示<br>对于<span class="hljs-number">30</span>%的数据，M&lt;<span class="hljs-operator">=</span><span class="hljs-number">10</span>；<br>对于全部的数据，M&lt;<span class="hljs-operator">=</span><span class="hljs-number">100</span>。<br></code></pre></td></tr></table></figure>
+<figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs llvm"><span class="hljs-type">void</span> DFS(int d<span class="hljs-punctuation">,</span>int <span class="hljs-keyword">c</span>)<br>&#123;<br>if(d<span class="hljs-operator">=</span><span class="hljs-operator">=</span>n)<br>	&#123;if(<span class="hljs-keyword">c</span>&gt;ans)ans<span class="hljs-operator">=</span><span class="hljs-keyword">c</span><span class="hljs-comment">; return;&#125;</span><br>DFS(d<span class="hljs-number">+1</span><span class="hljs-punctuation">,</span><span class="hljs-keyword">c</span>+w[i])<span class="hljs-comment">;</span><br>DFS(d<span class="hljs-number">+1</span><span class="hljs-punctuation">,</span><span class="hljs-keyword">c</span>)<span class="hljs-comment">;</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<p>骗分代码如上：</p>
+<h3 id="5、猜想—输出随机数"><a href="#5、猜想—输出随机数" class="headerlink" title="5、猜想—输出随机数"></a>5、猜想—输出随机数</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;stdlib.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;time.h&gt;</span></span><br><span class="hljs-comment">//以上两个头文件必须加</span><br><span class="hljs-built_in">srand</span>(<span class="hljs-built_in">time</span>(<span class="hljs-literal">NULL</span>));<br><span class="hljs-comment">//输出随机数前执行此语句</span><br><span class="hljs-built_in">printf</span>(“%d”,<span class="hljs-built_in">rand</span>()%X);<br><span class="hljs-comment">//输出一个0~X-1的随机整数。</span><br></code></pre></td></tr></table></figure>
+<p>这种方法适用于输出一个整数（或判断是否）的题目中，答案的范围<strong>越小越好</strong>。</p>
+<p>据说，在NOIP2013中，有人最后一题不会，愤然打了个随机数，结果得了 70 分！！！。</p>
+<h3 id="6、猜测答案"><a href="#6、猜测答案" class="headerlink" title="6、猜测答案"></a>6、猜测答案</h3><p>有些时候，问题的答案可能很有特点：对于大多数情况，答案是一样的。这时，就该骗分了。</p>
+<p>发掘出这个答案，然后直接输出。</p>
+<p>需要运用《骗分导论》第3章中学到的知识，先写出朴素算法，然后造一些数据，可能就会发现规律。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs css">炸毁计划<br>【问题描述】<br>皇军侵占了通往招远的黄金要道。为了保护渤海通道的安全，使得黄金能够顺利地运送到敌后战略总指挥地延安，从而购买战需武器，所以我们要通过你的程序确定这条战略走廊是否安全。<br> <br>已知我们有N座小岛，只有使得每一个小岛都能与其他任意一个小岛联通才能保证走廊的安全。每个小岛之间只能通过若干双向联通的桥保持联系，已知有M座桥(Ai,Bi)表示第<span class="hljs-selector-tag">i</span>座桥连接了Ai与Bi这两座城市。<br> <br>现在，敌人的炸药只能炸毁其中一座桥，请问在仅仅炸毁这一座桥的情况下，能否保证所有岛屿安全，都能联通起来。<br> <br>现在给出<span class="hljs-selector-tag">Q</span>个询问Ci，其中Ci表示桥梁编号，桥梁的编号按照输入顺序编号。每个询问表示在仅仅炸毁第Ci座桥的情况下能否保证所有岛屿安全。如果可以，在输出文件当中，对应输入顺序输出yes，否则输出no（输出为半角英文单词，区分大小写，默认为小写，不含任何小写符号，每行输出一个空格，忽略文末空格）。<br> <br>【输入格式】<br>第一行 三个整数N，M，<span class="hljs-selector-tag">Q</span>，分别表示岛屿的个数，桥梁的个数和询问的个数。<br>第二行到第M+<span class="hljs-number">1</span>行 每行两个整数。第<span class="hljs-selector-tag">i</span>+<span class="hljs-number">1</span>行有两个整数Ai Bi表示这个桥梁的属性。<br>第M+<span class="hljs-number">2</span>行 有<span class="hljs-selector-tag">Q</span>个整数Ci表示查询。<br> <br>【输出格式】<br><span class="hljs-selector-tag">Q</span>行，表示查询结果。<br> <br>【样例】<br><span class="hljs-number">2</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span><br><span class="hljs-number">1</span> <span class="hljs-number">2</span><br><span class="hljs-number">1</span>    <br>no<br> <br>【样例范围】<br>对于<span class="hljs-number">80%</span>的数据，N≤<span class="hljs-number">100</span>。<br>对于<span class="hljs-number">100%</span>的数据，N≤<span class="hljs-number">1000</span>，N,<span class="hljs-selector-tag">Q</span>≤M≤<span class="hljs-number">2000</span> 。<br></code></pre></td></tr></table></figure>
+
+<p>问题来了，<strong>那么多座桥，炸一座就破坏岛屿的联系，可能性微乎其微</strong>（除非特别设计数据）。骗分策略就出来了：<strong>对于所有询问，输出 yes. 此算法得 80 分。</strong></p>
+<h3 id="7、-小数据杀手—打表"><a href="#7、-小数据杀手—打表" class="headerlink" title="7、 小数据杀手—打表"></a>7、 小数据杀手—打表</h3><figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs excel">NOIP2003 栈<br> <br>题目描述<br> <br>栈是计算机中经典的数据结构，简单的说，栈就是限制在一端进行插入删除操作的线性表。<br>栈有两种最重要的操作，即pop（从栈顶弹出一个元素）和push（将一个元素进栈）。<br>栈的重要性不言自明，任何一门数据结构的课程都会介绍栈。宁宁同学在复习栈的基本概念时，想到了一个书上没有讲过的问题，而他自己无法给出答案，所以需要你的帮忙<br>宁宁考虑的是这样一个问题：一个操作数序列，从<span class="hljs-number">1</span>，<span class="hljs-number">2</span>，一直到<span class="hljs-built_in">n</span>（图示为<span class="hljs-number">1</span>到<span class="hljs-number">3</span>的情况），栈A的深度大于<span class="hljs-built_in">n</span>。<br> <br>现在可以进行两种操作，<br> <br><span class="hljs-number">1</span>.将一个数，从操作数序列的头端移到栈的头端（对应数据结构栈的push操作）<br> <br><span class="hljs-number">2</span>. 将一个数，从栈的头端移到输出序列的尾端（对应数据结构栈的pop操作）<br> <br>使用这两种操作，由一个操作数序列就可以得到一系列的输出序列，下图所示为由<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span>生成序列<span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">1</span>的过程。（原始状态如上图所示） 。<br> <br>你的程序将对给定的<span class="hljs-built_in">n</span>，计算并输出由操作数序列<span class="hljs-number">1</span>，<span class="hljs-number">2</span>，…，<span class="hljs-built_in">n</span>经过操作可能得到的输出序列的总数。<br> <br>输入描述<br>输入文件只含一个整数<span class="hljs-built_in">n</span>（<span class="hljs-number">1</span>≤<span class="hljs-built_in">n</span>≤<span class="hljs-number">18</span>）<br> <br>输出描述<br>输出文件只有一行，即可能输出序列的总数目<br> <br>样例输入<br><span class="hljs-number">3</span><br>样例输出<br><span class="hljs-number">5</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">int</span> a[<span class="hljs-number">18</span>]=&#123;<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">5</span>,<span class="hljs-number">14</span>,<span class="hljs-number">42</span>,<span class="hljs-number">132</span>,<span class="hljs-number">429</span>,<span class="hljs-number">1430</span>,<span class="hljs-number">4862</span>,<span class="hljs-number">16796</span>,<span class="hljs-number">58786</span>,<span class="hljs-number">208012</span>,<span class="hljs-number">742900</span>,<span class="hljs-number">2674440</span>,<span class="hljs-number">9694845</span>,<span class="hljs-number">35357670</span>,<span class="hljs-number">129644790</span>,<span class="hljs-number">477638700</span>&#125;;<br><br><span class="hljs-attribute">scanf</span>(“%d”,&amp;n);<br> <br><span class="hljs-attribute">printf</span>(“%d”,ans[n-<span class="hljs-number">1</span>]);<br></code></pre></td></tr></table></figure>
+<p>在OI考试中最后难的题数据最后的几个，他们往往不会创造新的数据，此时就可以直接输出最后几个数据了。</p>
+<p><img src="https://cdn.rthsoftware.cn/cached-08752e028a4bcc89d1a2a03e04c31f2b-avif/mapbad/1e34e78f64edab76a4b9a1d49b51ba76736798c7.png" srcset="/img/loading.gif" lazyload alt="image|331x498"></p>
+<p>怎么进队拿国一?看懂洛谷A+B。刷题是一种出路，枚举是一种思想。打表是一种勇气，搜索是一种信仰。剪枝是一种精神，骗分是一种日常。爆零是一种宿命，WA是一种绝望。TLE是一种痛苦，RE是一种放弃。UKE是一种无奈，AC是一种原谅。弃赛是一种颓废，AK是一种梦想。吊打是一种必然，进队是一种奢望。</p>
+<p>模拟只会猜题意，贪心只能过样例，数学上来先打表，组合数学靠运气，DP一般看规律，计算几何瞎暴力，图论强行套模板，数论只会GCD，递归递推伤不起，搜索茫然TLE，分治做得像枚举，暴力枚举数第一，数据结构干瞪眼，算法建树眼迷离，怒刷水题找信心，考试一来全懵逼，天若有情天亦老，我为暴力续一秒。十年OI一场空，不开long long见祖宗。比赛时节家家雨，OI赛场全WA。超时不会优化，只能原地爆炸。数学是火，点亮物理的灯；物理是灯，照亮化学的路；化学是路，通向生物的坑；生物是坑，埋葬学理的人。 文言是火，点亮历史宫灯；历史是灯，照亮社会之路；社会是路，通向哲学大坑；哲学是坑，埋葬文科生。 值得一看的东西~</p>
+<p>$\Huge The\ End$<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="这篇的原帖在[这里](https://discourse.xinyoudui.com/t/topic/20256)，也是我自己发的。">[1]</span></a></sup></p>
+<section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span>这篇的原帖在<a target="_blank" rel="noopener" href="https://discourse.xinyoudui.com/t/topic/20256">这里</a>，也是我自己发的。
+<a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%BC%96%E7%A8%8B/" class="category-chain-item">编程</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E5%8E%9F%E5%88%9B/" class="print-no-link">#原创</a>
+      
+        <a href="/tags/%E6%95%99%E7%A8%8B/" class="print-no-link">#教程</a>
+      
+        <a href="/tags/%E7%AC%94%E8%AE%B0/" class="print-no-link">#笔记</a>
+      
+        <a href="/tags/%E8%8A%B1%E9%87%8C%E8%83%A1%E5%93%A8/" class="print-no-link">#花里胡哨</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+   <!--
+    <p class="note note-primary">
+  <strong> 本文作者: </strong><a href="/">Joshua0729</a> <br>
+  <strong> 本文链接: </strong><a href="https://joshua0729.github.io/2025/07/17/%E9%AA%97%E5%88%86%E5%AF%BC%E8%AE%BA/">https://joshua0729.github.io/2025/07/17/%E9%AA%97%E5%88%86%E5%AF%BC%E8%AE%BA/</a> <br>
+  <strong> 版权声明: </strong>
+      
+      
+          <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+          <span class="hint--top hint--rounded" aria-label="BY - 署名">
+              <i class="iconfont icon-cc-by"></i>
+          </span>
+          </a>
+      
+      
+  </p>
+  -->
+  
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>骗分导论</div>
+      <div>https://joshua0729.github.io/2025/07/17/骗分导论/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Joshua0729</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025-07-17 19:07:00.3737</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2025-07-23 16:07:13.3333</div>
+        </div>
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2025/07/18/%E5%A4%8F%E4%BB%A4%E8%90%A57-18%E6%80%BB%E7%BB%93/" title="夏令营7.18总结">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">夏令营7.18总结</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/07/17/%E5%A4%8F%E4%BB%A4%E8%90%A57-17%E6%80%BB%E7%BB%93/" title="夏令营7.17总结">
+                        <span class="hidden-mobile">夏令营7.17总结</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+      
+<a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
+<div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> <head><style> .sel{ margin:5px; justify-content:space-around; }</style></head> <p>每日一句：<a id="rainbow" href=' target="_blank">🌈 获取中...</a></p> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  var relativeDate = function() {
+    var updatedTime = document.getElementById('updated-time');
+    if (updatedTime) {
+      var text = updatedTime.textContent;
+      var reg = /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:Z|[+-]\d{2}:\d{2})/;
+      var matchs = text.match(reg);
+      if (matchs) {
+        var relativeTime = moment(matchs[0]).fromNow();
+        updatedTime.textContent = text.replace(reg, relativeTime);
+      }
+      updatedTime.style.display = '';
+    }
+  };
+  Fluid.utils.createScript('https://lib.baomitu.com/moment.js/2.29.4/moment.min.js', function() {
+    if (!'zh-cn'.startsWith('en')) {
+      Fluid.utils.createScript('https://lib.baomitu.com/moment.js/2.29.4/locale/zh-cn.min.js', function() {
+        relativeDate();
+      });
+    } else {
+      relativeDate();
+    }
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  
+<script src="/js/englishwordshow.js"></script>
+<script src="/js/black_point_under.js"></script>
+<script src="/js/flower_flow_down.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

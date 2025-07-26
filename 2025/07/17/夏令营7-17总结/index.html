@@ -1,0 +1,849 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/icon.png">
+  <link rel="icon" href="/img/icon.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Joshua0729">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="昨天休息所以没有总结。 数上问题数的定义和性质什么是树？  有$n-1$条边且连通 有$n-1$条边且无环 任意两点之间有唯一路径  T1 构图判树直接找所有的包含区间，找到就加边，如果超过了，就输出no。 条件：数只有$n-1$条变F. 有根数指定一个顶点r为根节点，就可以解决很多问题。 节点到根节点的深度称为深度，深度相同的节点位于同一层。高度是深度的最大值。 还有一堆： ![屏幕截图 202">
+<meta property="og:type" content="article">
+<meta property="og:title" content="夏令营7.17总结">
+<meta property="og:url" content="https://joshua0729.github.io/2025/07/17/%E5%A4%8F%E4%BB%A4%E8%90%A57-17%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="Joshua0729的个人博客">
+<meta property="og:description" content="昨天休息所以没有总结。 数上问题数的定义和性质什么是树？  有$n-1$条边且连通 有$n-1$条边且无环 任意两点之间有唯一路径  T1 构图判树直接找所有的包含区间，找到就加边，如果超过了，就输出no。 条件：数只有$n-1$条变F. 有根数指定一个顶点r为根节点，就可以解决很多问题。 节点到根节点的深度称为深度，深度相同的节点位于同一层。高度是深度的最大值。 还有一堆： ![屏幕截图 202">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.rthsoftware.cn/cached-a5c9cba9f3be6f392e92ad6fb737889f-avif/mapbad/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-07-17%20143049.png">
+<meta property="article:published_time" content="2025-07-17T06:32:36.000Z">
+<meta property="article:modified_time" content="2025-07-23T08:35:13.570Z">
+<meta property="article:author" content="Joshua0729">
+<meta property="article:tag" content="原创">
+<meta property="article:tag" content="夏令营">
+<meta property="article:tag" content="总结">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cdn.rthsoftware.cn/cached-a5c9cba9f3be6f392e92ad6fb737889f-avif/mapbad/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-07-17%20143049.png">
+  
+  
+  
+  <title>夏令营7.17总结 - Joshua0729的个人博客</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/gundongtiaocolor.css">
+<link rel="stylesheet" href="/css/typingchanging.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"joshua0729.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":6},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Joshua0729的个人博客</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://cdn.rthsoftware.cn/cached-a5c9cba9f3be6f392e92ad6fb737889f-avif/mapbad/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-07-17%20143049.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="夏令营7.17总结"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-07-17 14:32" pubdate>
+          2025年7月17日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.1k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          9 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">夏令营7.17总结</h1>
+            
+              <p id="updated-time" class="note note-info" style="display: none">
+                
+                  
+                    本文最后更新于 2025-07-23T16:35:13+08:00
+                  
+                  
+
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <p>昨天休息所以没有总结。</p>
+<h1 id="数上问题"><a href="#数上问题" class="headerlink" title="数上问题"></a>数上问题</h1><h2 id="数的定义和性质"><a href="#数的定义和性质" class="headerlink" title="数的定义和性质"></a>数的定义和性质</h2><p>什么是树？</p>
+<ul>
+<li>有$n-1$条边且连通</li>
+<li>有$n-1$条边且无环</li>
+<li>任意两点之间有唯一路径</li>
+</ul>
+<h3 id="T1-构图判树"><a href="#T1-构图判树" class="headerlink" title="T1 构图判树"></a>T1 构图判树</h3><p>直接找所有的包含区间，找到就加边，如果超过了，就输出<code>no</code>。</p>
+<p>条件：数只有$n-1$条变F.</p>
+<h2 id="有根数"><a href="#有根数" class="headerlink" title="有根数"></a>有根数</h2><p>指定一个顶点<code>r</code>为根节点，就可以解决很多问题。</p>
+<p>节点到根节点的深度称为深度，深度相同的节点位于同一层。高度是深度的最大值。</p>
+<p>还有一堆：</p>
+<p>![屏幕截图 2025-07-17 090206.png (1152×611)](<a target="_blank" rel="noopener" href="https://cdn.rthe.cn/cached-291d9a866a7015d6cbd9ededa3895386-avif/mapbad/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE">https://cdn.rthe.cn/cached-291d9a866a7015d6cbd9ededa3895386-avif/mapbad/屏幕截图</a> 2025-07-17 090206.png)</p>
+<h2 id="树上DFS"><a href="#树上DFS" class="headerlink" title="树上DFS"></a>树上DFS</h2><p>白点：没访问过</p>
+<p>黑点：已经访问但是没有回溯</p>
+<p>黑点：已返回且已回溯</p>
+<p><code>dfs</code>时可以使用时间戳。分别标记访问到时和回溯到时。根节点标记为时间0。</p>
+<h3 id="T2-数后代"><a href="#T2-数后代" class="headerlink" title="T2 数后代"></a>T2 数后代</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">int</span> cnt[N];<br>vector&lt;pair&lt;<span class="hljs-type">int</span>,<span class="hljs-type">int</span>&gt;&gt; f[N];<br>vector&lt;<span class="hljs-type">int</span>&gt; g[N];<br><br><span class="hljs-type">int</span> ans[N];<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">dfs</span><span class="hljs-params">(<span class="hljs-type">int</span> x,<span class="hljs-type">int</span> fa)</span></span>&#123;<br>    dep[x]=dep[fa]<span class="hljs-number">+1</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">auto</span> p:f[x])&#123;<br>        <span class="hljs-type">int</span> di=p.first,i=p.second;<br>        ans[i]-=cnt[di];<br>    &#125;<br>    cnt[dep[x]]++;<span class="hljs-comment">//放这里！！！！！！！！！！</span><br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">auto</span> y:g[x])&#123;<br>        <span class="hljs-keyword">if</span>(y!=g[x])&#123;<br>            <span class="hljs-built_in">dfs</span>(y,x);<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">auto</span> p:f[x])&#123;<br>        <span class="hljs-type">int</span> di=p.first,i=p.second;<br>        ans[i]+=cnt[di];<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="T3-树上炸弹"><a href="#T3-树上炸弹" class="headerlink" title="T3 树上炸弹"></a>T3 树上炸弹</h3><p>核心思路就是用只能往下的炸弹模拟既能上又能下的炸弹，再扩展。</p>
+<p>也可以<code>dp</code>：</p>
+<p>令$f[u][i]$为子树$u$里的炸弹$(p,w)$中，满足$i\le w-d(p,u)$的有多少个。那么：</p>
+<ul>
+<li>在子树$u$中，能炸到点$u$的炸弹数量就是$f[u][0]$。</li>
+<li>在子树$a_1$里但不在子树$u$里，能炸到$u$的炸弹数量就是$f[a_1][1]-f[u][2]$。</li>
+<li>在子树$a_2$里但不在子树$a_1$里，能炸到$u$的炸弹数量就是$f[a_2][2]-f[1_1][3]$。</li>
+<li>………..</li>
+</ul>
+<h3 id="T4-Padel-Prize-Pursuit"><a href="#T4-Padel-Prize-Pursuit" class="headerlink" title="T4 Padel Prize Pursuit"></a>T4 Padel Prize Pursuit</h3><p>考虑一个有$m-1$个节点的图，点从$0$到$m$编号。每一个点代表了一枚奖牌。也就是一天或一场比赛。若第$i$枚奖牌下一次易主是在第$j$场比赛之后，那么就从$i$向$j$连接一条边。</p>
+<p>考虑从根节点向下走到一个点$v$的过程。我们维护一个数组$d[0…n-1]$，当我们走到点$v$时，$d[i]$就是人$i$持有奖牌$v$个晚上。</p>
+<p>在维护数组$d$时，顺便维护$d$的<code>argmax</code>（即$d$在哪个下标$i$的位置取得了最大值）。</p>
+<h2 id="k祖先问题"><a href="#k祖先问题" class="headerlink" title="k祖先问题"></a>k祖先问题</h2><p>给你一个有$n$个点的有根树，点从$1$编号到$n$。回答$q$个询问，询问内容为<em>求点$u$的第$k$个祖先</em>。</p>
+<p>这里使用倍增。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">const</span> <span class="hljs-type">int</span> log=<span class="hljs-built_in">bitwidth</span>(n);<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">jump</span><span class="hljs-params">(<span class="hljs-type">int</span> u,<span class="hljs-type">int</span> k)</span></span>&#123;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;log;i++)&#123;<br>        <span class="hljs-keyword">if</span>(k&gt;&gt;i&amp;<span class="hljs-number">1</span>)&#123;<br>            u=anc[u][i];<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> u;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="CF1175E【非例题】"><a href="#CF1175E【非例题】" class="headerlink" title="CF1175E【非例题】"></a>CF1175E【非例题】</h3><p>预处理：</p>
+<ul>
+<li>把区间按左端点从小到大排序，左端点相同的按照右端点从大到小排序。</li>
+<li>去除无用的区间</li>
+<li>找出每个区间的父节点</li>
+<li>计算出倍增表</li>
+</ul>
+<p>对于每个询问$[x,y]$：</p>
+<ul>
+<li>二分查找最后一个满足左端点小于等于$x$的区间，设此区间的编号为$i$。</li>
+<li>在$i$所在的有根树上，从节点$i$出发，向上跳到第一个右端点大于等于$y$的区间，计算跳过的距离。</li>
+</ul>
+<h2 id="LCA问题"><a href="#LCA问题" class="headerlink" title="LCA问题"></a>LCA问题</h2><p>给一棵有根树，回答$t$个问题：求点$u$与点$v$的最近公共祖先。</p>
+<h3 id="方法1-使用is-anc函数"><a href="#方法1-使用is-anc函数" class="headerlink" title="方法1 使用is_anc函数"></a>方法1 使用<code>is_anc</code>函数</h3><p>有一个函数<code>is_anc(x,y)</code>来判断点$x$是不是点$y$的祖先，那么就可以实现这个问题。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">lca</span><span class="hljs-params">(<span class="hljs-type">int</span> u,<span class="hljs-type">int</span> v)</span></span>&#123;<br>    <span class="hljs-keyword">if</span>(<span class="hljs-built_in">is_anc</span>(u,v)) <span class="hljs-keyword">return</span> u;<br>    <span class="hljs-keyword">if</span>(<span class="hljs-built_in">is_anc</span>(v,u)) <span class="hljs-keyword">return</span> v;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=log<span class="hljs-number">-1</span>;i&gt;=<span class="hljs-number">0</span>;i++)&#123;<br>        <span class="hljs-keyword">if</span>(anc[u][i]&amp;&amp;!<span class="hljs-built_in">is_anc</span>(anc[u][i],v))&#123;<br>            u=anc[u][i];<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> anc[u][<span class="hljs-number">0</span>];<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="方法2-使用节点深度"><a href="#方法2-使用节点深度" class="headerlink" title="方法2 使用节点深度"></a>方法2 使用节点深度</h3><p>如果已经求出了每个点$u$的深度$depth[u]$，那么就可以求$u$和$v$的最近公共祖先。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">lca</span><span class="hljs-params">(<span class="hljs-type">int</span> u,<span class="hljs-type">int</span> v)</span></span>&#123;<br>    <span class="hljs-keyword">if</span>(depth[u]&lt;depth[v]) <span class="hljs-built_in">swap</span>(u,v);<br>    u=<span class="hljs-built_in">jump</span>(u,depth[u]-depth[v]);<br>    <span class="hljs-keyword">if</span>(u==v) <span class="hljs-keyword">return</span> u;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=log<span class="hljs-number">-1</span>;i&gt;=<span class="hljs-number">0</span>;i--)&#123;<br>        <span class="hljs-keyword">if</span>(anc[u][i]!=anc[v][i])&#123;<br>            u=anc[u][i];<br>            v=anc[v][i];<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> anc[u][<span class="hljs-number">0</span>];<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="T6-【模板】-最近公共祖先"><a href="#T6-【模板】-最近公共祖先" class="headerlink" title="T6 【模板】 最近公共祖先"></a>T6 【模板】 最近公共祖先</h3><p>这题用上面两种方法任选其一完成即可。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%BC%96%E7%A8%8B/" class="category-chain-item">编程</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E7%BC%96%E7%A8%8B/%E6%80%BB%E7%BB%93/" class="category-chain-item">总结</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E5%8E%9F%E5%88%9B/" class="print-no-link">#原创</a>
+      
+        <a href="/tags/%E5%A4%8F%E4%BB%A4%E8%90%A5/" class="print-no-link">#夏令营</a>
+      
+        <a href="/tags/%E6%80%BB%E7%BB%93/" class="print-no-link">#总结</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+   <!--
+    <p class="note note-primary">
+  <strong> 本文作者: </strong><a href="/">Joshua0729</a> <br>
+  <strong> 本文链接: </strong><a href="https://joshua0729.github.io/2025/07/17/%E5%A4%8F%E4%BB%A4%E8%90%A57-17%E6%80%BB%E7%BB%93/">https://joshua0729.github.io/2025/07/17/%E5%A4%8F%E4%BB%A4%E8%90%A57-17%E6%80%BB%E7%BB%93/</a> <br>
+  <strong> 版权声明: </strong>
+      
+      
+          <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+          <span class="hint--top hint--rounded" aria-label="BY - 署名">
+              <i class="iconfont icon-cc-by"></i>
+          </span>
+          </a>
+      
+      
+  </p>
+  -->
+  
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>夏令营7.17总结</div>
+      <div>https://joshua0729.github.io/2025/07/17/夏令营7-17总结/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Joshua0729</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025-07-17 14:07:00.3636</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2025-07-23 16:07:57.1313</div>
+        </div>
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2025/07/17/%E9%AA%97%E5%88%86%E5%AF%BC%E8%AE%BA/" title="骗分导论">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">骗分导论</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/07/15/%E5%A4%8F%E4%BB%A4%E8%90%A57-15%E6%80%BB%E7%BB%93/" title="夏令营7.15总结">
+                        <span class="hidden-mobile">夏令营7.15总结</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+      
+<a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
+<div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> <head><style> .sel{ margin:5px; justify-content:space-around; }</style></head> <p>每日一句：<a id="rainbow" href=' target="_blank">🌈 获取中...</a></p> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  var relativeDate = function() {
+    var updatedTime = document.getElementById('updated-time');
+    if (updatedTime) {
+      var text = updatedTime.textContent;
+      var reg = /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:Z|[+-]\d{2}:\d{2})/;
+      var matchs = text.match(reg);
+      if (matchs) {
+        var relativeTime = moment(matchs[0]).fromNow();
+        updatedTime.textContent = text.replace(reg, relativeTime);
+      }
+      updatedTime.style.display = '';
+    }
+  };
+  Fluid.utils.createScript('https://lib.baomitu.com/moment.js/2.29.4/moment.min.js', function() {
+    if (!'zh-cn'.startsWith('en')) {
+      Fluid.utils.createScript('https://lib.baomitu.com/moment.js/2.29.4/locale/zh-cn.min.js', function() {
+        relativeDate();
+      });
+    } else {
+      relativeDate();
+    }
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  
+<script src="/js/englishwordshow.js"></script>
+<script src="/js/black_point_under.js"></script>
+<script src="/js/flower_flow_down.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

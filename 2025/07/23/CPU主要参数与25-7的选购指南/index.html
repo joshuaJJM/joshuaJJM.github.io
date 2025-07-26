@@ -1,0 +1,812 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/icon.png">
+  <link rel="icon" href="/img/icon.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Joshua0729">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="CPU基础知识与2025年7月CPU的选购指南一、CPU 基础参数详解（一）核心数核心数指的是 CPU 内执行指令的运算核心数量。简单来说，多核心的 CPU 就像是拥有多个 “小脑袋” 同时工作。例如，4 核心的 CPU 能够同时处理 4 个线程任务，这极大地提高了多线程任务的处理能力。在如今的多任务处理环境下，无论是同时运行多个办公软件，还是进行视频编辑时同时处理视频渲染、音频编辑等任务，多核心">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CPU主要参数与25.7的选购指南">
+<meta property="og:url" content="https://joshua0729.github.io/2025/07/23/CPU%E4%B8%BB%E8%A6%81%E5%8F%82%E6%95%B0%E4%B8%8E25-7%E7%9A%84%E9%80%89%E8%B4%AD%E6%8C%87%E5%8D%97/index.html">
+<meta property="og:site_name" content="Joshua0729的个人博客">
+<meta property="og:description" content="CPU基础知识与2025年7月CPU的选购指南一、CPU 基础参数详解（一）核心数核心数指的是 CPU 内执行指令的运算核心数量。简单来说，多核心的 CPU 就像是拥有多个 “小脑袋” 同时工作。例如，4 核心的 CPU 能够同时处理 4 个线程任务，这极大地提高了多线程任务的处理能力。在如今的多任务处理环境下，无论是同时运行多个办公软件，还是进行视频编辑时同时处理视频渲染、音频编辑等任务，多核心">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://q8.itc.cn/images01/20241007/62dd7004a108413f978d1fae1cafa027.png">
+<meta property="article:published_time" content="2025-07-23T10:36:53.000Z">
+<meta property="article:modified_time" content="2025-07-23T10:48:12.741Z">
+<meta property="article:author" content="Joshua0729">
+<meta property="article:tag" content="原创">
+<meta property="article:tag" content="电脑硬件">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://q8.itc.cn/images01/20241007/62dd7004a108413f978d1fae1cafa027.png">
+  
+  
+  
+  <title>CPU主要参数与25.7的选购指南 - Joshua0729的个人博客</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/gundongtiaocolor.css">
+<link rel="stylesheet" href="/css/typingchanging.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"joshua0729.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":6},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Joshua0729的个人博客</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://q8.itc.cn/images01/20241007/62dd7004a108413f978d1fae1cafa027.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="CPU主要参数与25.7的选购指南"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-07-23 18:36" pubdate>
+          2025年7月23日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.9k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          16 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">CPU主要参数与25.7的选购指南</h1>
+            
+              <p id="updated-time" class="note note-info" style="display: none">
+                
+                  
+                    本文最后更新于 2025-07-23T18:48:12+08:00
+                  
+                  
+
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="CPU基础知识与2025年7月CPU的选购指南"><a href="#CPU基础知识与2025年7月CPU的选购指南" class="headerlink" title="CPU基础知识与2025年7月CPU的选购指南"></a>CPU基础知识与2025年7月CPU的选购指南</h1><h2 id="一、CPU-基础参数详解"><a href="#一、CPU-基础参数详解" class="headerlink" title="一、CPU 基础参数详解"></a>一、CPU 基础参数详解</h2><h3 id="（一）核心数"><a href="#（一）核心数" class="headerlink" title="（一）核心数"></a>（一）核心数</h3><p>核心数指的是 CPU 内执行指令的运算核心数量。简单来说，多核心的 CPU 就像是拥有多个 “小脑袋” 同时工作。例如，4 核心的 CPU 能够同时处理 4 个线程任务，这极大地提高了多线程任务的处理能力。在如今的多任务处理环境下，无论是同时运行多个办公软件，还是进行视频编辑时同时处理视频渲染、音频编辑等任务，多核心 CPU 都能展现出明显优势。像进行 3D 建模时，多个核心可以分别处理模型的不同部分，大大缩短建模时间。</p>
+<h3 id="（二）线程数"><a href="#（二）线程数" class="headerlink" title="（二）线程数"></a>（二）线程数</h3><p>线程数通过超线程技术得以实现，它能让一个物理核心模拟出多个逻辑核心来并行处理任务。以 Intel 的超线程技术为例，一个核心可以拥有两个线程。对于 8 核心 16 线程的 CPU 而言，在多线程任务处理方面表现卓越。在服务器应用中，需要同时响应大量用户的请求，多线程的 CPU 能够将不同用户的请求分配到各个线程进行处理，保证服务器高效稳定运行。在日常使用中，多线程也有助于提升系统的流畅度，比如在后台进行文件压缩的同时，前台依然可以流畅地浏览网页。</p>
+<h3 id="（三）主频"><a href="#（三）主频" class="headerlink" title="（三）主频"></a>（三）主频</h3><p>主频即 CPU 内核工作的时钟频率，单位为 GHz（吉赫兹）。可以将其理解为 CPU 运算的 “速度”，主频越高，在一个时钟周期内完成的指令数就越多，运算速度理论上也就越快。例如，一款主频为 3.6GHz 的 CPU，每秒能够产生 36 亿个时钟脉冲。在一些对单核性能要求较高的应用中，如大多数的日常办公软件、网页浏览，以及部分对单核性能敏感的游戏，较高的主频能够带来更流畅的使用体验，减少卡顿现象。</p>
+<h3 id="（四）缓存"><a href="#（四）缓存" class="headerlink" title="（四）缓存"></a>（四）缓存</h3><p>缓存分为一级缓存（L1 Cache）、二级缓存（L2 Cache）和三级缓存（L3 Cache）。缓存是高速存储区域，用于存储 CPU 频繁访问的数据和指令。其中，L1 缓存速度最快，但容量最小；L3 缓存容量最大，但速度相对较慢。缓存的存在就像是在 CPU 附近设置了一个 “小型仓库”，当 CPU 需要数据时，优先从缓存中读取，大大减少了从内存中读取数据的时间，提高了数据访问效率。在运行大型游戏或复杂软件时，缓存能够提前存储常用数据，避免频繁从内存调取数据造成的卡顿，使游戏加载速度更快，软件运行更流畅。</p>
+<h3 id="（五）制程工艺"><a href="#（五）制程工艺" class="headerlink" title="（五）制程工艺"></a>（五）制程工艺</h3><p>制程工艺指的是在硅材料上生产 CPU 时内部电路与晶体管的精细程度，单位为纳米（nm）。制程工艺越小，晶体管体积越小，这样就可以在相同面积的芯片上集成更多晶体管，从而提升性能并降低功耗。例如，台积电的 3nm 工艺相较于之前的工艺，能够在提升 CPU 性能的同时，降低其能耗，减少发热。对于笔记本电脑等对散热和续航有较高要求的设备来说，先进的制程工艺尤为重要，它能让笔记本在性能提升的同时，保持较低的发热和更长的续航时间。</p>
+<h3 id="（六）TDP（热设计功耗）"><a href="#（六）TDP（热设计功耗）" class="headerlink" title="（六）TDP（热设计功耗）"></a>（六）TDP（热设计功耗）</h3><p>TDP 指的是 CPU 达到最大负荷时释放的热量，单位为瓦（W）。它用于衡量 CPU 的散热需求，TDP 越低，说明 CPU 的能耗比越高，产生的热量越少。在选择 CPU 时，TDP 是一个重要参考因素，因为它关系到电脑的散热设计。如果 CPU 的 TDP 过高，而电脑的散热系统无法有效散热，就会导致 CPU 温度过高，进而出现降频现象，影响性能。例如，一些高性能的游戏 CPU，其 TDP 相对较高，在装机时就需要配备性能强劲的散热器，以保证 CPU 稳定运行。</p>
+<h2 id="二、2025-年-7-月-CPU-选购指南"><a href="#二、2025-年-7-月-CPU-选购指南" class="headerlink" title="二、2025 年 7 月 CPU 选购指南"></a>二、2025 年 7 月 CPU 选购指南</h2><p>这里，因为我对 Intel（英特尔）的产品了解的偏多，就使用了 Intel 的 CPU 进行推荐。</p>
+<h3 id="（一）预算有限（500-元以下）"><a href="#（一）预算有限（500-元以下）" class="headerlink" title="（一）预算有限（500 元以下）"></a>（一）预算有限（500 元以下）</h3><ol>
+<li>Intel 酷睿 i3 12100F：采用 Alder Lake 架构，拥有 4 核 8 线程，基础频率 3.3Ghz，加速频率 4.3Ghz，L2 级缓存 5MB，L3 缓存 12MB，功耗 58W，内存支持 DDR4 3200&#x2F;DDR5 4800。这款 CPU 非常适合搭配入门级游戏主机，再配上 H610 主板，性价比超高。目前散片价格在 300 元上下，性能表现对于日常办公以及一些轻度游戏来说，完全能够胜任。</li>
+</ol>
+<h3 id="（二）中等预算（500-1500-元）"><a href="#（二）中等预算（500-1500-元）" class="headerlink" title="（二）中等预算（500 - 1500 元）"></a>（二）中等预算（500 - 1500 元）</h3><ol>
+<li><p>Intel 酷睿 i5 13400F：基于 Alder Lake 架构，具备 10 核 16 线程，基础频率 2.5Ghz，加速频率 4.6Ghz，L2 级缓存 9.5MB，L3 缓存 20MB，功耗 65W，内存支持 DDR4 3200&#x2F;DDR5 4800。散片价格在 689 元上下，相比 12400F，虽然价格贵了 50 元左右，但多核性能领先了 30%，不仅在游戏方面表现不错，还能兼顾一些生产力需求，如简单的视频剪辑、图片处理等，是一款性价比很高的选择。</p>
+</li>
+<li><p>Intel 酷睿 i5 14400F：拥有 6 个大核和 4 个小核，全 P 核加速 4.1GHz，全 E 核 3.5GHz，二级缓存为 9.5MB，三级缓存为 20MB。标准运行频率 2.5 GHz，最高运行频率 4.7 GHz。虽然被吐槽为 “牙膏 U”，但其售价 700 元出头，且不锁 SA 电压，D4 内存可在不分频的情况下跑到 3600MHz 的频率，对部分电竞网游有优势。搭配一线品牌的入门级 DDR4 版 H610 主板，板 U 总价可控制在 1200 元左右，价格方面有一定竞争力。</p>
+</li>
+</ol>
+<h3 id="（三）较高预算（1500-3000-元）"><a href="#（三）较高预算（1500-3000-元）" class="headerlink" title="（三）较高预算（1500 - 3000 元）"></a>（三）较高预算（1500 - 3000 元）</h3><ol>
+<li>Intel 酷睿 i5 14600KF：基于 Raptor Lake 架构，14 核 20 线程，基础频率 3.5Ghz，加速频率 5.3Ghz，L2 级缓存 20MB，L3 缓存 24MB，功耗 125W，内存支持 DDR4 3200&#x2F;DDR5 5600。降价后性价比出众，游戏和生产力兼顾，目前散片价格在 1165 元左右，盒装 1279 元左右，是追求全能型 CPU 用户的不错选择。不过需要注意的是，该型号存在一定的 “雷 U” 风险，购买时需谨慎。</li>
+</ol>
+<h3 id="（四）高预算（3000-元以上）"><a href="#（四）高预算（3000-元以上）" class="headerlink" title="（四）高预算（3000 元以上）"></a>（四）高预算（3000 元以上）</h3><ol>
+<li><p>Intel 酷睿 Ultra 9 200：价格在 4299 元左右，性能强劲，面向对电脑性能有极致追求的用户，无论是进行专业的图形设计、大规模数据处理，还是畅玩顶级游戏，都能轻松胜任，在多核心性能以及单核性能上都有出色的表现，并且在能效比方面也有不错的提升。</p>
+</li>
+<li><p>Intel 酷睿 i9 14900K：基于 Raptor Lake 架构，18 核 36 线程，基础频率 3.5Ghz，加速频率 5.3Ghz，L2 级缓存 20MB，L3 缓存 32MB，基础功耗 125W，内存支持 DDR4 3200&#x2F;DDR5 5600。该型号在游戏和生产力上都有优势，价格在 2899 元左右，是预算较高的用户的不错选择。</p>
+</li>
+</ol>
+<div class="note note-success">
+            <p>本文部分由 AI 生成，虽然已经经过检查，但是在商品价格以及推荐上可能与未来存在区别，请自行判断。</p>
+          </div>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%94%B5%E8%84%91/" class="category-chain-item">电脑</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E5%8E%9F%E5%88%9B/" class="print-no-link">#原创</a>
+      
+        <a href="/tags/%E7%94%B5%E8%84%91%E7%A1%AC%E4%BB%B6/" class="print-no-link">#电脑硬件</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+   <!--
+    <p class="note note-primary">
+  <strong> 本文作者: </strong><a href="/">Joshua0729</a> <br>
+  <strong> 本文链接: </strong><a href="https://joshua0729.github.io/2025/07/23/CPU%E4%B8%BB%E8%A6%81%E5%8F%82%E6%95%B0%E4%B8%8E25-7%E7%9A%84%E9%80%89%E8%B4%AD%E6%8C%87%E5%8D%97/">https://joshua0729.github.io/2025/07/23/CPU%E4%B8%BB%E8%A6%81%E5%8F%82%E6%95%B0%E4%B8%8E25-7%E7%9A%84%E9%80%89%E8%B4%AD%E6%8C%87%E5%8D%97/</a> <br>
+  <strong> 版权声明: </strong>
+      
+      
+          <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+          <span class="hint--top hint--rounded" aria-label="BY - 署名">
+              <i class="iconfont icon-cc-by"></i>
+          </span>
+          </a>
+      
+      
+  </p>
+  -->
+  
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>CPU主要参数与25.7的选购指南</div>
+      <div>https://joshua0729.github.io/2025/07/23/CPU主要参数与25-7的选购指南/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Joshua0729</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025-07-23 18:07:00.5353</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2025-07-23 18:07:74.1212</div>
+        </div>
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2025/07/24/%E5%A4%8F%E4%BB%A4%E8%90%A57-24%E6%80%BB%E7%BB%93/" title="夏令营7.24总结">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">夏令营7.24总结</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/07/23/%E7%94%B5%E8%84%91%E7%A1%AC%E7%9B%98%E5%90%8D%E8%AF%8D%E8%AF%A6%E8%A7%A3/" title="电脑硬盘名词详解">
+                        <span class="hidden-mobile">电脑硬盘名词详解</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+      
+<a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
+<div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> <head><style> .sel{ margin:5px; justify-content:space-around; }</style></head> <p>每日一句：<a id="rainbow" href=' target="_blank">🌈 获取中...</a></p> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  var relativeDate = function() {
+    var updatedTime = document.getElementById('updated-time');
+    if (updatedTime) {
+      var text = updatedTime.textContent;
+      var reg = /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:Z|[+-]\d{2}:\d{2})/;
+      var matchs = text.match(reg);
+      if (matchs) {
+        var relativeTime = moment(matchs[0]).fromNow();
+        updatedTime.textContent = text.replace(reg, relativeTime);
+      }
+      updatedTime.style.display = '';
+    }
+  };
+  Fluid.utils.createScript('https://lib.baomitu.com/moment.js/2.29.4/moment.min.js', function() {
+    if (!'zh-cn'.startsWith('en')) {
+      Fluid.utils.createScript('https://lib.baomitu.com/moment.js/2.29.4/locale/zh-cn.min.js', function() {
+        relativeDate();
+      });
+    } else {
+      relativeDate();
+    }
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  
+<script src="/js/englishwordshow.js"></script>
+<script src="/js/black_point_under.js"></script>
+<script src="/js/flower_flow_down.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

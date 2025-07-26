@@ -1,0 +1,855 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/icon.png">
+  <link rel="icon" href="/img/icon.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Joshua0729">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="贪心贪心就是在当前条件下的最优解。与DP不同，贪心是保证在当前条件下的最优解。 正常贪心（我只能用这几个字来和区间区别了） T1 摩天轮思路：最大的应该最重与最轻的匹配。如果如果和另一个人匹配，会浪费一些重量。 让凑对的人最多（让座舱最满） 证明正确：假设不是最优，尝试使用不是这个的方法。看看有没有反例。 要从“第一步怎么走”入手。 T2 萨鲁曼的部队直到要不能满足了再去考虑这个点。 在$[x,x">
+<meta property="og:type" content="article">
+<meta property="og:title" content="夏令营7-12贪心学习笔记&amp;总结">
+<meta property="og:url" content="https://joshua0729.github.io/2025/07/12/%E5%A4%8F%E4%BB%A4%E8%90%A57-12%E8%B4%AA%E5%BF%83%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0&%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="Joshua0729的个人博客">
+<meta property="og:description" content="贪心贪心就是在当前条件下的最优解。与DP不同，贪心是保证在当前条件下的最优解。 正常贪心（我只能用这几个字来和区间区别了） T1 摩天轮思路：最大的应该最重与最轻的匹配。如果如果和另一个人匹配，会浪费一些重量。 让凑对的人最多（让座舱最满） 证明正确：假设不是最优，尝试使用不是这个的方法。看看有没有反例。 要从“第一步怎么走”入手。 T2 萨鲁曼的部队直到要不能满足了再去考虑这个点。 在$[x,x">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.rthe.cn/cached-6761cd98577d04db3d21bf036f68f964-avif/mapbad/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-07-12%20093542.png">
+<meta property="article:published_time" content="2025-07-12T00:33:07.000Z">
+<meta property="article:modified_time" content="2025-07-23T08:33:23.301Z">
+<meta property="article:author" content="Joshua0729">
+<meta property="article:tag" content="原创">
+<meta property="article:tag" content="笔记">
+<meta property="article:tag" content="夏令营">
+<meta property="article:tag" content="总结">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cdn.rthe.cn/cached-6761cd98577d04db3d21bf036f68f964-avif/mapbad/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-07-12%20093542.png">
+  
+  
+  
+  <title>夏令营7-12贪心学习笔记&amp;总结 - Joshua0729的个人博客</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/gundongtiaocolor.css">
+<link rel="stylesheet" href="/css/typingchanging.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"joshua0729.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":6},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Joshua0729的个人博客</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://cdn.rthe.cn/cached-6761cd98577d04db3d21bf036f68f964-avif/mapbad/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-07-12%20093542.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="夏令营7-12贪心学习笔记&amp;总结"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-07-12 08:33" pubdate>
+          2025年7月12日 早上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          935 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          8 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">夏令营7-12贪心学习笔记&amp;总结</h1>
+            
+              <p id="updated-time" class="note note-info" style="display: none">
+                
+                  
+                    本文最后更新于 2025-07-23T16:33:23+08:00
+                  
+                  
+
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="贪心"><a href="#贪心" class="headerlink" title="贪心"></a>贪心</h1><p>贪心就是在当前条件下的最优解。与DP不同，贪心是保证在当前条件下的最优解。</p>
+<h2 id="正常贪心"><a href="#正常贪心" class="headerlink" title="正常贪心"></a>正常贪心</h2><p>（我只能用这几个字来和区间区别了）</p>
+<h3 id="T1-摩天轮"><a href="#T1-摩天轮" class="headerlink" title="T1 摩天轮"></a>T1 摩天轮</h3><p>思路：最大的应该最重与最轻的匹配。如果如果和另一个人匹配，会浪费一些重量。</p>
+<p>让凑对的人最多（让座舱最满）</p>
+<p>证明正确：假设不是最优，尝试使用不是这个的方法。看看有没有反例。</p>
+<p>要从“第一步怎么走”入手。</p>
+<h3 id="T2-萨鲁曼的部队"><a href="#T2-萨鲁曼的部队" class="headerlink" title="T2 萨鲁曼的部队"></a>T2 萨鲁曼的部队</h3><p>直到要不能满足了再去考虑这个点。</p>
+<p>在$[x,x+r]$中找一个点，打一个标记。</p>
+<h3 id="T3-小木棍"><a href="#T3-小木棍" class="headerlink" title="T3 小木棍"></a>T3 小木棍</h3><p><del>出了原题错题不可做题</del>而且<strong>CSP-J2024也是T3</strong></p>
+<p>8用的木棍最多，所以先全选8，位数最小。</p>
+<p>在确定了$n-1$位以后，最高位就确定了。</p>
+<p>优先让前几位小。总共x位,$x&#x3D;(\frac{n}{7})向上取整$。</p>
+<p>按照$\frac{n}{7}$的余数分类讨</p>
+<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/pv2fo23n.png" srcset="/img/loading.gif" lazyload alt="这题分类讨论的类别"></p>
+<ol>
+<li>位数最少</li>
+<li>从高往低尽量小。</li>
+</ol>
+<h2 id="区间问题"><a href="#区间问题" class="headerlink" title="区间问题"></a>区间问题</h2><p>就一句：<br>$$<br>全是\huge经典\Huge模板\times N<br>$$</p>
+<h3 id="区间安排问题"><a href="#区间安排问题" class="headerlink" title="区间安排问题"></a>区间安排问题</h3><p>按照左端点排序是考虑这样的情况：</p>
+<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/ob5cnv2q.png" srcset="/img/loading.gif" lazyload alt="按照左端点排序的问题"></p>
+<p>考虑逐步开放所有可放的区间，当有区间可以进入时，就进入。相当于找对最后影响最小的区间。即按照右端点排序。</p>
+<h3 id="区间选点问题"><a href="#区间选点问题" class="headerlink" title="区间选点问题"></a>区间选点问题</h3><p>没有例题先不写</p>
+<h3 id="区间覆盖问题1"><a href="#区间覆盖问题1" class="headerlink" title="区间覆盖问题1"></a>区间覆盖问题1</h3><p>问题：数轴上有$n$个区间$[L_i,R_i]$，从中选取尽量少的区间覆盖$[x,y]$。</p>
+<p>$L$从小到大，$R$从大到小</p>
+<h3 id="区间覆盖问题1-2"><a href="#区间覆盖问题1-2" class="headerlink" title="区间覆盖问题1.2"></a>区间覆盖问题1.2</h3><p>问题：数轴上有$n$个区间$[L_i,R_i]$，从中选取尽量少的区间覆盖$[x,y]$。区别是这个问题是时段。所以$x&#x3D;r+1$</p>
+<h3 id="区间覆盖问题2"><a href="#区间覆盖问题2" class="headerlink" title="区间覆盖问题2"></a>区间覆盖问题2</h3><p><img src="https://cdn.luogu.com.cn/upload/image_hosting/fru31xsk.png" srcset="/img/loading.gif" lazyload alt="区间覆盖问题2"></p>
+<h3 id="一般的点和区间配对问题"><a href="#一般的点和区间配对问题" class="headerlink" title="一般的点和区间配对问题"></a>一般的点和区间配对问题</h3><p>点和区间配对：</p>
+<p>所有能和这个点配对的区间中，要选取R的最小值，且能覆盖这个点。因为R大的区间有可能覆盖下一个点。</p>
+<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/t7p1zn0o.png" srcset="/img/loading.gif" lazyload></p>
+<h4 id="T7-带区间限制的装箱问题"><a href="#T7-带区间限制的装箱问题" class="headerlink" title="T7 带区间限制的装箱问题"></a>T7 带区间限制的装箱问题</h4><p>这题中，可以把盒子当成上一题的点，球当成上一题的区间。</p>
+<p>区别是，这里有$10^9$个点，不能逐个枚举，要忽略无用的点。</p>
+<h4 id="T8-代金券"><a href="#T8-代金券" class="headerlink" title="T8 代金券"></a>T8 代金券</h4><p>$[L_i,1^{9}]（正无穷）$</p>
+<p>经典错误：</p>
+<ul>
+<li>$D_i越大越先用$</li>
+<li>$L_i越小越先用$</li>
+</ul>
+<p>原则：</p>
+<ul>
+<li>优先使用优惠大的代金券</li>
+<li>多用代金券</li>
+</ul>
+<h3 id="区间分组问题"><a href="#区间分组问题" class="headerlink" title="区间分组问题"></a>区间分组问题</h3><h4 id="T9-牛栏预定（区间分组问题）"><a href="#T9-牛栏预定（区间分组问题）" class="headerlink" title="T9 牛栏预定（区间分组问题）"></a>T9 牛栏预定（区间分组问题）</h4><p>把区间分组，每一组的区间两两不相交。</p>
+<p>R从往大。L从小往大。</p>
+<ol>
+<li>取L的最小区间$[L_1,R_1]$</li>
+<li><code>upper_bound</code> $L_2&gt;R_1$</li>
+<li>……，得到1组。</li>
+</ol>
+<h4 id="T10-CSP2021-S-1-廊桥分配"><a href="#T10-CSP2021-S-1-廊桥分配" class="headerlink" title="T10 CSP2021-S-1-廊桥分配"></a>T10 CSP2021-S-1-廊桥分配</h4><p>这道题的一个关键就是你无法调整飞机靠不靠廊桥，只能控制放几个在国内或国际。飞机是有位置就靠上去，没位置就停在远机位。</p>
+<p>对国内区，国际区其实是一样的。</p>
+<p>$计算出停靠在国内区i廊桥上的飞机数量C_{1,i}，国际区i号廊桥上的数量C_{2,i}。$</p>
+<p>$计算出C_1和c_2的前缀和序列S_1和S_2。$</p>
+<p>答案是$max_{0\le i\le n}(s_{1,i}+s_{2,i})$</p>
+<h2 id="带反悔的贪心"><a href="#带反悔的贪心" class="headerlink" title="带反悔的贪心"></a>带反悔的贪心</h2><h3 id="T13-股票"><a href="#T13-股票" class="headerlink" title="T13 股票"></a>T13 股票</h3><p>这题其实有多种解法，这里选择反悔的贪心。</p>
+<p>在第$i$天，如果有价值低于$P_i$的股票，就把最便宜的一股买下，但是保留<strong>反悔</strong>的选项，可以撤消这个行为。</p>
+<h3 id="T14-奶牛优惠券"><a href="#T14-奶牛优惠券" class="headerlink" title="T14 奶牛优惠券"></a>T14 奶牛优惠券</h3><p>$先买C_i前K小的牛。如果还有钱，以后每次买剩余中的min(C_i+Δ_K,P_i)最小的牛。其中，Δ_K代表了最小优惠。$</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%BC%96%E7%A8%8B/" class="category-chain-item">编程</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E7%BC%96%E7%A8%8B/%E7%AC%94%E8%AE%B0/" class="category-chain-item">笔记</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E5%8E%9F%E5%88%9B/" class="print-no-link">#原创</a>
+      
+        <a href="/tags/%E7%AC%94%E8%AE%B0/" class="print-no-link">#笔记</a>
+      
+        <a href="/tags/%E5%A4%8F%E4%BB%A4%E8%90%A5/" class="print-no-link">#夏令营</a>
+      
+        <a href="/tags/%E6%80%BB%E7%BB%93/" class="print-no-link">#总结</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+   <!--
+    <p class="note note-primary">
+  <strong> 本文作者: </strong><a href="/">Joshua0729</a> <br>
+  <strong> 本文链接: </strong><a href="https://joshua0729.github.io/2025/07/12/%E5%A4%8F%E4%BB%A4%E8%90%A57-12%E8%B4%AA%E5%BF%83%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0&%E6%80%BB%E7%BB%93/">https://joshua0729.github.io/2025/07/12/%E5%A4%8F%E4%BB%A4%E8%90%A57-12%E8%B4%AA%E5%BF%83%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0&%E6%80%BB%E7%BB%93/</a> <br>
+  <strong> 版权声明: </strong>
+      
+      
+          <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+          <span class="hint--top hint--rounded" aria-label="BY - 署名">
+              <i class="iconfont icon-cc-by"></i>
+          </span>
+          </a>
+      
+      
+  </p>
+  -->
+  
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>夏令营7-12贪心学习笔记&amp;总结</div>
+      <div>https://joshua0729.github.io/2025/07/12/夏令营7-12贪心学习笔记&amp;总结/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Joshua0729</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025-07-12 08:07:00.077</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2025-07-23 16:07:30.2323</div>
+        </div>
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2025/07/13/%E5%A4%8F%E4%BB%A4%E8%90%A57-13%E6%80%BB%E7%BB%93/" title="夏令营7.13总结">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">夏令营7.13总结</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/07/11/%E5%A4%8F%E4%BB%A4%E8%90%A57-11%E6%80%BB%E7%BB%93/" title="夏令营7.11总结">
+                        <span class="hidden-mobile">夏令营7.11总结</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+      
+<a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
+<div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> <head><style> .sel{ margin:5px; justify-content:space-around; }</style></head> <p>每日一句：<a id="rainbow" href=' target="_blank">🌈 获取中...</a></p> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  var relativeDate = function() {
+    var updatedTime = document.getElementById('updated-time');
+    if (updatedTime) {
+      var text = updatedTime.textContent;
+      var reg = /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:Z|[+-]\d{2}:\d{2})/;
+      var matchs = text.match(reg);
+      if (matchs) {
+        var relativeTime = moment(matchs[0]).fromNow();
+        updatedTime.textContent = text.replace(reg, relativeTime);
+      }
+      updatedTime.style.display = '';
+    }
+  };
+  Fluid.utils.createScript('https://lib.baomitu.com/moment.js/2.29.4/moment.min.js', function() {
+    if (!'zh-cn'.startsWith('en')) {
+      Fluid.utils.createScript('https://lib.baomitu.com/moment.js/2.29.4/locale/zh-cn.min.js', function() {
+        relativeDate();
+      });
+    } else {
+      relativeDate();
+    }
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  
+<script src="/js/englishwordshow.js"></script>
+<script src="/js/black_point_under.js"></script>
+<script src="/js/flower_flow_down.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
