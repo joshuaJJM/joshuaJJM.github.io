@@ -19,26 +19,26 @@
   <meta name="author" content="Joshua0729">
   <meta name="keywords" content="">
   
-    <meta name="description" content="今天照例还是模考。 时间线我发现写时间线要考试的时候自己记录，容易忘也很烦，以后模考的话时间线就不写了吧。 题目T1当遇到一道题目，如果有两个思路，一个简单但是正确性不确定，另一个较难但是确定正确，就可以通过写对拍等方式验证猜想。 思路是给一个数组中的每个元素分配一个“分数”，然后计算所有分数的总和。分数的分配规则基于元素与其相邻元素的大小关系：  较大的元素应该获得较高的分数 相等的元素应该获得">
+    <meta name="description" content="线段树概念二叉树二叉树满足条件：  有根树 每个节点的孩子不超过两个 孩子有左右之分  满二叉树是指所有层都是完整的二叉树，即如果二叉树有$n$层，那么就有$2^n-1$个节点。 完全二叉树是指除了最下一层的节点是从左往右排列且可能不满之外，其他部分是一棵满二叉树。 完全二叉数或满二叉树中，设一个节点的编号为$n$，则其左儿子编号为$2n$，右儿子编号是$2n+1$。 T1 静态RMQ这题是模板题">
 <meta property="og:type" content="article">
-<meta property="og:title" content="夏令营7.25总结">
-<meta property="og:url" content="https://joshua0729.github.io/2025/07/25/%E5%A4%8F%E4%BB%A4%E8%90%A57-25%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:title" content="夏令营7.26总结">
+<meta property="og:url" content="https://joshua0729.github.io/2025/07/26/%E5%A4%8F%E4%BB%A4%E8%90%A57-26%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="Joshua0729的个人博客">
-<meta property="og:description" content="今天照例还是模考。 时间线我发现写时间线要考试的时候自己记录，容易忘也很烦，以后模考的话时间线就不写了吧。 题目T1当遇到一道题目，如果有两个思路，一个简单但是正确性不确定，另一个较难但是确定正确，就可以通过写对拍等方式验证猜想。 思路是给一个数组中的每个元素分配一个“分数”，然后计算所有分数的总和。分数的分配规则基于元素与其相邻元素的大小关系：  较大的元素应该获得较高的分数 相等的元素应该获得">
+<meta property="og:description" content="线段树概念二叉树二叉树满足条件：  有根树 每个节点的孩子不超过两个 孩子有左右之分  满二叉树是指所有层都是完整的二叉树，即如果二叉树有$n$层，那么就有$2^n-1$个节点。 完全二叉树是指除了最下一层的节点是从左往右排列且可能不满之外，其他部分是一棵满二叉树。 完全二叉数或满二叉树中，设一个节点的编号为$n$，则其左儿子编号为$2n$，右儿子编号是$2n+1$。 T1 静态RMQ这题是模板题">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.rthe.cn/cached-3fdc1fff290a8a69925834d5f92db733-avif/mapbad/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-07-25%20161425.png">
-<meta property="article:published_time" content="2025-07-25T08:15:03.000Z">
-<meta property="article:modified_time" content="2025-07-25T09:28:16.974Z">
+<meta property="og:image" content="https://cdn.rthsoftware.cn/cached-b3de1d756035bcf6e488a202af950efb-avif/mapbad/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-07-26%20190311.png">
+<meta property="article:published_time" content="2025-07-26T11:02:28.000Z">
+<meta property="article:modified_time" content="2025-07-26T11:05:03.846Z">
 <meta property="article:author" content="Joshua0729">
 <meta property="article:tag" content="原创">
 <meta property="article:tag" content="夏令营">
 <meta property="article:tag" content="总结">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cdn.rthe.cn/cached-3fdc1fff290a8a69925834d5f92db733-avif/mapbad/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-07-25%20161425.png">
+<meta name="twitter:image" content="https://cdn.rthsoftware.cn/cached-b3de1d756035bcf6e488a202af950efb-avif/mapbad/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-07-26%20190311.png">
   
   
   
-  <title>夏令营7.25总结 - Joshua0729的个人博客</title>
+  <title>夏令营7.26总结 - Joshua0729的个人博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -215,13 +215,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('https://cdn.rthe.cn/cached-3fdc1fff290a8a69925834d5f92db733-avif/mapbad/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-07-25%20161425.png') no-repeat center center; background-size: cover;">
+     style="background: url('https://cdn.rthsoftware.cn/cached-b3de1d756035bcf6e488a202af950efb-avif/mapbad/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-07-26%20190311.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="夏令营7.25总结"></span>
+            <span id="subtitle" data-typed-text="夏令营7.26总结"></span>
           
         </div>
 
@@ -232,8 +232,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-07-25 16:15" pubdate>
-          2025年7月25日 下午
+        <time datetime="2025-07-26 19:02" pubdate>
+          2025年7月26日 晚上
         </time>
       </span>
     
@@ -244,7 +244,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.1k 字
+          1.5k 字
         
       </span>
     
@@ -255,7 +255,7 @@
         
         
         
-          9 分钟
+          13 分钟
         
       </span>
     
@@ -292,12 +292,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">夏令营7.25总结</h1>
+            <h1 id="seo-header">夏令营7.26总结</h1>
             
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于 2025-07-25T17:28:16+08:00
+                    本文最后更新于 2025-07-26T19:05:03+08:00
                   
                   
 
@@ -307,56 +307,78 @@
             
               <div class="markdown-body">
                 
-                <p>今天<del>照例</del>还是模考。</p>
-<h2 id="时间线"><a href="#时间线" class="headerlink" title="时间线"></a>时间线</h2><p>我发现写时间线要考试的时候自己记录，容易忘也很烦，以后模考的话时间线就不写了吧。</p>
-<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><h3 id="T1"><a href="#T1" class="headerlink" title="T1"></a>T1</h3><p>当遇到一道题目，如果有两个思路，一个简单但是正确性不确定，另一个较难但是确定正确，就可以通过写对拍等方式验证猜想。</p>
-<p>思路是给一个数组中的每个元素分配一个“分数”，然后计算所有分数的总和。分数的分配规则基于元素与其相邻元素的大小关系：</p>
+                <h1 id="线段树"><a href="#线段树" class="headerlink" title="线段树"></a>线段树</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><h3 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h3><p>二叉树满足条件：</p>
 <ul>
-<li>较大的元素应该获得较高的分数</li>
-<li>相等的元素应该获得相同的分数</li>
-<li>最终每个元素的分数是其从左侧和右侧两个方向计算出的分数的最大值</li>
-<li>计算出的最大值即为答案。</li>
+<li>有根树</li>
+<li>每个节点的孩子不超过两个</li>
+<li>孩子有左右之分</li>
 </ul>
-<h3 id="T2"><a href="#T2" class="headerlink" title="T2"></a>T2</h3><p>考虑贪心。</p>
+<p>满二叉树是指所有层都是完整的二叉树，即如果二叉树有$n$层，那么就有$2^n-1$个节点。</p>
+<p>完全二叉树是指除了最下一层的节点是从左往右排列且可能不满之外，其他部分是一棵满二叉树。</p>
+<p>完全二叉数或满二叉树中，设一个节点的编号为$n$，则其左儿子编号为$2n$，右儿子编号是$2n+1$。</p>
+<h2 id="T1-静态RMQ"><a href="#T1-静态RMQ" class="headerlink" title="T1 静态RMQ"></a>T1 静态RMQ</h2><p>这题是模板题，所以线段树的模板这里就直接放上来就可以了。</p>
+<p>具体的其他内容就不详细写了。</p>
+<h3 id="结构体定义部分"><a href="#结构体定义部分" class="headerlink" title="结构体定义部分"></a>结构体定义部分</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-keyword">typedef</span> <span class="hljs-type">long</span> <span class="hljs-type">long</span> ll;<br><br><span class="hljs-type">const</span> <span class="hljs-type">int</span> N=<span class="hljs-number">5e5</span><span class="hljs-number">+3</span>;<br><br><span class="hljs-keyword">struct</span> <span class="hljs-title class_">node</span>&#123;<br>	<span class="hljs-type">int</span> l,r;<br>	<span class="hljs-type">int</span> val;<br>	<span class="hljs-built_in">node</span>():<span class="hljs-built_in">l</span>(<span class="hljs-number">0</span>),<span class="hljs-built_in">r</span>(<span class="hljs-number">0</span>),<span class="hljs-built_in">val</span>(<span class="hljs-number">0</span>)&#123;&#125;<br>	<span class="hljs-built_in">node</span>(<span class="hljs-type">int</span> l,<span class="hljs-type">int</span> r,<span class="hljs-type">int</span> val):<span class="hljs-built_in">l</span>(l),<span class="hljs-built_in">r</span>(r),<span class="hljs-built_in">val</span>(val)&#123;&#125;<br>&#125;t[N&lt;&lt;<span class="hljs-number">2</span>];<span class="hljs-comment">//这里开是4n的数组是因为如果使用2n的数组是默认是完全二叉树的前提下，但是线段树虽然除了最底下一层是满二叉树，但是最底下一层并不是按顺序紧密排列的。所以要开4n的空间防止越界。</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="初始化部分"><a href="#初始化部分" class="headerlink" title="初始化部分"></a>初始化部分</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">define</span> ls (i&lt;&lt;1)</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> rs (i&lt;&lt;1|1)</span><br><br><span class="hljs-type">int</span> a[N];<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">build</span><span class="hljs-params">(<span class="hljs-type">int</span> l,<span class="hljs-type">int</span> r,<span class="hljs-type">int</span> i)</span></span>&#123;<br>	t[i]=<span class="hljs-built_in">node</span>(l,r,<span class="hljs-number">0</span>);<br>	<span class="hljs-keyword">if</span>(l==r)&#123;<br>		t[i].val=a[l];<br>		<span class="hljs-keyword">return</span>;<br>	&#125;<br>	<span class="hljs-type">int</span> mid=(l+r)&gt;&gt;<span class="hljs-number">1</span>;<br>	<span class="hljs-built_in">build</span>(l,mid,ls);<br>	<span class="hljs-built_in">build</span>(mid<span class="hljs-number">+1</span>,r,rs);<br>	t[i].val=<span class="hljs-built_in">min</span>(t[ls].val,t[rs].val);<br><br></code></pre></td></tr></table></figure>
+
+<h3 id="查询部分"><a href="#查询部分" class="headerlink" title="查询部分"></a>查询部分</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">query</span><span class="hljs-params">(<span class="hljs-type">int</span> l,<span class="hljs-type">int</span> r,<span class="hljs-type">int</span> i,<span class="hljs-type">int</span> ql,<span class="hljs-type">int</span> qr)</span></span>&#123;<br>	<span class="hljs-keyword">if</span>(ql&lt;=l&amp;&amp;r&lt;=qr)&#123;<br>		<span class="hljs-keyword">return</span> t[i].val;<br>	&#125;<br>	<span class="hljs-type">int</span> mid=(l+r)&gt;&gt;<span class="hljs-number">1</span>;<br>	<span class="hljs-type">int</span> res=<span class="hljs-number">1e9</span><span class="hljs-number">+7</span>;<br>	<span class="hljs-keyword">if</span>(ql&lt;=mid)&#123;<br>		res=<span class="hljs-built_in">min</span>(res,<span class="hljs-built_in">query</span>(l,mid,ls,ql,qr));<br>	&#125;<br>	<span class="hljs-keyword">if</span>(qr&gt;mid)&#123;<br>		res=<span class="hljs-built_in">min</span>(res,<span class="hljs-built_in">query</span>(mid<span class="hljs-number">+1</span>,r,rs,ql,qr));<br>	&#125;<br>	<span class="hljs-keyword">return</span> res;<br>&#125;<br><span class="hljs-meta">#<span class="hljs-keyword">undef</span> ls<span class="hljs-comment">//用完后及时undef，防止用多个算法时define冲突。</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">undef</span> rs</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="主函数与处理查询部分"><a href="#主函数与处理查询部分" class="headerlink" title="主函数与处理查询部分"></a>主函数与处理查询部分</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">int</span> n,q;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>	cin&gt;&gt;n&gt;&gt;q;<br>	<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;n;++i)&#123;<br>		cin&gt;&gt;a[i];<br>	&#125;<br>	<br>	<span class="hljs-built_in">build</span>(<span class="hljs-number">0</span>,n<span class="hljs-number">-1</span>,<span class="hljs-number">1</span>);<br><br>	<span class="hljs-keyword">while</span>(q--)&#123;<br>		<span class="hljs-type">int</span> l,r;<br>		cin&gt;&gt;l&gt;&gt;r;<br>		cout&lt;&lt;<span class="hljs-built_in">query</span>(<span class="hljs-number">0</span>,n<span class="hljs-number">-1</span>,<span class="hljs-number">1</span>,l,r<span class="hljs-number">-1</span>)&lt;&lt;endl;<br>	&#125;<br><br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="T2-单点加区间求和"><a href="#T2-单点加区间求和" class="headerlink" title="T2 单点加区间求和"></a>T2 单点加区间求和</h2><p>整体步骤：</p>
+<ol>
+<li>线段树（Segment Tree）的构建</li>
+</ol>
 <ul>
-<li>匹配<code>K</code>的每一位，尽可能保持前缀相同（以保证<code>M</code>最小），仅在必要时调整某一位为更大的数字，并将剩余数字按升序排列（确保后续位最小）。<br>回溯：</li>
-<li>一位无法匹配<code>K</code>时，回溯到前一位寻找更大的数字，避免 “卡死” 在无效路径上。<br>数字排列的化：</li>
-<li>定某一位使用更大的数字后，剩余数字按升序排列，直接保证后续位最小，无需再比较。</li>
+<li>若当前节点表示的区间长度为1（<code>l=r</code>），则直接存储数组对应位置的值。</li>
+<li>否则，将区间分为左右两半（<code>mid=(l+r)&gt;&gt;1</code>），递归构建左子树和右子树，当前节点的值为左右子树的和。</li>
 </ul>
-<h3 id="T3"><a href="#T3" class="headerlink" title="T3"></a>T3</h3><p>要使总不满意度最小，关键是让 <code>A</code> 中分给学生的 <code>N-1</code> 个元素与 <code>B</code> 的 <code>N-1</code> 个元素 “最优匹配”（即每个 <code>B[j]</code> 匹配最接近的 <code>A[i]</code>）。由于 <code>A</code> 和 <code>B</code> 都是数字，排序后按顺序匹配是最优策略（这是贪心算法的经典结论：两个数组排序后一一对应，差值之和最小）。</p>
-<h3 id="T4"><a href="#T4" class="headerlink" title="T4"></a>T4</h3><p>分两种情况处理：</p>
+<ol start="2">
+<li>单点更新操作（<code>update</code>函数）<br>当需要给数组中位置<code>p</code>的元素增加<code>x</code>时：</li>
+</ol>
 <ul>
-<li>若整个字符串已经是回文串（指针相遇仍未找到不匹配）：<br>此时需要插入一个字符使其仍为回文串。最简单的方式是在中间位置插入一个与中心字符相同的字符（如 “ee” 插入 “y” 变成 “eye”）。</li>
-<li>若存在不匹配的<code>s[i]</code>和<code>s[j]</code>：<br>尝试两种插入方案：<ul>
-<li>在 <code>i</code> 位置左侧插入 <code>s[j]</code>（使 <code>s[j]</code> 与右侧的 <code>s[j]</code> 对称）。</li>
-<li>在 <code>j</code> 位置右侧插入 <code>s[i]</code>（使 <code>s[i]</code> 与左侧的 <code>s[i]</code> 对称）。<br>检查两种方案是否能形成回文串，若能则输出其中一个；若都不能，则输出 <code>NA</code>。</li>
+<li>从根节点出发，递归找到对应<code>p</code>的叶子节点。</li>
+<li>更新叶子节点的值（加上<code>x</code>）。</li>
+<li>回溯更新所有祖先节点的值（每个祖先节点的值为左右子树的和，因此子节点变化后需重新计算）。</li>
 </ul>
-</li>
-</ul>
-<h3 id="T5"><a href="#T5" class="headerlink" title="T5"></a>T5</h3><h4 id="1-棋子位置的约束分析"><a href="#1-棋子位置的约束分析" class="headerlink" title="1. 棋子位置的约束分析"></a>1. 棋子位置的约束分析</h4><p>设：</p>
+<ol start="3">
+<li>区间查询操作（<code>query</code>函数）<br>当需要查询区间<code>[ql,qr]</code>的总和时从根节点出发，判断当前节点的区间与查询区间的关系：</li>
+</ol>
 <ul>
-<li><code>r[i]</code>表示第<code>i</code>行是否反转（1&#x3D;反转，0&#x3D;不反转）。</li>
-<li><code>c[j]</code>表示第<code>j</code>列是否反转（1&#x3D;反转，0&#x3D;不反转）。</li>
+<li>若当前节点区间完全在查询区间内，直接返回该节点的值。</li>
+<li>若当前节点区间与查询区间部分重叠，递归查询左子树和右子树，返回两者的和。</li>
+<li>若完全不重叠，返回 0。</li>
 </ul>
-<p>棋子<code>(A_i, B_i)</code>最终为白色的条件：<br>初始格子为白色，反转次数为偶数（0或2次）时仍为白色，即：<br><code>r[A_i]+c[B_i]≡0(mod2)</code> → <code>c[B_i]=r[A_i]</code>（因为0+0&#x3D;0，1+1&#x3D;2≡0）。 </p>
-<p>这意味着：<em>列的反转状态由其所在行的反转状态决定</em>，两者必须相同。</p>
-<h4 id="2-连通分量划分"><a href="#2-连通分量划分" class="headerlink" title="2. 连通分量划分"></a>2. 连通分量划分</h4><p>通过棋子的约束关系，行和列形成“连通分量”： </p>
+<h2 id="T3"><a href="#T3" class="headerlink" title="T3"></a>T3</h2><p>代码的核心功能是维护一个数组，支持两种操作：</p>
 <ul>
-<li>若棋子<code>(a, b)</code>存在，则行<code>a</code>与列 <code>b</code> 必须同状态（<code>r[a]=c[b]</code>）。 </li>
-<li>由此可构建一张 bipartite 图（行和列作为节点，棋子为边），连通分量内的行和列的反转状态必须一致（要么全反转，要么全不反转）。</li>
+<li>区间更新：给数组中某个连续区间内的所有元素同时增加一个值。</li>
+<li>单点查询：查询数组中指定位置元素的当前值。</li>
 </ul>
-<p>代码通过 DFS 遍历 划分连通分量，记录每个分量包含的行数（<code>x[tot]</code>）和列数（<code>y[tot]</code>）。</p>
-<h4 id="3-动态规划（DP）求解最优反转方案"><a href="#3-动态规划（DP）求解最优反转方案" class="headerlink" title="3. 动态规划（DP）求解最优反转方案"></a>3. 动态规划（DP）求解最优反转方案</h4><p>设最终选择反转的行总数为<code>i</code>（<code>0≤i≤H</code>），则： </p>
+<p>由于需要频繁进行区间更新（若用朴素方法，每次更新的时间复杂度为$O(n)$，效率极低），线段树结合懒标记是解决这类问题的高效方案，可将单次操作的时间复杂度优化至$O(logn)$。</p>
+<p>懒标记是线段树中用于延迟更新的技术：</p>
 <ul>
-<li>未反转的行数为<code>H-i</code>。 </li>
-<li>根据约束，反转的列数 <code>j</code> 由连通分量的选择决定（需满足 <code>0≤j≤W</code>）。</li>
+<li>当需要对某个区间执行更新时，若当前节点的区间完全包含在更新区间内，不立即更新其所有子节点，而是在节点上记录一个 “待更新标记”（<code>tag</code>）。</li>
+<li>只有当后续操作需要访问该节点的子节点时，才将标记 “下放”（<code>pushdown</code>）到子节点，确保子节点的状态正确。</li>
 </ul>
-<p>黑色格子数量的计算公式（推导见下文）：<br><code>黑色格子数=i×(W-j)+j×(H-i)</code> </p>
-<p>为最大化该值，需通过 DP 计算每个可能的<code>i</code>对应的最小和最大<code>j</code>（<code>j</code>需在<code>[0, W]</code>内）： </p>
+<p>这种机制避免了不必要的重复更新，显著提高了区间更新的效率。</p>
+<h2 id="T4"><a href="#T4" class="headerlink" title="T4"></a>T4</h2><p>核心功能是维护一个数组，支持两种操作：</p>
+<ol>
+<li>区间线性更新：对指定区间<code>[l,r)</code>内的所有元素执行操作$a[i]&#x3D;(a[i]\times b+c)%MOD$（先乘$b$，再加$c$，最后取模）。</li>
+<li>单点查询：查询数组中指定位置$i$的元素经过所有更新后的当前值（取模后）。</li>
+</ol>
+<p>由于需要频繁进行区间线性变换（朴素方法时间复杂度为$O(n)$，效率极低），线段树结合双懒标记是最优解决方案，可将单次操作时间复杂度优化至$O(\log n)$。<br>懒标记下放流程：<br>若节点存在有效的变换（<code>mul!=1</code>或<code>add!=0</code>），则将变换下放至左右子节点：</p>
 <ul>
-<li><code>f[i]</code>：选择<code>i</code>行反转时，最多能反转的列数。 </li>
-<li><code>g[i]</code>：选择<code>i</code>行反转时，最少能反转的列数。</li>
+<li>左子节点：<code>mul=(mul*父节点mul)%MOD</code>，<code>add=(add*父节点mul+父节点add)%MOD</code>。</li>
+<li>右子节点：同上。</li>
+<li>清空当前节点的标记（<code>mul=1</code>，<code>add=0</code>），避免重复下放。</li>
 </ul>
+<h2 id="T5"><a href="#T5" class="headerlink" title="T5"></a>T5</h2><p>代码需要处理两种核心操作：</p>
+<ul>
+<li>区间线性更新：对数组中$[l,r]$区间内的所有元素执行变换$x\rightarrow(x\times b+c)%MOD$（先乘$b$，再加$c$，最后取模）。</li>
+<li>区间求和查询：计算数组中$[l,r]$区间内所有元素的和，结果对<code>MOD</code>取模。</li>
+</ul>
+<p>由于数组规模可能很大（$n$达$5\times10^5$），且操作频繁（$q$达$5\times10^5$），必须使用高效的数据结构。线段树结合双懒标记能将单次操作的时间复杂度降至$O(\log n)$，满足需求。</p>
 
                 
               </div>
@@ -413,7 +435,7 @@
    <!--
     <p class="note note-primary">
   <strong> 本文作者: </strong><a href="/">Joshua0729</a> <br>
-  <strong> 本文链接: </strong><a href="https://joshua0729.github.io/2025/07/25/%E5%A4%8F%E4%BB%A4%E8%90%A57-25%E6%80%BB%E7%BB%93/">https://joshua0729.github.io/2025/07/25/%E5%A4%8F%E4%BB%A4%E8%90%A57-25%E6%80%BB%E7%BB%93/</a> <br>
+  <strong> 本文链接: </strong><a href="https://joshua0729.github.io/2025/07/26/%E5%A4%8F%E4%BB%A4%E8%90%A57-26%E6%80%BB%E7%BB%93/">https://joshua0729.github.io/2025/07/26/%E5%A4%8F%E4%BB%A4%E8%90%A57-26%E6%80%BB%E7%BB%93/</a> <br>
   <strong> 版权声明: </strong>
       
       
@@ -429,8 +451,8 @@
   
   <div class="license-box my-3">
     <div class="license-title">
-      <div>夏令营7.25总结</div>
-      <div>https://joshua0729.github.io/2025/07/25/夏令营7-25总结/</div>
+      <div>夏令营7.26总结</div>
+      <div>https://joshua0729.github.io/2025/07/26/夏令营7-26总结/</div>
     </div>
     <div class="license-meta">
       
@@ -442,13 +464,13 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025-07-25 16:07:00.033</div>
+          <div>2025-07-26 19:07:00.2828</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025-07-25 17:07:97.1616</div>
+          <div>2025-07-26 19:07:84.033</div>
         </div>
       
       
@@ -479,18 +501,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/07/26/%E5%A4%8F%E4%BB%A4%E8%90%A57-26%E6%80%BB%E7%BB%93/" title="夏令营7.26总结">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">夏令营7.26总结</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/07/25/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E7%A5%88%E7%A6%8F%E6%96%B9%E5%BC%8F/" title="程序员的祈福方式">
-                        <span class="hidden-mobile">程序员的祈福方式</span>
+                      <a href="/2025/07/25/%E5%A4%8F%E4%BB%A4%E8%90%A57-25%E6%80%BB%E7%BB%93/" title="夏令营7.25总结">
+                        <span class="hidden-mobile">夏令营7.25总结</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
