@@ -19,26 +19,26 @@
   <meta name="author" content="Joshua0729">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Day7 模考 时间分配$8:30\sim8:40$做T1，AC $8:40\sim8:50$做T2，AC $8:50\sim9:30$做T3，AC $9:30\sim10:00$尝试T3，样例不对 $10:00\sim10:20$尝试T4，过不了 $10:20\sim10:30$T4骗分，30tps 题目T1比较简单。 定义$a_i$代表袋子里又$i$个标号为$a$的球。 同时额外累计一个ans">
+    <meta name="description" content="题目T1图的表示：每个节点有两个可能的 “出口”（用$endss[i][0]$和$endss[i][1]$表示），分别对应两种方向标记（如$R$和非$R$，通过change函数映射为0和1）。每个出口存储连接的目标节点和对应的反向标记（确保边的双向性）。 连通分量遍历：用 DFS 遍历所有未访问的节点，探索其所在的连通分量，记录分量中的节点总数（re1）和边总数（re2）。由于每条边被双向记录（如">
 <meta property="og:type" content="article">
-<meta property="og:title" content="夏令营7.18总结">
-<meta property="og:url" content="https://joshua0729.github.io/2025/07/18/%E5%A4%8F%E4%BB%A4%E8%90%A57-18%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:title" content="夏令营7.27总结">
+<meta property="og:url" content="https://joshua0729.github.io/2025/07/27/%E5%A4%8F%E4%BB%A4%E8%90%A57-27%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="Joshua0729的个人博客">
-<meta property="og:description" content="Day7 模考 时间分配$8:30\sim8:40$做T1，AC $8:40\sim8:50$做T2，AC $8:50\sim9:30$做T3，AC $9:30\sim10:00$尝试T3，样例不对 $10:00\sim10:20$尝试T4，过不了 $10:20\sim10:30$T4骗分，30tps 题目T1比较简单。 定义$a_i$代表袋子里又$i$个标号为$a$的球。 同时额外累计一个ans">
+<meta property="og:description" content="题目T1图的表示：每个节点有两个可能的 “出口”（用$endss[i][0]$和$endss[i][1]$表示），分别对应两种方向标记（如$R$和非$R$，通过change函数映射为0和1）。每个出口存储连接的目标节点和对应的反向标记（确保边的双向性）。 连通分量遍历：用 DFS 遍历所有未访问的节点，探索其所在的连通分量，记录分量中的节点总数（re1）和边总数（re2）。由于每条边被双向记录（如">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.rthe.cn/cached-0686d605b00411907fabf958c9c8ccc3-avif/mapbad/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-07-18%20160512.png">
-<meta property="article:published_time" content="2025-07-18T08:03:52.000Z">
-<meta property="article:modified_time" content="2025-07-23T08:35:14.147Z">
+<meta property="og:image" content="https://cdn.rthe.cn/cached-4ee21ed1caab71d7d1cce9ca5879e714-avif/mapbad/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-07-27%20190859.png">
+<meta property="article:published_time" content="2025-07-27T11:08:07.000Z">
+<meta property="article:modified_time" content="2025-07-27T11:09:54.724Z">
 <meta property="article:author" content="Joshua0729">
 <meta property="article:tag" content="原创">
 <meta property="article:tag" content="夏令营">
 <meta property="article:tag" content="总结">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cdn.rthe.cn/cached-0686d605b00411907fabf958c9c8ccc3-avif/mapbad/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-07-18%20160512.png">
+<meta name="twitter:image" content="https://cdn.rthe.cn/cached-4ee21ed1caab71d7d1cce9ca5879e714-avif/mapbad/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-07-27%20190859.png">
   
   
   
-  <title>夏令营7.18总结 - Joshua0729的个人博客</title>
+  <title>夏令营7.27总结 - Joshua0729的个人博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -215,13 +215,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('https://cdn.rthe.cn/cached-0686d605b00411907fabf958c9c8ccc3-avif/mapbad/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-07-18%20160512.png') no-repeat center center; background-size: cover;">
+     style="background: url('https://cdn.rthe.cn/cached-4ee21ed1caab71d7d1cce9ca5879e714-avif/mapbad/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-07-27%20190859.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="夏令营7.18总结"></span>
+            <span id="subtitle" data-typed-text="夏令营7.27总结"></span>
           
         </div>
 
@@ -232,8 +232,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-07-18 16:03" pubdate>
-          2025年7月18日 下午
+        <time datetime="2025-07-27 19:08" pubdate>
+          2025年7月27日 晚上
         </time>
       </span>
     
@@ -244,7 +244,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          903 字
+          1.3k 字
         
       </span>
     
@@ -255,7 +255,7 @@
         
         
         
-          8 分钟
+          11 分钟
         
       </span>
     
@@ -292,12 +292,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">夏令营7.18总结</h1>
+            <h1 id="seo-header">夏令营7.27总结</h1>
             
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于 2025-07-23T16:35:14+08:00
+                    本文最后更新于 2025-07-27T19:09:54+08:00
                   
                   
 
@@ -307,68 +307,88 @@
             
               <div class="markdown-body">
                 
-                <p>Day7 模考</p>
-<h2 id="时间分配"><a href="#时间分配" class="headerlink" title="时间分配"></a>时间分配</h2><p>$8:30\sim8:40$做T1，AC</p>
-<p>$8:40\sim8:50$做T2，AC</p>
-<p>$8:50\sim9:30$做T3，AC</p>
-<p>$9:30\sim10:00$尝试T3，样例不对</p>
-<p>$10:00\sim10:20$尝试T4，过不了</p>
-<p>$10:20\sim10:30$T4骗分，30tps</p>
-<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><h3 id="T1"><a href="#T1" class="headerlink" title="T1"></a>T1</h3><p>比较简单。</p>
-<p>定义$a_i$代表袋子里又$i$个标号为$a$的球。</p>
-<p>同时额外累计一个<code>ans</code>，代表当前袋子里球的数量</p>
-<p>读入每组数据，如果是</p>
+                <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><h3 id="T1"><a href="#T1" class="headerlink" title="T1"></a>T1</h3><p>图的表示：<br>每个节点有两个可能的 “出口”（用$endss[i][0]$和$endss[i][1]$表示），分别对应两种方向标记（如$R$和非$R$，通过<code>change</code>函数映射为0和1）。每个出口存储连接的目标节点和对应的反向标记（确保边的双向性）。</p>
+<p>连通分量遍历：<br>用 DFS 遍历所有未访问的节点，探索其所在的连通分量，记录分量中的节点总数（<code>re1</code>）和边总数（<code>re2</code>）。由于每条边被双向记录（如节点<code>a</code>到<code>c</code>和<code>c</code>到<code>a</code>），统计的<code>re2</code>实际是边数的2倍，因此需要除以2得到真实边数。</p>
+<p>分量分类：<br>对每个连通分量，比较真实边数（<code>re2/2</code>）和节点数（<code>re1</code>）：</p>
 <ul>
-<li>放入：将下述操作完成后$a_i$加一。<ul>
-<li>操作：</li>
-<li>$a_i&#x3D;0$：将<code>ans</code>加一</li>
-<li>否则<code>ans</code>不变</li>
+<li>若<code>边数=节点数</code>，归为第一类（<code>ans1</code>计数）。</li>
+<li>否则，归为第二类（<code>ans2</code>计数）。</li>
+</ul>
+<p>考试的时候这题对我来说还是比较简单的。</p>
+<h3 id="T2"><a href="#T2" class="headerlink" title="T2"></a>T2</h3><p>这题考试的时候花了一点时间，但是最后还是搞定了。</p>
+<p>核心逻辑是分阶段分析路径和约束范围计算，高效统计有效路径：</p>
+<ol>
+<li>将路径分为前$k$步和后$k_2&#x3D;len-k$步（$k$表示从0到$len$遍历所有可能的分割）。</li>
+<li>对前$k$步，计算向下步数（$d_1$）的合法范围$[l_1, r_1]$。</li>
+<li>对后$k_2$步，计算向下步数（$d_2$）的合法范围$[l_2, r_2]$。</li>
+<li>结合总向下步数必须为$h-1$（$d_1+d_2&#x3D;h-1$）和总向右步数必须为$w-1$（$(k-d1)+(k2-d2)&#x3D;w-1$），推导$d_1$的有效范围，进而计算该分割下的有效路径数。</li>
+</ol>
+<p>这题我的代码逻辑比较复杂，所以把代码的具体步骤也放上来。</p>
+<ol>
+<li>前<code>k</code>步的约束范围计算</li>
+</ol>
+<ul>
+<li><p>数组定义：</p>
+<ul>
+<li>$mind[k]$：前$k$步中最少的向下步数（<code>&#39;D&#39;</code>的数量）。</li>
+<li>$minr[k]$：前$k$步中最少的向右步数（<code>&#39;R&#39;</code>的数量）。</li>
+<li>$maxd[k]$：前$k$步中最多的向下步数（<code>&#39;D&#39;</code> + <code>&#39;?&#39;</code>的数量）。</li>
+<li>$maxr[k]$：前$k$步中最多的向右步数（<code>&#39;R&#39;</code> + <code>&#39;?&#39;</code>的数量）。</li>
 </ul>
 </li>
-<li>取出：完成下述操作后$a_i$减一。<ul>
-<li>操作：</li>
-<li>$a_i&#x3D;0$：将<code>ans</code>减一</li>
-<li>否则<code>ans</code>不变</li>
+<li><p>合法范围$[l_1, r_1]$：</p>
+<p>前$k$步的向下步数$d_1$需满足：</p>
+<ul>
+<li>$d1\ge mind[k]$（至少走$s$中要求的<code>&#39;D&#39;</code>）。</li>
+<li>$d1\ge-maxr[k]$（向右步数$k-d_1$不能超过最大可能的向右步数）。</li>
+<li>$d1\ge maxd[k]$（最多走$s$中允许的<code>&#39;D&#39;</code> + <code>&#39;?&#39;</code>）。</li>
+<li>$d1\ge k-minr[k]$（向右步数$k-d_1$不能少于要求的<code>&#39;R&#39;</code>）。<br>因此，$l_1&#x3D;max(mind[k],k-maxr[k])$，$r_1&#x3D;min(maxd[k],k-minr[k])$。</li>
 </ul>
 </li>
-<li>统计：直接输出<code>ans</code></li>
 </ul>
-<p>核心代码：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">int</span> n;<br>cin&gt;&gt;n;<br><span class="hljs-keyword">if</span>(n==<span class="hljs-number">1</span>)&#123;<br>    <span class="hljs-type">int</span> x;<br>    cin&gt;&gt;x;<br>    <span class="hljs-keyword">if</span>(a[x]==<span class="hljs-number">0</span>) ans++;<br>    a[x]++;<br>&#125;<br><span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(n==<span class="hljs-number">2</span>)&#123;<br>    <span class="hljs-type">int</span> x;<br>    cin&gt;&gt;x;<br>    a[x]--;<br>    <span class="hljs-keyword">if</span>(a[x]==<span class="hljs-number">0</span>) ans--;<br>&#125;<br><span class="hljs-keyword">else</span>&#123;<br>    cout&lt;&lt;ans&lt;&lt;endl;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h3 id="T2"><a href="#T2" class="headerlink" title="T2"></a>T2</h3><p><del>强烈怀疑是放错题目了</del></p>
-<p>这题就是一个简单的判断模三。但是，当你准备把一段简单的模三代码交上去时，你会发现<del>什么结果都没有</del>因为时<code>OI</code>赛制。但是实际上只有十分，因为<del>你没开<code>long long</code></del>不对是因为你没看题面。</p>
-<p>题面里明明白白地写了：$\Huge接下来每个整数的长度小于等于1000.$</p>
-<p>那么，接下来的就很简单了。</p>
-<p>用<code>string</code>是最简单的，当然你用字符数组我也不拦着你。</p>
-<p>简单的核心代码：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs cpp">string a;<br>cin&gt;&gt;a;<br><span class="hljs-type">int</span> add=<span class="hljs-number">0</span>;<br><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;a.<span class="hljs-built_in">size</span>();i++)&#123;<br>    add+=a[i]-<span class="hljs-string">&#x27;0&#x27;</span>;<br>&#125;<br><span class="hljs-keyword">if</span>(add%<span class="hljs-number">3</span>==<span class="hljs-number">0</span>)&#123;<br>    cout&lt;&lt;<span class="hljs-string">&quot;Yes&quot;</span>&lt;&lt;endl;<br>&#125;<br><span class="hljs-keyword">else</span> cout&lt;&lt;<span class="hljs-string">&quot;No&quot;</span>&lt;&lt;endl;<br></code></pre></td></tr></table></figure>
-<h3 id="T3"><a href="#T3" class="headerlink" title="T3"></a>T3</h3><p>这道题目相对来说还是比较简单的。</p>
-<p>这里的重点不放在做法上，在一种在考试时很实用的小妙招：</p>
-<p>一种简单的<code>vector</code>去重方法：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-built_in">sort</span>(a.<span class="hljs-built_in">begin</span>(),a.<span class="hljs-built_in">end</span>());<span class="hljs-comment">//排序</span><br><span class="hljs-comment">//unique把重复元素放到最后，并返回最后一个非重复元素的下一个的下标</span><br>a.<span class="hljs-built_in">erase</span>(<span class="hljs-built_in">unique</span>(a.<span class="hljs-built_in">begin</span>(),a.<span class="hljs-built_in">end</span>()),a.<span class="hljs-built_in">end</span>());<span class="hljs-comment">//erase擦除第一个重复元素到最后一个元素</span><br></code></pre></td></tr></table></figure>
-
-<p>注意：判断下标，所以要加一句，否则会<code>RE</code>：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">if</span>(c.<span class="hljs-built_in">empty</span>()) <span class="hljs-keyword">return</span>;<br></code></pre></td></tr></table></figure>
-
-<p>注意特殊情况，否则容易爆零。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">//情况1</span><br><span class="hljs-built_in">lower_bound</span>();<br><span class="hljs-built_in">end</span>() n<span class="hljs-number">+1</span>;<span class="hljs-comment">//lower_bound()找不到可能返回end+1的下标，容易越界</span><br><span class="hljs-keyword">auto</span> it=<span class="hljs-built_in">lower_bound</span>();<span class="hljs-comment">//可能这个指针为空</span><br>ans=<span class="hljs-built_in">max</span>(ans,*it);<span class="hljs-comment">//这里可能会越界</span><br><br><span class="hljs-comment">//情况2</span><br><span class="hljs-comment">//减之前判断下标位置</span><br><span class="hljs-keyword">if</span>(it!=a.<span class="hljs-built_in">begin</span>()) it--;<br></code></pre></td></tr></table></figure>
-
-<p>还有一个<code>vector</code>的使用小技巧：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-built_in">reserve</span>()<span class="hljs-comment">//可以给vector预留空间</span><br></code></pre></td></tr></table></figure>
-<h3 id="T4"><a href="#T4" class="headerlink" title="T4"></a>T4</h3><p>为了最大化嵌套后的结果，我们需要：</p>
-<p>优先选择增长潜力大的函数：即每次嵌套后能带来更大增幅的函数。</p>
-<p>$dp$优化：通过$dp$逐步构建最优解，避免暴力枚举所有可能的组合。</p>
-<p>对每个函数计算一个关键值$K&#x3D;\frac{B_i}{A_i−1}$，用于衡量函数的增长潜力。</p>
-<p>如果$A_i&#x3D;1$则$k$设为无穷大，确保这些函数优先被选中。</p>
-<p>按照$k$从大到小排序，确保增长潜力大的函数优先被考虑。</p>
-<p>动态规划计算最大值：</p>
-<p>初始化动态规划数组$dp$，其中$dp[j]$表示选择$j$个函数时的最大可能值。</p>
-<p>初始时$dp[0]&#x3D;1$，因为嵌套的初始输入是$1$</p>
-<p>对于每个函数，从$K$到$1$反向更新$dp[j]$：</p>
-<p>计算选择当前函数后的新值：$neww&#x3D;A_i\times dp[j−1]+B_i$。</p>
-<p>如果新值比当前$dp[j]$大，则更新$dp[j]$。</p>
-<h3 id="T5"><a href="#T5" class="headerlink" title="T5"></a>T5</h3><p><del>骗分骗30</del></p>
-<p>还没搞定<code>QwQ</code>。</p>
+<ol start="2">
+<li>后<code>k2</code>步的约束范围计算</li>
+</ol>
+<ul>
+<li><p>数组定义</p>
+<p>（从后往前累加）：</p>
+<ul>
+<li>$sud[i]$：从位置$i$到结尾的<code>&#39;D&#39;</code>数量。</li>
+<li>$sur[i]$：从位置$i$到结尾的<code>&#39;R&#39;</code>数量。</li>
+<li>$suq[i]$：从位置$i$到结尾的<code>&#39;?&#39;</code>数量。</li>
+</ul>
+</li>
+<li><p>合法范围$[l_2, r_2]$：后$k_2$步的向下步数$d_2$需满足：</p>
+<ul>
+<li>$d_2\ge mindsu$（<code>sud</code>中<code>&#39;D&#39;</code>的数量）。</li>
+<li>$d2\ge k_2-(minrsu+suqv)$（向右步数$k_2-d_2$不能超过<code>&#39;R&#39; + &#39;?&#39;</code>的数量）。</li>
+<li>$d2\le mindsu+suqv$（<code>&#39;D&#39; + &#39;?&#39;</code>的数量）。</li>
+<li>$d2\le k2-minrsu$（向右步数不能少于<code>&#39;R&#39;</code>的数量）。<br>因此，$l_2&#x3D;max(mindsu, k_2-(minrsu+suqv))$，$r_2&#x3D;min(mindsu+suqv, k_2-minrsu)$。</li>
+</ul>
+</li>
+</ul>
+<ol start="3">
+<li>有效路径计数</li>
+</ol>
+<ul>
+<li>总向下步数需满足$d_1+d_2&#x3D;h-1\rightarrow d_2&#x3D;(h-1)-d_1$。</li>
+<li>结合$d_1$的范围$[l_1, r_1]$和$d_2$的范围$[l_2, r_2]$，推导出$d_1$的有效区间：<br>$d_1\ge l_1$，$d_1\le r_1$，$d_2\ge l_2\rightarrow d_1\le (h-1)-l_2$，$d_2\le r_2\rightarrow d_1\ge (h-1)-r_2$。<br>同时，$d_1$需满足网格边界约束（$i_{min}$和$i_{max}$，与$h$和$w$相关）。</li>
+<li>有效路径数为该区间的长度（若区间合法），累加所有$k$的结果即为总答案。</li>
+</ul>
+<h3 id="T3"><a href="#T3" class="headerlink" title="T3"></a>T3</h3><p>这题考试的时候就敲了TLE的部分风。</p>
+<p><del>T2写太多了，这题少些一点</del></p>
+<p>核心思路：</p>
+<ol>
+<li>追踪元素的激活状态：用数组$vis[x]$记录元素$x$的激活状态，$vis[x]&#x3D;0$表示未激活，$vis[x]&#x3D;i$表示在第$i$次操作时被激活。</li>
+<li>记录活跃元素总数的前缀和：用数组$sum[i]$记录前$i$次操作中，每一次操作后 “活跃元素总数” 的累加和（即$sum[i]&#x3D;sum[i-1]+len$，其中$len$是第$i$次操作后的活跃元素总数）。</li>
+<li>计算元素的贡献：当元素$x$从激活变为未激活时，其激活时间段为$[vis[x], 当前操作次数]$，贡献为该区间内 “活跃元素总数” 的和（即$sum[当前]-sum[vis[x]-1]$）。若操作结束后元素仍处于激活状态，则需补充计算从最后一次激活到操作结束的贡献。</li>
+</ol>
+<h3 id="T4"><a href="#T4" class="headerlink" title="T4"></a>T4</h3><p>这题好像没搞定，没写完，就没交了。</p>
+<ol>
+<li>计算最长递增子序列（<code>LIS</code>）的长度：<br>利用贪心算法结合二分查找，分别从左到右和从右到左遍历序列，记录每个元素在<code>LIS</code>中的位置信息。</li>
+<li>识别<code>LIS</code>的组成元素：<br>对于每个元素，判断其是否可能属于某条<code>LIS</code>（通过左右遍历的位置信息之和是否等于<code>LIS</code>长度加1）。</li>
+<li>筛选不可替代的关键元素：<br>统计每个<code>LIS</code>位置上的元素数量，若某个位置上仅有一个元素，则该元素是不可替代的关键元素。</li>
+</ol>
 
                 
               </div>
@@ -425,7 +445,7 @@
    <!--
     <p class="note note-primary">
   <strong> 本文作者: </strong><a href="/">Joshua0729</a> <br>
-  <strong> 本文链接: </strong><a href="https://joshua0729.github.io/2025/07/18/%E5%A4%8F%E4%BB%A4%E8%90%A57-18%E6%80%BB%E7%BB%93/">https://joshua0729.github.io/2025/07/18/%E5%A4%8F%E4%BB%A4%E8%90%A57-18%E6%80%BB%E7%BB%93/</a> <br>
+  <strong> 本文链接: </strong><a href="https://joshua0729.github.io/2025/07/27/%E5%A4%8F%E4%BB%A4%E8%90%A57-27%E6%80%BB%E7%BB%93/">https://joshua0729.github.io/2025/07/27/%E5%A4%8F%E4%BB%A4%E8%90%A57-27%E6%80%BB%E7%BB%93/</a> <br>
   <strong> 版权声明: </strong>
       
       
@@ -441,8 +461,8 @@
   
   <div class="license-box my-3">
     <div class="license-title">
-      <div>夏令营7.18总结</div>
-      <div>https://joshua0729.github.io/2025/07/18/夏令营7-18总结/</div>
+      <div>夏令营7.27总结</div>
+      <div>https://joshua0729.github.io/2025/07/27/夏令营7-27总结/</div>
     </div>
     <div class="license-meta">
       
@@ -454,13 +474,13 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025-07-18 16:07:00.5252</div>
+          <div>2025-07-27 19:07:00.077</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025-07-23 16:07:14.1414</div>
+          <div>2025-07-27 19:07:72.5454</div>
         </div>
       
       
@@ -491,18 +511,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/07/18/%E4%BA%BA%E4%BB%AC%E4%B8%BA%E4%BB%80%E4%B9%88%E8%BF%98%E8%A6%81%E4%BD%BF%E7%94%A8%E7%94%B5%E8%84%91%EF%BC%9F/" title="人们为什么还要使用电脑？">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">人们为什么还要使用电脑？</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/07/17/%E9%AA%97%E5%88%86%E5%AF%BC%E8%AE%BA/" title="骗分导论">
-                        <span class="hidden-mobile">骗分导论</span>
+                      <a href="/2025/07/26/%E5%A4%8F%E4%BB%A4%E8%90%A57-26%E6%80%BB%E7%BB%93/" title="夏令营7.26总结">
+                        <span class="hidden-mobile">夏令营7.26总结</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

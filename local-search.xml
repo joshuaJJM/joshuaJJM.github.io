@@ -4,6 +4,37 @@
   
   
   <entry>
+    <title>夏令营7.27总结</title>
+    <link href="/2025/07/27/%E5%A4%8F%E4%BB%A4%E8%90%A57-27%E6%80%BB%E7%BB%93/"/>
+    <url>/2025/07/27/%E5%A4%8F%E4%BB%A4%E8%90%A57-27%E6%80%BB%E7%BB%93/</url>
+    
+    <content type="html"><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><h3 id="T1"><a href="#T1" class="headerlink" title="T1"></a>T1</h3><p>图的表示：<br>每个节点有两个可能的 “出口”（用$endss[i][0]$和$endss[i][1]$表示），分别对应两种方向标记（如$R$和非$R$，通过<code>change</code>函数映射为0和1）。每个出口存储连接的目标节点和对应的反向标记（确保边的双向性）。</p><p>连通分量遍历：<br>用 DFS 遍历所有未访问的节点，探索其所在的连通分量，记录分量中的节点总数（<code>re1</code>）和边总数（<code>re2</code>）。由于每条边被双向记录（如节点<code>a</code>到<code>c</code>和<code>c</code>到<code>a</code>），统计的<code>re2</code>实际是边数的2倍，因此需要除以2得到真实边数。</p><p>分量分类：<br>对每个连通分量，比较真实边数（<code>re2/2</code>）和节点数（<code>re1</code>）：</p><ul><li>若<code>边数=节点数</code>，归为第一类（<code>ans1</code>计数）。</li><li>否则，归为第二类（<code>ans2</code>计数）。</li></ul><p>考试的时候这题对我来说还是比较简单的。</p><h3 id="T2"><a href="#T2" class="headerlink" title="T2"></a>T2</h3><p>这题考试的时候花了一点时间，但是最后还是搞定了。</p><p>核心逻辑是分阶段分析路径和约束范围计算，高效统计有效路径：</p><ol><li>将路径分为前$k$步和后$k_2&#x3D;len-k$步（$k$表示从0到$len$遍历所有可能的分割）。</li><li>对前$k$步，计算向下步数（$d_1$）的合法范围$[l_1, r_1]$。</li><li>对后$k_2$步，计算向下步数（$d_2$）的合法范围$[l_2, r_2]$。</li><li>结合总向下步数必须为$h-1$（$d_1+d_2&#x3D;h-1$）和总向右步数必须为$w-1$（$(k-d1)+(k2-d2)&#x3D;w-1$），推导$d_1$的有效范围，进而计算该分割下的有效路径数。</li></ol><p>这题我的代码逻辑比较复杂，所以把代码的具体步骤也放上来。</p><ol><li>前<code>k</code>步的约束范围计算</li></ol><ul><li><p>数组定义：</p><ul><li>$mind[k]$：前$k$步中最少的向下步数（<code>&#39;D&#39;</code>的数量）。</li><li>$minr[k]$：前$k$步中最少的向右步数（<code>&#39;R&#39;</code>的数量）。</li><li>$maxd[k]$：前$k$步中最多的向下步数（<code>&#39;D&#39;</code> + <code>&#39;?&#39;</code>的数量）。</li><li>$maxr[k]$：前$k$步中最多的向右步数（<code>&#39;R&#39;</code> + <code>&#39;?&#39;</code>的数量）。</li></ul></li><li><p>合法范围$[l_1, r_1]$：</p><p>前$k$步的向下步数$d_1$需满足：</p><ul><li>$d1\ge mind[k]$（至少走$s$中要求的<code>&#39;D&#39;</code>）。</li><li>$d1\ge-maxr[k]$（向右步数$k-d_1$不能超过最大可能的向右步数）。</li><li>$d1\ge maxd[k]$（最多走$s$中允许的<code>&#39;D&#39;</code> + <code>&#39;?&#39;</code>）。</li><li>$d1\ge k-minr[k]$（向右步数$k-d_1$不能少于要求的<code>&#39;R&#39;</code>）。<br>因此，$l_1&#x3D;max(mind[k],k-maxr[k])$，$r_1&#x3D;min(maxd[k],k-minr[k])$。</li></ul></li></ul><ol start="2"><li>后<code>k2</code>步的约束范围计算</li></ol><ul><li><p>数组定义</p><p>（从后往前累加）：</p><ul><li>$sud[i]$：从位置$i$到结尾的<code>&#39;D&#39;</code>数量。</li><li>$sur[i]$：从位置$i$到结尾的<code>&#39;R&#39;</code>数量。</li><li>$suq[i]$：从位置$i$到结尾的<code>&#39;?&#39;</code>数量。</li></ul></li><li><p>合法范围$[l_2, r_2]$：后$k_2$步的向下步数$d_2$需满足：</p><ul><li>$d_2\ge mindsu$（<code>sud</code>中<code>&#39;D&#39;</code>的数量）。</li><li>$d2\ge k_2-(minrsu+suqv)$（向右步数$k_2-d_2$不能超过<code>&#39;R&#39; + &#39;?&#39;</code>的数量）。</li><li>$d2\le mindsu+suqv$（<code>&#39;D&#39; + &#39;?&#39;</code>的数量）。</li><li>$d2\le k2-minrsu$（向右步数不能少于<code>&#39;R&#39;</code>的数量）。<br>因此，$l_2&#x3D;max(mindsu, k_2-(minrsu+suqv))$，$r_2&#x3D;min(mindsu+suqv, k_2-minrsu)$。</li></ul></li></ul><ol start="3"><li>有效路径计数</li></ol><ul><li>总向下步数需满足$d_1+d_2&#x3D;h-1\rightarrow d_2&#x3D;(h-1)-d_1$。</li><li>结合$d_1$的范围$[l_1, r_1]$和$d_2$的范围$[l_2, r_2]$，推导出$d_1$的有效区间：<br>$d_1\ge l_1$，$d_1\le r_1$，$d_2\ge l_2\rightarrow d_1\le (h-1)-l_2$，$d_2\le r_2\rightarrow d_1\ge (h-1)-r_2$。<br>同时，$d_1$需满足网格边界约束（$i_{min}$和$i_{max}$，与$h$和$w$相关）。</li><li>有效路径数为该区间的长度（若区间合法），累加所有$k$的结果即为总答案。</li></ul><h3 id="T3"><a href="#T3" class="headerlink" title="T3"></a>T3</h3><p>这题考试的时候就敲了TLE的部分风。</p><p><del>T2写太多了，这题少些一点</del></p><p>核心思路：</p><ol><li>追踪元素的激活状态：用数组$vis[x]$记录元素$x$的激活状态，$vis[x]&#x3D;0$表示未激活，$vis[x]&#x3D;i$表示在第$i$次操作时被激活。</li><li>记录活跃元素总数的前缀和：用数组$sum[i]$记录前$i$次操作中，每一次操作后 “活跃元素总数” 的累加和（即$sum[i]&#x3D;sum[i-1]+len$，其中$len$是第$i$次操作后的活跃元素总数）。</li><li>计算元素的贡献：当元素$x$从激活变为未激活时，其激活时间段为$[vis[x], 当前操作次数]$，贡献为该区间内 “活跃元素总数” 的和（即$sum[当前]-sum[vis[x]-1]$）。若操作结束后元素仍处于激活状态，则需补充计算从最后一次激活到操作结束的贡献。</li></ol><h3 id="T4"><a href="#T4" class="headerlink" title="T4"></a>T4</h3><p>这题好像没搞定，没写完，就没交了。</p><ol><li>计算最长递增子序列（<code>LIS</code>）的长度：<br>利用贪心算法结合二分查找，分别从左到右和从右到左遍历序列，记录每个元素在<code>LIS</code>中的位置信息。</li><li>识别<code>LIS</code>的组成元素：<br>对于每个元素，判断其是否可能属于某条<code>LIS</code>（通过左右遍历的位置信息之和是否等于<code>LIS</code>长度加1）。</li><li>筛选不可替代的关键元素：<br>统计每个<code>LIS</code>位置上的元素数量，若某个位置上仅有一个元素，则该元素是不可替代的关键元素。</li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>编程</category>
+      
+      <category>总结</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>原创</tag>
+      
+      <tag>夏令营</tag>
+      
+      <tag>总结</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>夏令营7.26总结</title>
     <link href="/2025/07/26/%E5%A4%8F%E4%BB%A4%E8%90%A57-26%E6%80%BB%E7%BB%93/"/>
     <url>/2025/07/26/%E5%A4%8F%E4%BB%A4%E8%90%A57-26%E6%80%BB%E7%BB%93/</url>
