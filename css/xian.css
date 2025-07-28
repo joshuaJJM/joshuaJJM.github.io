@@ -1,0 +1,36 @@
+/* 链接基础样式设置 */
+a {
+    position: relative; /* 为伪元素提供定位基准 */
+    text-decoration: none; /* 去除默认下划线（可选） */
+    transition: color 0.15s ease; /* 文字颜色过渡效果 */
+    color: #005C97; /* 链接默认颜色 */
+}
+
+/* 鼠标悬浮时的链接样式 */
+a:hover {
+    color: #fa4b4b; /* 悬浮时的文字颜色 */
+}
+
+/* 下划线效果实现 */
+a:not(.exlg-dash-options)::after {
+    content: ""; /* 伪元素内容为空 */
+    width: 0; /* 初始宽度为0（隐藏状态） */
+    height: 5px; /* 下划线高度 */
+    background: rgba(114, 110, 255, 0.575); /* 下划线颜色和透明度 */
+    position: absolute; /* 绝对定位 */
+    top: 100%; /* 定位在链接底部 */
+    left: 50%; /* 初始水平居中（从中间向两边展开） */
+    transition: all 0.3s ease; /* 过渡动画，使效果更平滑 */
+}
+
+/* 鼠标悬浮时显示下划线 */
+a:not(.exlg-dash-options):hover::after {
+    left: 0; /* 从左侧开始 */
+    width: 100%; /* 宽度扩展到与链接等长 */
+}
+
+/* 排除特定链接的下划线效果（根据原脚本保留） */
+a[data-v-303bbf52][data-v-639bc19b][data-v-5e85f938]::after,
+a[data-v-303bbf52][data-v-258e49ac]::after {
+    height: 0 !important; /* 强制隐藏这些链接的下划线 */
+}
