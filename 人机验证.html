@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>验证</title>
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      overflow: hidden;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      font-family: sans-serif;
+    }
+
+    #box {
+      position: absolute;
+      width: 400px;
+      height: 80px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      padding: 20px;
+      backdrop-filter: blur(10px);
+      transition: transform 0.2s ease;
+    }
+
+    #targetBtn {
+      width: 24px;
+      height: 24px;
+      appearance: none;
+      border: 2px solid #fff;
+      border-radius: 6px;
+      background: transparent;
+      cursor: pointer;
+      margin-right: 15px;
+      transition: background 0.3s;
+      flex-shrink: 0;
+    }
+
+    #targetBtn:checked {
+      background: #fff;
+    }
+
+    .labelText {
+      color: white;
+      font-size: 16px;
+      user-select: none;
+    }
+
+    #surrenderBtn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: #eee;
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/White_flag_icon.svg/64px-White_flag_icon.svg.png');
+      background-size: 60%;
+      background-position: center;
+      background-repeat: no-repeat;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      display: none;
+      z-index: 10;
+    }
+
+    #surrenderText {
+      position: fixed;
+      bottom: 35px;
+      right: 90px;
+      background: rgba(255,255,255,0.1);
+      color: white;
+      padding: 5px 10px;
+      border-radius: 10px;
+      opacity: 0;
+      transition: opacity 0.5s, transform 0.5s;
+      pointer-events: none;
+    }
+
+    .ripple {
+      position: fixed;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 80%);
+      transform: scale(0);
+      animation: rippleExpand 2s linear infinite;
+      pointer-events: none;
+      z-index: 5;
+    }
+
+    @keyframes rippleExpand {
+      0% {
+        transform: scale(0);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(50);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div id="box">
+  <input type="checkbox" id="targetBtn">
+  <div class="labelText">请勾选左侧的复选框以确认你不是机器人</div>
+</div>
+
+<button id="surrenderBtn"></button>
+<div id="surrenderText">要投降吗？投降了我就乖乖等你来按</div>
+
+<script>
+  const box = document.getElementById('box');
+  const btn = document.getElementById('targetBtn');
+  const surrenderBtn = document.getElementById('surrenderBtn');
+  const surrenderText = document.getElementById('surrenderText');
+  const jumpURL = "./"; // <-- 你想跳转的网址
+
+  let surrender = false;
+  let x = window.innerWidth / 2 - box.offsetWidth / 2;
+  let y = window.innerHeight / 2 - box.offsetHeight / 2;
+  box.style.left = x + 'px';
+  box.style.top = y + 'px';
+
+  let targetX = x;
+  let targetY = y;
+
+  function clamp(val, min, max) {
+    return Math.max(min, Math.min(max, val));
+  }
+
+  function dist(x1, y1, x2, y2) {
+    return Math.sqrt((x1 - x2)**2 + (y1 - y2)**2);
+  }
+
+  document.addEventListener('mousemove', (e) => {
+    if (surrender) return;
+
+    const mouseX = e.clientX;
+    const mouseY = e.clientY;
+    const btnRect = btn.getBoundingClientRect();
+    const btnX = btnRect.left + btnRect.width / 2;
+    const btnY = btnRect.top + btnRect.height / 2;
+
+    const d = dist(mouseX, mouseY, btnX, btnY);
+
+    if (d < 100) {
+      const dx = btnX - mouseX;
+      const dy = btnY - mouseY;
+      const escapeFactor = 10;
+      targetX += dx * escapeFactor * 0.05;
+      targetY += dy * escapeFactor * 0.05;
+    }
+
+    // 如果被逼墙角，弹开
+    const margin = 50;
+    if (x < margin) targetX += 30;
+    if (x > window.innerWidth - box.offsetWidth - margin) targetX -= 30;
+    if (y < margin) targetY += 30;
+    if (y > window.innerHeight - box.offsetHeight - margin) targetY -= 30;
+
+    targetX = clamp(targetX, 0, window.innerWidth - box.offsetWidth);
+    targetY = clamp(targetY, 0, window.innerHeight - box.offsetHeight);
+  });
+
+  function animateBox() {
+    if (!surrender) {
+      x += (targetX - x) * 0.15;
+      y += (targetY - y) * 0.15;
+      box.style.left = x + 'px';
+      box.style.top = y + 'px';
+    }
+    requestAnimationFrame(animateBox);
+  }
+
+  animateBox();
+
+  // 投降逻辑
+  setTimeout(() => {
+    surrenderBtn.style.display = 'block';
+    setTimeout(() => {
+      surrenderText.style.opacity = 1;
+    }, 500);
+    setTimeout(() => {
+      createRippleEffect();
+    }, 3000);
+  }, 5000);
+
+  surrenderBtn.addEventListener('click', () => {
+    surrender = true;
+    surrenderText.style.display = 'none';
+  });
+
+  function createRippleEffect() {
+    const rect = surrenderBtn.getBoundingClientRect();
+    const cx = rect.left + rect.width / 2;
+    const cy = rect.top + rect.height / 2;
+
+    const ripple = document.createElement('div');
+    ripple.className = 'ripple';
+    ripple.style.left = (cx - 10) + 'px';
+    ripple.style.top = (cy - 10) + 'px';
+    ripple.style.width = '20px';
+    ripple.style.height = '20px';
+    document.body.appendChild(ripple);
+  }
+
+  btn.addEventListener('change', () => {
+    if (btn.checked) {
+      window.location.href = jumpURL;
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    targetX = clamp(targetX, 0, window.innerWidth - box.offsetWidth);
+    targetY = clamp(targetY, 0, window.innerHeight - box.offsetHeight);
+  });
+</script>
+
+</body>
+</html>
