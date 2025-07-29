@@ -114,6 +114,8 @@
 <div id="surrenderText">要投降吗？投降了我就乖乖等你来按</div>
 
 <script>
+  document.addEventListener('contextmenu', e => e.preventDefault());
+
   const box = document.getElementById('box');
   const btn = document.getElementById('targetBtn');
   const surrenderBtn = document.getElementById('surrenderBtn');
