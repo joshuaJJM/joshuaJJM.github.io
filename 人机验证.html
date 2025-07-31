@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>验证</title>
+  <title>人机验证</title>
   <style>
     html, body {
       margin: 0;
@@ -56,16 +56,21 @@
       width: 50px;
       height: 50px;
       border-radius: 50%;
-      background: #eee;
-      background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/White_flag_icon.svg/64px-White_flag_icon.svg.png');
-      background-size: 60%;
-      background-position: center;
-      background-repeat: no-repeat;
+      background: rgba(255,255,255,0.2);
       border: none;
+      font-size: 28px;
+      line-height: 50px;
+      text-align: center;
+      color: white;
       cursor: pointer;
       box-shadow: 0 0 10px rgba(0,0,0,0.3);
       display: none;
       z-index: 10;
+      transition: transform 0.2s ease;
+    }
+
+    #surrenderBtn:hover {
+      transform: scale(1.1);
     }
 
     #surrenderText {
@@ -110,17 +115,18 @@
   <div class="labelText">我是人类</div>
 </div>
 
-<button id="surrenderBtn"></button>
+<button id="surrenderBtn">🚩</button>
 <div id="surrenderText">要投降吗？投降了我就乖乖等你来按</div>
 
 <script>
+  // 禁用右键菜单
   document.addEventListener('contextmenu', e => e.preventDefault());
 
   const box = document.getElementById('box');
   const btn = document.getElementById('targetBtn');
   const surrenderBtn = document.getElementById('surrenderBtn');
   const surrenderText = document.getElementById('surrenderText');
-  const jumpURL = "./"; // <-- 你想跳转的网址
+  const jumpURL = "./"; // ← 修改为你想跳转的链接
 
   let surrender = false;
   let x = window.innerWidth / 2 - box.offsetWidth / 2;
