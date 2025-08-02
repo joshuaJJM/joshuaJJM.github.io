@@ -19,26 +19,26 @@
   <meta name="author" content="Joshua0729">
   <meta name="keywords" content="">
   
-    <meta name="description" content="今天主要讲了啥都不是（杂题）其实是模考。 但是全班这个断网的模考，对惨的就是我。由于集训带了一个台式机，所以没法搬到考试的地方，就只能用备用的电脑。 题目T1这题还是比较简单（其实是纯签到题）。唯一可能错的原因就是把输出的内容抄错了。 代码就是输入每个数，判断是否为0，如果不为0，就去过的地方加一。最后判断去过的地方的数量，输出对应的内容即可。 T2这题的正解其实就是暴力枚举。 但是考试的时候不知">
+    <meta name="description" content="洛谷上本文的链接 思路本题的情况大致分为两种：  有人不是种子选手 都是种子选手  有人不是种子选手的情况比较简单，因为都是随机抽签，所以最小的相遇的可能性就是 1。 否则需要计算两人的批次后计算最小相遇轮数。步骤：  确定批次。批次为满足条件 $2^{l-1}&lt;x\le 2^l$ 的最小 $l$。 最小相遇轮数为 $8-\max(a,b)+1$。其中 $a,b$ 为两人的批次。  最后直接">
 <meta property="og:type" content="article">
-<meta property="og:title" content="夏令营8.1总结">
-<meta property="og:url" content="https://joshua0729.github.io/2025/08/01/%E5%A4%8F%E4%BB%A4%E8%90%A58-1%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:title" content="B4210题解">
+<meta property="og:url" content="https://joshua0729.github.io/2025/08/02/B4210%E9%A2%98%E8%A7%A3/index.html">
 <meta property="og:site_name" content="Joshua0729的个人博客">
-<meta property="og:description" content="今天主要讲了啥都不是（杂题）其实是模考。 但是全班这个断网的模考，对惨的就是我。由于集训带了一个台式机，所以没法搬到考试的地方，就只能用备用的电脑。 题目T1这题还是比较简单（其实是纯签到题）。唯一可能错的原因就是把输出的内容抄错了。 代码就是输入每个数，判断是否为0，如果不为0，就去过的地方加一。最后判断去过的地方的数量，输出对应的内容即可。 T2这题的正解其实就是暴力枚举。 但是考试的时候不知">
+<meta property="og:description" content="洛谷上本文的链接 思路本题的情况大致分为两种：  有人不是种子选手 都是种子选手  有人不是种子选手的情况比较简单，因为都是随机抽签，所以最小的相遇的可能性就是 1。 否则需要计算两人的批次后计算最小相遇轮数。步骤：  确定批次。批次为满足条件 $2^{l-1}&lt;x\le 2^l$ 的最小 $l$。 最小相遇轮数为 $8-\max(a,b)+1$。其中 $a,b$ 为两人的批次。  最后直接">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.rthe.cn/cached-94488527a2250bc7a602a1dd8984d3be-avif/mapbad/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-08-01%20202807.png">
-<meta property="article:published_time" content="2025-08-01T12:26:46.000Z">
-<meta property="article:modified_time" content="2025-08-01T12:36:18.181Z">
+<meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/4xk2n30t.png">
+<meta property="article:published_time" content="2025-08-02T07:30:56.000Z">
+<meta property="article:modified_time" content="2025-08-02T07:36:09.035Z">
 <meta property="article:author" content="Joshua0729">
+<meta property="article:tag" content="题解">
 <meta property="article:tag" content="原创">
-<meta property="article:tag" content="夏令营">
-<meta property="article:tag" content="总结">
+<meta property="article:tag" content="洛谷">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cdn.rthe.cn/cached-94488527a2250bc7a602a1dd8984d3be-avif/mapbad/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-08-01%20202807.png">
+<meta name="twitter:image" content="https://cdn.luogu.com.cn/upload/image_hosting/4xk2n30t.png">
   
   
   
-  <title>夏令营8.1总结 - Joshua0729的个人博客</title>
+  <title>B4210题解 - Joshua0729的个人博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -248,13 +248,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('https://cdn.rthe.cn/cached-94488527a2250bc7a602a1dd8984d3be-avif/mapbad/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-08-01%20202807.png') no-repeat center center; background-size: cover;">
+     style="background: url('https://cdn.luogu.com.cn/upload/image_hosting/4xk2n30t.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="夏令营8.1总结"></span>
+            <span id="subtitle" data-typed-text="B4210题解"></span>
           
         </div>
 
@@ -265,8 +265,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-08-01 20:26" pubdate>
-          2025年8月1日 晚上
+        <time datetime="2025-08-02 15:30" pubdate>
+          2025年8月2日 下午
         </time>
       </span>
     
@@ -277,7 +277,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          791 字
+          243 字
         
       </span>
     
@@ -288,7 +288,7 @@
         
         
         
-          7 分钟
+          3 分钟
         
       </span>
     
@@ -325,12 +325,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">夏令营8.1总结</h1>
+            <h1 id="seo-header">B4210题解</h1>
             
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于 2025-08-01T20:36:18+08:00
+                    本文最后更新于 2025-08-02T15:36:09+08:00
                   
                   
 
@@ -340,48 +340,23 @@
             
               <div class="markdown-body">
                 
-                <p>今天主要讲了<del>啥都不是</del>（<del>杂题</del>）其实是模考。</p>
-<p>但是全班这个断网的模考，对惨的就是我。由于集训带了一个台式机，所以没法搬到考试的地方，就只能用备用的电脑。</p>
-<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><h3 id="T1"><a href="#T1" class="headerlink" title="T1"></a>T1</h3><p>这题还是比较简单（<del>其实是纯签到题</del>）。<del>唯一</del>可能错的原因就是把输出的内容抄错了。</p>
-<p>代码就是输入每个数，判断是否为0，如果不为0，就去过的地方加一。最后判断去过的地方的数量，输出对应的内容即可。</p>
-<h3 id="T2"><a href="#T2" class="headerlink" title="T2"></a>T2</h3><p>这题的正解其实<del>就是暴力枚举</del>。</p>
-<p>但是考试的时候不知道为什么看了半天题目才写出来。</p>
-<p>一开始考虑使用<del>六层循环</del>，但是寻思着时间复杂度就爆炸了，就仔细地观察了一下样例。发现由于抹布是正方形的，所以如果把地板切成很多片，每一片都单独看的话，每一个连续的脏东西区间的长度都必须要$%k&#x3D;&#x3D;0$才能保证可以刚好擦完。</p>
-<p>自己在考试的时候举了很多例子，也没能证伪。就按照这个方法写了，其实考试的时候是怕复杂度爆炸的，但是实际上没有问题（或许是因为数据太水了？），居然跑出了所有点都不超过 10ms 的时间。</p>
-<h3 id="T3"><a href="#T3" class="headerlink" title="T3"></a>T3</h3><p>下面的这两题在模考的时候没做出来，所以会比较偏题解。</p>
-<p>核心思路：目录树构建与递归遍历</p>
+                <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/article/ajno3jug">洛谷上本文的链接</a></p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>本题的情况大致分为两种：</p>
+<ul>
+<li>有人不是种子选手</li>
+<li>都是种子选手</li>
+</ul>
+<p>有人不是种子选手的情况比较简单，因为都是随机抽签，所以最小的相遇的可能性就是 1。</p>
+<p>否则需要计算两人的批次后计算最小相遇轮数。步骤：</p>
 <ol>
-<li>目录树的构建：</li>
+<li>确定批次。批次为满足条件 $2^{l-1}&lt;x\le 2^l$ 的最小 $l$。</li>
+<li>最小相遇轮数为 $8-\max(a,b)+1$。其中 $a,b$ 为两人的批次。</li>
 </ol>
-<ul>
-<li>通过解析输入的目录路径（如<code>/a/b/c</code>），将其拆分为多个层级的父目录（如<code>/</code>、<code>/a/</code>、<code>/a/b/</code>）。</li>
-<li>用双向映射（<code>m1</code> 和 <code>m2</code>）将目录路径与唯一标识 <code>id</code> 关联，便于处理。</li>
-<li>用邻接表<code>vec</code>存储目录之间的父子关系，用集合 <code>s</code> 记录每个目录的直接子目录。</li>
-</ul>
-<ol start="2">
-<li>目录大小计算：</li>
-</ol>
-<ul>
-<li>采用深度优先搜索（<code>dfs</code>）从叶子目录向上计算每个目录的总大小（<code>sizee</code>），即当前目录大小加上其所有子目录大小之和。</li>
-</ul>
-<ol start="3">
-<li>递归判断与输出：</li>
-</ol>
-<ul>
-<li>从根目录（<code>/</code>）开始递归处理每个目录（<code>solve</code> 函数）。</li>
-<li>对于每个目录，判断其最大子目录的大小是否达到<code>limit</code>：<ul>
-<li>若达到，则标记为需要展开（输出<code>-</code>），并递归处理其所有子目录。</li>
-<li>若未达到，则标记为不需要展开（输出<code>+</code>）。</li>
-</ul>
-</li>
-</ul>
-<h3 id="T4"><a href="#T4" class="headerlink" title="T4"></a>T4</h3><p>还没搞懂<code>QwQ</code>。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>今天的模考还是比较神奇的。</p>
-<p><del>T2不知道为什么就过了</del></p>
-<p>这次，模考，我觉得收获还是比较大的。</p>
-<p>首先，核对答案时要注意哪些小细节。比如T1，如果抄错了一个字母或大小写搞错了就直接爆炸了。</p>
-<p>还有人在这种IO赛制的时候会把用户的文件夹名字写错。这样就直接爆0了。</p>
-<p>如果输入输出文件名字写错了，那么后果也是灾难性的。还有人忘记加上文件名后面的<code>.in</code>于<code>.out</code>。</p>
+<p>最后直接输出即可。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-keyword">typedef</span> <span class="hljs-type">long</span> <span class="hljs-type">long</span> ll;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>	<span class="hljs-type">int</span> s,t;<br>	cin&gt;&gt;s&gt;&gt;t;<br>	<span class="hljs-keyword">if</span>(s&gt;t) <span class="hljs-built_in">swap</span>(s,t);<br>	<br>	<span class="hljs-type">int</span> a,b;<br>	a=<span class="hljs-number">0</span>;<br>	<span class="hljs-keyword">while</span>((<span class="hljs-number">1</span>&lt;&lt;a)&lt;s) a++;<br>	a++;<br>	b=<span class="hljs-number">0</span>;<br>	<span class="hljs-keyword">while</span>((<span class="hljs-number">1</span>&lt;&lt;b)&lt;t) b++;<br>	b++;<br>	<br>	<span class="hljs-keyword">if</span>(s&lt;=<span class="hljs-number">32</span>&amp;&amp;t&lt;=<span class="hljs-number">32</span>)&#123;<br>		cout&lt;&lt;<span class="hljs-number">8</span>-<span class="hljs-built_in">max</span>(a,b)<span class="hljs-number">+1</span>&lt;&lt;endl;<br>	&#125; <br>	<span class="hljs-keyword">else</span>&#123;<br>		cout&lt;&lt;<span class="hljs-number">1</span>&lt;&lt;endl;<br>	&#125;<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>时间复杂度：$O(1)$</p>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/record/228379738">AC 记录</a></p>
 
                 
               </div>
@@ -405,7 +380,7 @@
   
     <span>></span>
     
-  <a href="/categories/%E7%BC%96%E7%A8%8B/%E6%80%BB%E7%BB%93/" class="category-chain-item">总结</a>
+  <a href="/categories/%E7%BC%96%E7%A8%8B/%E9%A2%98%E8%A7%A3/" class="category-chain-item">题解</a>
   
   
 
@@ -422,11 +397,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
+        <a href="/tags/%E9%A2%98%E8%A7%A3/" class="print-no-link">#题解</a>
+      
         <a href="/tags/%E5%8E%9F%E5%88%9B/" class="print-no-link">#原创</a>
       
-        <a href="/tags/%E5%A4%8F%E4%BB%A4%E8%90%A5/" class="print-no-link">#夏令营</a>
-      
-        <a href="/tags/%E6%80%BB%E7%BB%93/" class="print-no-link">#总结</a>
+        <a href="/tags/%E6%B4%9B%E8%B0%B7/" class="print-no-link">#洛谷</a>
       
     </div>
   
@@ -438,7 +413,7 @@
    <!--
     <p class="note note-primary">
   <strong> 本文作者: </strong><a href="/">Joshua0729</a> <br>
-  <strong> 本文链接: </strong><a href="https://joshua0729.github.io/2025/08/01/%E5%A4%8F%E4%BB%A4%E8%90%A58-1%E6%80%BB%E7%BB%93/">https://joshua0729.github.io/2025/08/01/%E5%A4%8F%E4%BB%A4%E8%90%A58-1%E6%80%BB%E7%BB%93/</a> <br>
+  <strong> 本文链接: </strong><a href="https://joshua0729.github.io/2025/08/02/B4210%E9%A2%98%E8%A7%A3/">https://joshua0729.github.io/2025/08/02/B4210%E9%A2%98%E8%A7%A3/</a> <br>
   <strong> 版权声明: </strong>
       
       
@@ -454,8 +429,8 @@
   
   <div class="license-box my-3">
     <div class="license-title">
-      <div>夏令营8.1总结</div>
-      <div>https://joshua0729.github.io/2025/08/01/夏令营8-1总结/</div>
+      <div>B4210题解</div>
+      <div>https://joshua0729.github.io/2025/08/02/B4210题解/</div>
     </div>
     <div class="license-meta">
       
@@ -467,13 +442,13 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025-08-01 20:08:00.4646</div>
+          <div>2025-08-02 15:08:00.5656</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025-08-01 20:08:18.1818</div>
+          <div>2025-08-02 15:08:03.099</div>
         </div>
       
       
@@ -504,18 +479,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/08/02/B4210%E9%A2%98%E8%A7%A3/" title="B4210题解">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">B4210题解</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/08/01/B4204%E9%A2%98%E8%A7%A3/" title="B4204题解">
-                        <span class="hidden-mobile">B4204题解</span>
+                      <a href="/2025/08/01/%E5%A4%8F%E4%BB%A4%E8%90%A58-1%E6%80%BB%E7%BB%93/" title="夏令营8.1总结">
+                        <span class="hidden-mobile">夏令营8.1总结</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

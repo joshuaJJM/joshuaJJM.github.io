@@ -4,6 +4,37 @@
   
   
   <entry>
+    <title>B4210题解</title>
+    <link href="/2025/08/02/B4210%E9%A2%98%E8%A7%A3/"/>
+    <url>/2025/08/02/B4210%E9%A2%98%E8%A7%A3/</url>
+    
+    <content type="html"><![CDATA[<p><a href="https://www.luogu.com.cn/article/ajno3jug">洛谷上本文的链接</a></p><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>本题的情况大致分为两种：</p><ul><li>有人不是种子选手</li><li>都是种子选手</li></ul><p>有人不是种子选手的情况比较简单，因为都是随机抽签，所以最小的相遇的可能性就是 1。</p><p>否则需要计算两人的批次后计算最小相遇轮数。步骤：</p><ol><li>确定批次。批次为满足条件 $2^{l-1}&lt;x\le 2^l$ 的最小 $l$。</li><li>最小相遇轮数为 $8-\max(a,b)+1$。其中 $a,b$ 为两人的批次。</li></ol><p>最后直接输出即可。</p><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-keyword">typedef</span> <span class="hljs-type">long</span> <span class="hljs-type">long</span> ll;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br><span class="hljs-type">int</span> s,t;<br>cin&gt;&gt;s&gt;&gt;t;<br><span class="hljs-keyword">if</span>(s&gt;t) <span class="hljs-built_in">swap</span>(s,t);<br><br><span class="hljs-type">int</span> a,b;<br>a=<span class="hljs-number">0</span>;<br><span class="hljs-keyword">while</span>((<span class="hljs-number">1</span>&lt;&lt;a)&lt;s) a++;<br>a++;<br>b=<span class="hljs-number">0</span>;<br><span class="hljs-keyword">while</span>((<span class="hljs-number">1</span>&lt;&lt;b)&lt;t) b++;<br>b++;<br><br><span class="hljs-keyword">if</span>(s&lt;=<span class="hljs-number">32</span>&amp;&amp;t&lt;=<span class="hljs-number">32</span>)&#123;<br>cout&lt;&lt;<span class="hljs-number">8</span>-<span class="hljs-built_in">max</span>(a,b)<span class="hljs-number">+1</span>&lt;&lt;endl;<br>&#125; <br><span class="hljs-keyword">else</span>&#123;<br>cout&lt;&lt;<span class="hljs-number">1</span>&lt;&lt;endl;<br>&#125;<br><span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure><p>时间复杂度：$O(1)$</p><p><a href="https://www.luogu.com.cn/record/228379738">AC 记录</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>编程</category>
+      
+      <category>题解</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>题解</tag>
+      
+      <tag>原创</tag>
+      
+      <tag>洛谷</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>夏令营8.1总结</title>
     <link href="/2025/08/01/%E5%A4%8F%E4%BB%A4%E8%90%A58-1%E6%80%BB%E7%BB%93/"/>
     <url>/2025/08/01/%E5%A4%8F%E4%BB%A4%E8%90%A58-1%E6%80%BB%E7%BB%93/</url>
