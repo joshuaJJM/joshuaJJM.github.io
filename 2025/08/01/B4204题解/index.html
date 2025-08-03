@@ -19,16 +19,16 @@
   <meta name="author" content="Joshua0729">
   <meta name="keywords" content="">
   
-    <meta name="description" content="题意给你 $n$ 根青菜，$m$ 个机器人，机器人洗菜用 $a$ 的时间，做菜用 $b$ 的时间。求多久之后菜能做好。 思路使用一个小根堆调度。确保每次出队的都是最早空闲的机器人。 然后先让机器人完成所有物品的清洗，对于每个机器人，完成清洗任务后再次进入队列，作为空闲机器人等待下一次使用。 当所有的菜都洗碗之后，让空闲的机器人从处理洗菜任务变成开始处理水煮任务。水煮任务的处理逻辑同以上的逻辑。 最">
+    <meta name="description" content="洛谷同文链接 题意给你 $n$ 根青菜，$m$ 个机器人，机器人洗菜用 $a$ 的时间，做菜用 $b$ 的时间。求多久之后菜能做好。 思路使用一个小根堆调度。确保每次出队的都是最早空闲的机器人。 然后先让机器人完成所有物品的清洗，对于每个机器人，完成清洗任务后再次进入队列，作为空闲机器人等待下一次使用。 当所有的菜都洗碗之后，让空闲的机器人从处理洗菜任务变成开始处理水煮任务。水煮任务的处理逻辑同以">
 <meta property="og:type" content="article">
 <meta property="og:title" content="B4204题解">
 <meta property="og:url" content="https://joshua0729.github.io/2025/08/01/B4204%E9%A2%98%E8%A7%A3/index.html">
 <meta property="og:site_name" content="Joshua0729的个人博客">
-<meta property="og:description" content="题意给你 $n$ 根青菜，$m$ 个机器人，机器人洗菜用 $a$ 的时间，做菜用 $b$ 的时间。求多久之后菜能做好。 思路使用一个小根堆调度。确保每次出队的都是最早空闲的机器人。 然后先让机器人完成所有物品的清洗，对于每个机器人，完成清洗任务后再次进入队列，作为空闲机器人等待下一次使用。 当所有的菜都洗碗之后，让空闲的机器人从处理洗菜任务变成开始处理水煮任务。水煮任务的处理逻辑同以上的逻辑。 最">
+<meta property="og:description" content="洛谷同文链接 题意给你 $n$ 根青菜，$m$ 个机器人，机器人洗菜用 $a$ 的时间，做菜用 $b$ 的时间。求多久之后菜能做好。 思路使用一个小根堆调度。确保每次出队的都是最早空闲的机器人。 然后先让机器人完成所有物品的清洗，对于每个机器人，完成清洗任务后再次进入队列，作为空闲机器人等待下一次使用。 当所有的菜都洗碗之后，让空闲的机器人从处理洗菜任务变成开始处理水煮任务。水煮任务的处理逻辑同以">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/8xn74b2i.png">
 <meta property="article:published_time" content="2025-08-01T00:06:17.000Z">
-<meta property="article:modified_time" content="2025-08-01T00:47:43.156Z">
+<meta property="article:modified_time" content="2025-08-02T11:20:38.764Z">
 <meta property="article:author" content="Joshua0729">
 <meta property="article:tag" content="题解">
 <meta property="article:tag" content="原创">
@@ -277,7 +277,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          435 字
+          441 字
         
       </span>
     
@@ -330,7 +330,7 @@
               <p id="updated-time" class="note note-info" style="display: none">
                 
                   
-                    本文最后更新于 2025-08-01T08:47:43+08:00
+                    本文最后更新于 2025-08-02T19:20:38+08:00
                   
                   
 
@@ -340,7 +340,8 @@
             
               <div class="markdown-body">
                 
-                <h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>给你 $n$ 根青菜，$m$ 个机器人，机器人洗菜用 $a$ 的时间，做菜用 $b$ 的时间。求多久之后菜能做好。</p>
+                <p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/article/jtf7oiom">洛谷同文链接</a></p>
+<h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>给你 $n$ 根青菜，$m$ 个机器人，机器人洗菜用 $a$ 的时间，做菜用 $b$ 的时间。求多久之后菜能做好。</p>
 <h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>使用一个小根堆调度。确保每次出队的都是最早空闲的机器人。</p>
 <p>然后先让机器人完成所有物品的清洗，对于每个机器人，完成清洗任务后再次进入队列，作为空闲机器人等待下一次使用。</p>
 <p>当所有的菜都洗碗之后，让空闲的机器人从处理洗菜任务变成开始处理水煮任务。水煮任务的处理逻辑同以上的逻辑。</p>
@@ -439,7 +440,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025-08-01 08:08:15.4343</div>
+          <div>2025-08-02 19:08:76.3838</div>
         </div>
       
       
@@ -592,7 +593,7 @@
     <div class="footer-content">
       
 <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
-<div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> <head><style> .sel{ margin:5px; justify-content:space-around; }</style></head> <p>每日一句：<a id="rainbow" href=' target="_blank">🌈 获取中...</a></p> 
+<div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> <head><style> .sel{ margin:5px; justify-content:space-around; }</style></head> <p>每日一句：<a id="rainbow" href=' target="_blank">🌈 获取中...</a></p> <img src="https://count.getloli.com/@joshuajjm?name=joshuajjm&theme=3d-num&padding=8&offset=0&align=top&scale=1&pixelated=1&darkmode=auto" srcset="/img/loading.gif" lazyload alt="joshuajjm"> 
     </div>
   
   
