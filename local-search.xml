@@ -4,6 +4,37 @@
   
   
   <entry>
+    <title>夏令营8.3总结</title>
+    <link href="/2025/08/03/%E5%A4%8F%E4%BB%A4%E8%90%A58-3%E6%80%BB%E7%BB%93/"/>
+    <url>/2025/08/03/%E5%A4%8F%E4%BB%A4%E8%90%A58-3%E6%80%BB%E7%BB%93/</url>
+    
+    <content type="html"><![CDATA[<p>今天还是模考。</p><h3 id="T1"><a href="#T1" class="headerlink" title="T1"></a>T1</h3><p><del>老师不讲武德</del></p><p>老师竟然闲得无聊把很难的一题放在了最前面。</p><p> 我们几乎全班都<del>中招</del>了。因为正常情况下，第一题是正常的签到题。但是这一次的T1难度爆表，很多人甚至没做出部分分。<del>因为是捆绑测试</del></p><p><del>其实</del>思路就是分段处理所有的纸币，按照面值从大到小使用。</p><p>将物品的剩余金额从大到小排列。继续使用上面的方法。</p><p>最后，输出结果即可。</p><h3 id="T2"><a href="#T2" class="headerlink" title="T2"></a>T2</h3><p>这题在考试的时候，花了好久才理解样例，因为一个车站可以同时有多个公交线路。</p><p>但是在考试的时候没有完全总结出判断是否合法的逻辑。所以只有22分。</p><p>下面是完整的判断逻辑：</p><ol><li>遍历过程中，<code>G</code>的数量始终$\ge$<code>R</code>的数量，且$\le$<code>W</code>的数量。</li><li>字符串结束时，<code>G</code>和<code>R</code>的总数量相等。</li><li>字符串中至少包含一个<code>G</code>。</li></ol><p>最后，符合这三个条件的就是合法的序列，否则不合法。</p><h3 id="T3"><a href="#T3" class="headerlink" title="T3"></a>T3</h3><p>这题考试的时候<del>正解完全不会写</del>，但是写了一个时间复杂度奇怪（好？）的暴力，居然拿了TLE70分！</p><p>正解：</p><ul><li>其实就是递归+回溯</li><li>一个数能被$2^m$整除，当且仅当该数的最后$m$位二进制表示为$0$。对于十进制数，这意味这该数的最后$m$位组成的数能被$2^m$整除。</li><li>递归的逻辑就是：从空序列开始，逐步在序列前添加1-9（首位不能为0），每一次添加就检查是否满足条件。</li><li>最后，再加上一个剪枝即可。</li></ul><h3 id="T4"><a href="#T4" class="headerlink" title="T4"></a>T4</h3><p>这题似乎挺难的，但是我考试的时候还是<del>不知道怎么样</del>正经地骗分骗了12分。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>编程</category>
+      
+      <category>总结</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>原创</tag>
+      
+      <tag>夏令营</tag>
+      
+      <tag>总结</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>夏令营8.2总结</title>
     <link href="/2025/08/02/%E5%A4%8F%E4%BB%A4%E8%90%A58-2%E6%80%BB%E7%BB%93/"/>
     <url>/2025/08/02/%E5%A4%8F%E4%BB%A4%E8%90%A58-2%E6%80%BB%E7%BB%93/</url>
