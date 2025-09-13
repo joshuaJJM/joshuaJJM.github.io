@@ -75,7 +75,7 @@
   
 <link rel="stylesheet" href="/css/gundongtiaocolor.css">
 <link rel="stylesheet" href="/css/typingchanging.css">
-<link rel="stylesheet" href="/css/xian.css">
+<link rel="stylesheet" href="/css/linkunderline.css">
 
 
 
@@ -483,6 +483,12 @@
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/2025/08/28/hexo-fluid%20%E7%BE%8E%E5%8C%96%E6%8C%87%E5%8D%97/" title="hexo-fluid 美化指南">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">hexo-fluid 美化指南</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
@@ -552,6 +558,21 @@
 
 
 
+
+
+  <script>
+  Fluid.utils.createScript('https://lib.baomitu.com/mermaid/8.14.0/mermaid.min.js', function() {
+    mermaid.initialize({"theme":"default"});
+
+    Fluid.utils.listenDOMLoaded(function() {
+      Fluid.events.registerRefreshCallback(function() {
+        if ('mermaid' in window) {
+          mermaid.init();
+        }
+      });
+    });
+  });
+</script>
 
 
 

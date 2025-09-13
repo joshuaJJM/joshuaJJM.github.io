@@ -22,6 +22,7 @@
     if(String(snum).length === 1 ){
       snum = "0" + snum;
     }
+	  /** 显示的文字内容，详细你结合实际渲染结果应该能看出改哪里 **/
     document.getElementById("timeDate").innerHTML = "本站已在随时准备跑路的状态下以极其不稳定的方式运行了&nbsp"+dnum+"&nbsp天";
     document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";
   }
